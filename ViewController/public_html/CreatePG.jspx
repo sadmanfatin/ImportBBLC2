@@ -3853,7 +3853,7 @@
           <af:dialog id="d5" title="Select Items"
                      dialogListener="#{ManagedBean.editDialogListenerItem}">
             <af:panelCollection id="pc8"
-                                inlineStyle="width:1200px; height:450px;">
+                                inlineStyle="width:1300px; height:450px;">
               <f:facet name="menus"/>
               <f:facet name="toolbar">
                 <af:toolbar id="t19">
@@ -4021,6 +4021,21 @@
                     <f:validator binding="#{row.bindings.BalanceQuantity.validator}"/>
                     <af:convertNumber groupingUsed="false"
                                       pattern="#{bindings.FillItems1.hints.BalanceQuantity.format}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column headerText="Poc Id"
+                           id="c332" align="center" sortable="true"
+                           filterable="true">
+                  <af:inputText value="#{row.bindings.PocId.inputValue}"
+                                label="#{bindings.FillItems1.hints.PocId.label}"
+                                required="#{bindings.FillItems1.hints.PocId.mandatory}"
+                                columns="#{bindings.FillItems1.hints.PocId.displayWidth}"
+                                maximumLength="#{bindings.FillItems1.hints.PocId.precision}"
+                                shortDesc="#{bindings.FillItems1.hints.PocId.tooltip}"
+                                id="it141" readOnly="true">
+                    <f:validator binding="#{row.bindings.PocId.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.FillItems1.hints.PocId.format}"/>
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="ReceivedQuantity" filterable="true"

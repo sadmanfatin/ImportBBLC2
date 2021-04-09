@@ -532,7 +532,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         linerow.setAttribute("Grn", getPopulateValue(poprow, "Grn"));  /**  added at 16.03.17 by fatin  */
         
         linerow.setAttribute("GrnQuantity", getPopulateValue(poprow, "GrnQuantity"));  /**  added at 11.06.17 by fatin  */
-
+        linerow.setAttribute("PocId", getPopulateValue(poprow, "PocId")); 
         populateItemLines1(OrgId);
     } //end of populateLines
 

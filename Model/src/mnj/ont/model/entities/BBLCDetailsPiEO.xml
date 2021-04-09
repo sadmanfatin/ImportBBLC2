@@ -594,6 +594,17 @@
     ColumnType="VARCHAR2"
     TableName="IEDOC_IMP_BBLC_SUB_DET_PI">
     <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+    <Attribute
+    Name="PocId"
+    ColumnName="POC_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="IEDOC_IMP_BBLC_SUB_DET_PI">
+    <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
     </DesignTime>
   </Attribute>

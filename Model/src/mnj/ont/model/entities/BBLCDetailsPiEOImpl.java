@@ -557,6 +557,16 @@ public class BBLCDetailsPiEOImpl extends EntityImpl {
             }
         }
         ,
+        PocId {
+            public Object get(BBLCDetailsPiEOImpl obj) {
+                return obj.getPocId();
+            }
+
+            public void put(BBLCDetailsPiEOImpl obj, Object value) {
+                obj.setPocId((Number)value);
+            }
+        }
+        ,
         BBLCDetails {
             public Object get(BBLCDetailsPiEOImpl obj) {
                 return obj.getBBLCDetails();
@@ -647,6 +657,7 @@ public class BBLCDetailsPiEOImpl extends EntityImpl {
     public static final int PARTIALPL = AttributesEnum.PartialPl.index();
     public static final int GRN = AttributesEnum.Grn.index();
     public static final int GRNQUANTITY = AttributesEnum.GrnQuantity.index();
+    public static final int POCID = AttributesEnum.PocId.index();
     public static final int BBLCDETAILS = AttributesEnum.BBLCDetails.index();
 
     /**
@@ -1481,6 +1492,22 @@ public class BBLCDetailsPiEOImpl extends EntityImpl {
      */
     public void setGrnQuantity(Number value) {
         setAttributeInternal(GRNQUANTITY, value);
+    }
+
+    /**
+     * Gets the attribute value for PocId, using the alias name PocId.
+     * @return the PocId
+     */
+    public Number getPocId() {
+        return (Number)getAttributeInternal(POCID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for PocId.
+     * @param value value to set the PocId
+     */
+    public void setPocId(Number value) {
+        setAttributeInternal(POCID, value);
     }
 
     /**

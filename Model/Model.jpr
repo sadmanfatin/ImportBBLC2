@@ -211,6 +211,10 @@
             <value n="id" v="Resource Bundle Variable Resolver"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <url n="id" path="../../../AppData/Roaming/JDeveloper/system11.1.1.6.38.62.29/o.jdeveloper/Xalan-2.7.0.jar.library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <list n="libraryReferences">
          <hash>
@@ -261,6 +265,10 @@
             <value n="id" v="Resource Bundle Variable Resolver"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <url n="id" path="../../../AppData/Roaming/JDeveloper/system11.1.1.6.38.62.29/o.jdeveloper/Xalan-2.7.0.jar.library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
@@ -268,5 +276,6 @@
    </hash>
    <hash n="ResourceBundleOptions">
       <value n="ADFRestricted" v="true"/>
+      <list n="RegisteredResourceBundles"/>
    </hash>
 </jpr:project>

@@ -38,7 +38,8 @@
        SHORT_EXCESS_QTY,
        IMP_BBLC_HEADER_ID,
        ITEM_PREFIX,SPO_NO,
-       ITEM_ID      
+       ITEM_ID   ,
+       POC_ID     
 FROM          
 (
 SELECT 
@@ -83,7 +84,8 @@ SELECT
       (SELECT INVENTORY_ITEM_ID
          FROM MTL_SYSTEM_ITEMS MSI
         WHERE MSI.DESCRIPTION = IPDI.ATTRIBUTE2
-          AND MSI.ORGANIZATION_ID = 353 AND ROWNUM=1)ITEM_ID     
+          AND MSI.ORGANIZATION_ID = 353 AND ROWNUM=1)ITEM_ID  ,
+          IPDI.POC_ID   
   FROM 
        IEDOC_IMP_PI_LINES IPL,
        IEDOC_IMP_PI_DETAILS IPD,
@@ -299,6 +301,20 @@ ORDER BY PI_NO,IMP_BBLC_HEADER_ID]]>
     ColumnType="NUMBER"
     AliasName="ITEM_ID"
     Expression="ITEM_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PocId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="POC_ID"
+    Expression="POC_ID"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>

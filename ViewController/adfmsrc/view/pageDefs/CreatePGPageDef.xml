@@ -471,6 +471,7 @@
           <Item Value="ShortExcessQty"/>
           <Item Value="ItemCheckBox"/>
           <Item Value="SpoNo"/>
+          <Item Value="PocId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
