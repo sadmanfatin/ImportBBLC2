@@ -1,5 +1,5 @@
 package mnj.ont.model;
-
+import mnj.ont.model.customexceptions.*;
 import com.sun.org.apache.xerces.internal.dom.DocumentImpl;
 
 import java.io.File;
@@ -142,9 +142,11 @@ public class CreatePDF {
     }
 //===//
 //===//    
-    public void exportAllRowsToPDFOne(FacesContext facesContext, OutputStream outputStream) {
-        
-        XMLElement node  = getBBLCDetailsNode() ;
+    public void exportAllRowsToPDFOne(FacesContext facesContext, OutputStream outputStream) throws BankInfoNotFoundException,
+                                                                        OrgAddressInfoNotFoundException {
+
+        XMLElement node  = null ;
+        node =  getBBLCDetailsNode();
         
         
         try {
@@ -159,10 +161,11 @@ public class CreatePDF {
     }
 
     //===//    
-    public void exportPDFshippingGuaranteeForwarding(FacesContext facesContext, OutputStream outputStream) {
-        
-            
-        XMLElement node  = getBBLCDetailsNode() ;
+    public void exportPDFshippingGuaranteeForwarding(FacesContext facesContext, OutputStream outputStream) throws BankInfoNotFoundException,
+                                                                                          OrgAddressInfoNotFoundException {
+
+           XMLElement node  = null ;
+           node =  getBBLCDetailsNode();
         
         
         try {
@@ -176,9 +179,13 @@ public class CreatePDF {
     }
 //===//    
 //===//    
-    public void exportPDFTT_FDD_Invoice_Certify_Letter(FacesContext facesContext, OutputStream outputStream) {
-        
-        XMLElement node  = getBBLCDetailsNode() ;
+       public void exportPDFTT_FDD_Invoice_Certify_Letter(FacesContext facesContext, OutputStream outputStream) throws BankInfoNotFoundException,
+                                                                                         OrgAddressInfoNotFoundException {
+
+        XMLElement node  = null ;
+        node =  getBBLCDetailsNode();
+
+
         
         
         try {
@@ -195,7 +202,8 @@ public class CreatePDF {
       ((XMLNode)n).print(System.out);
     }
 
-    private void updateBblcDetailsNode(XMLElement node) {
+    private void updateBblcDetailsNode(XMLElement node) throws BankInfoNotFoundException,
+                                                                OrgAddressInfoNotFoundException {
         
         
     //  System.out.println("------------------------  appM.getBankHeadBranchesVO1().getAllRowsInRange().length "+appM.getBankHeadBranchesVO1().getAllRowsInRange().length);    
@@ -205,14 +213,12 @@ public class CreatePDF {
            OrganizationAddressVORowImpl oraganizationAddressRow = (OrganizationAddressVORowImpl)appM.getOrganizationAddressVO1().first();
            
            if( bankHeadBranchVoRow == null )  {
-               Message.showMessage("Bank information is Not found!", "error");
-               return;                                                                       
+               throw new BankInfoNotFoundException("Bank information is Not found!");                                                                     
            }
          
            
         if( oraganizationAddressRow == null )  {
-            Message.showMessage("Organization information is not found!", "error");
-            return;
+               throw new BankInfoNotFoundException("Bank information is Not found!");
            }
         
            
@@ -338,7 +344,8 @@ public class CreatePDF {
         
     }
 
-    private XMLElement getBBLCDetailsNode() {
+    private XMLElement getBBLCDetailsNode() throws BankInfoNotFoundException,
+                                                      OrgAddressInfoNotFoundException {
         
         ViewObject vo ;
         vo= appM.getBBLCDetails1();
