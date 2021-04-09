@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BBLCDetailsAiVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  SelectList="BBLCDetailsAiEO.IMP_BBLC_AI_DETAIL_ID, 
+       BBLCDetailsAiEO.IMP_BBLC_DETAIL_ID, 
+       BBLCDetailsAiEO.BBLC_NO, 
+       BBLCDetailsAiEO.BILL_REFERENCE_NO, 
+       BBLCDetailsAiEO.BILL_REFERENCE_DATE, 
+       BBLCDetailsAiEO.INVOICE_NO, 
+       BBLCDetailsAiEO.BILL_VALUE, 
+       BBLCDetailsAiEO.ACCEPTANCE_DATE, 
+       BBLCDetailsAiEO.MATURITY_DATE, 
+       BBLCDetailsAiEO.BILL_ENTRY_NO, 
+       BBLCDetailsAiEO.BILL_ENTRY_DATE, 
+       BBLCDetailsAiEO.BILL_SUBMIT_BANK_DATE, 
+       BBLCDetailsAiEO.LAST_UPDATE_LOGIN, 
+       BBLCDetailsAiEO.LAST_UPDATE_DATE, 
+       BBLCDetailsAiEO.LAST_UPDATED_BY, 
+       BBLCDetailsAiEO.CREATION_DATE, 
+       BBLCDetailsAiEO.CREATED_BY, 
+       BBLCDetailsAiEO.ATTRIBUTE1, 
+       BBLCDetailsAiEO.ATTRIBUTE2, 
+       BBLCDetailsAiEO.ATTRIBUTE3, 
+       BBLCDetailsAiEO.ATTRIBUTE4, 
+       BBLCDetailsAiEO.ATTRIBUTE5, 
+       BBLCDetailsAiEO.ATTRIBUTE6, 
+       BBLCDetailsAiEO.ATTRIBUTE7, 
+       BBLCDetailsAiEO.ATTRIBUTE8, 
+       BBLCDetailsAiEO.ATTRIBUTE9, 
+       BBLCDetailsAiEO.ATTRIBUTE10, 
+       BBLCDetailsAiEO.ATTRIBUTE11, 
+       BBLCDetailsAiEO.ATTRIBUTE12, 
+       BBLCDetailsAiEO.ATTRIBUTE13, 
+       BBLCDetailsAiEO.ATTRIBUTE14, 
+       BBLCDetailsAiEO.ATTRIBUTE15, 
+       BBLCDetailsAiEO.ATTRIBUTE16, 
+       BBLCDetailsAiEO.ATTRIBUTE17, 
+       BBLCDetailsAiEO.ATTRIBUTE18, 
+       BBLCDetailsAiEO.ATTRIBUTE19, 
+       BBLCDetailsAiEO.ATTRIBUTE20, 
+       BBLCDetailsAiEO.ATTRIBUTE21, 
+       BBLCDetailsAiEO.ATTRIBUTE22, 
+       BBLCDetailsAiEO.ATTRIBUTE23, 
+       BBLCDetailsAiEO.ATTRIBUTE24, 
+       BBLCDetailsAiEO.ATTRIBUTE25, 
+       BBLCDetailsAiEO.ATTRIBUTE26, 
+       BBLCDetailsAiEO.ATTRIBUTE27, 
+       BBLCDetailsAiEO.ATTRIBUTE28, 
+       BBLCDetailsAiEO.ATTRIBUTE29, 
+       BBLCDetailsAiEO.ATTRIBUTE30"
+  FromList="IEDOC_IMP_BBLC_SUB_DET_AI BBLCDetailsAiEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="mnj.ont.model.views.BBLCDetailsAiVORowImpl"
+  ComponentClass="mnj.ont.model.views.BBLCDetailsAiVOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="CurrencyVO1"
+    ViewObjectName="mnj.ont.model.lov.views.CurrencyVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="BBLCShipmentInvoiceVO1"
+    ViewObjectName="mnj.ont.model.lov.views.BBLCShipmentInvoiceVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Attribute1"
+    ListVOName="CurrencyVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute1_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute1"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CurrencyCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CurrencyCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute5"
+    ListVOName="BBLCShipmentInvoiceVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute5_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute5"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute6"
+    ListVOName="BBLCShipmentInvoiceVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute6_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute6"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute7"
+    ListVOName="BBLCShipmentInvoiceVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute7_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute7"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute8"
+    ListVOName="BBLCShipmentInvoiceVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute8_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute8"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute9"
+    ListVOName="BBLCShipmentInvoiceVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute9_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute9"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute10"
+    ListVOName="BBLCShipmentInvoiceVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute10_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute10"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute11"
+    ListVOName="BBLCShipmentInvoiceVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute11_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute11"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute12"
+    ListVOName="BBLCShipmentInvoiceVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute12_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute12"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute13"
+    ListVOName="BBLCShipmentInvoiceVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute13_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute13"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute14"
+    ListVOName="BBLCShipmentInvoiceVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute14_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute14"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute15"
+    ListVOName="BBLCShipmentInvoiceVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute15_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute15"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="InvoiceNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <EntityUsage
+    Name="BBLCDetailsAiEO"
+    Entity="mnj.ont.model.entities.BBLCDetailsAiEO"/>
+  <ViewAttribute
+    Name="ImpBblcAiDetailId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ImpBblcAiDetailId"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="IMP_BBLC_AI_DETAIL_ID"/>
+  <ViewAttribute
+    Name="ImpBblcDetailId"
+    PrecisionRule="true"
+    EntityAttrName="ImpBblcDetailId"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="IMP_BBLC_DETAIL_ID"/>
+  <ViewAttribute
+    Name="BblcNo"
+    PrecisionRule="true"
+    EntityAttrName="BblcNo"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="BBLC_NO"/>
+  <ViewAttribute
+    Name="BillReferenceNo"
+    PrecisionRule="true"
+    EntityAttrName="BillReferenceNo"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="BILL_REFERENCE_NO"/>
+  <ViewAttribute
+    Name="BillReferenceDate"
+    PrecisionRule="true"
+    EntityAttrName="BillReferenceDate"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="BILL_REFERENCE_DATE"/>
+  <ViewAttribute
+    Name="InvoiceNo"
+    PrecisionRule="true"
+    EntityAttrName="InvoiceNo"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="INVOICE_NO"/>
+  <ViewAttribute
+    Name="BillValue"
+    PrecisionRule="true"
+    EntityAttrName="BillValue"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="BILL_VALUE"/>
+  <ViewAttribute
+    Name="AcceptanceDate"
+    PrecisionRule="true"
+    EntityAttrName="AcceptanceDate"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ACCEPTANCE_DATE"/>
+  <ViewAttribute
+    Name="MaturityDate"
+    PrecisionRule="true"
+    EntityAttrName="MaturityDate"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="MATURITY_DATE"/>
+  <ViewAttribute
+    Name="BillEntryNo"
+    PrecisionRule="true"
+    EntityAttrName="BillEntryNo"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="BILL_ENTRY_NO"/>
+  <ViewAttribute
+    Name="BillEntryDate"
+    PrecisionRule="true"
+    EntityAttrName="BillEntryDate"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="BILL_ENTRY_DATE"/>
+  <ViewAttribute
+    Name="BillSubmitBankDate"
+    PrecisionRule="true"
+    EntityAttrName="BillSubmitBankDate"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="BILL_SUBMIT_BANK_DATE"/>
+  <ViewAttribute
+    Name="LastUpdateLogin"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateLogin"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="LAST_UPDATE_LOGIN"/>
+  <ViewAttribute
+    Name="LastUpdateDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateDate"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="LAST_UPDATE_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="CreationDate"
+    PrecisionRule="true"
+    EntityAttrName="CreationDate"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="CREATION_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="Attribute1"
+    PrecisionRule="true"
+    EntityAttrName="Attribute1"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE1"
+    LOVName="LOV_Attribute1"
+    DefaultValue="USD">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute2"
+    PrecisionRule="true"
+    EntityAttrName="Attribute2"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE2"/>
+  <ViewAttribute
+    Name="Attribute3"
+    PrecisionRule="true"
+    EntityAttrName="Attribute3"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE3"/>
+  <ViewAttribute
+    Name="Attribute4"
+    PrecisionRule="true"
+    EntityAttrName="Attribute4"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE4"/>
+  <ViewAttribute
+    Name="Attribute5"
+    PrecisionRule="true"
+    EntityAttrName="Attribute5"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE5"
+    LOVName="LOV_Attribute5">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCDetailsAiVO.Attribute5_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute6"
+    PrecisionRule="true"
+    EntityAttrName="Attribute6"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE6"
+    LOVName="LOV_Attribute6">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCDetailsAiVO.Attribute6_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute7"
+    PrecisionRule="true"
+    EntityAttrName="Attribute7"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE7"
+    LOVName="LOV_Attribute7">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCDetailsAiVO.Attribute7_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute8"
+    PrecisionRule="true"
+    EntityAttrName="Attribute8"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE8"
+    LOVName="LOV_Attribute8">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCDetailsAiVO.Attribute8_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute9"
+    PrecisionRule="true"
+    EntityAttrName="Attribute9"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE9"
+    LOVName="LOV_Attribute9">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCDetailsAiVO.Attribute9_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute10"
+    PrecisionRule="true"
+    EntityAttrName="Attribute10"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE10"
+    LOVName="LOV_Attribute10">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCDetailsAiVO.Attribute10_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute11"
+    PrecisionRule="true"
+    EntityAttrName="Attribute11"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE11"
+    LOVName="LOV_Attribute11">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCDetailsAiVO.Attribute11_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute12"
+    PrecisionRule="true"
+    EntityAttrName="Attribute12"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE12"
+    LOVName="LOV_Attribute12">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCDetailsAiVO.Attribute12_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute13"
+    PrecisionRule="true"
+    EntityAttrName="Attribute13"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE13"
+    LOVName="LOV_Attribute13">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCDetailsAiVO.Attribute13_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute14"
+    PrecisionRule="true"
+    EntityAttrName="Attribute14"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE14"
+    LOVName="LOV_Attribute14">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCDetailsAiVO.Attribute14_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute15"
+    PrecisionRule="true"
+    EntityAttrName="Attribute15"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE15"
+    LOVName="LOV_Attribute15">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCDetailsAiVO.Attribute15_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute16"
+    PrecisionRule="true"
+    EntityAttrName="Attribute16"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE16"/>
+  <ViewAttribute
+    Name="Attribute17"
+    PrecisionRule="true"
+    EntityAttrName="Attribute17"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE17"/>
+  <ViewAttribute
+    Name="Attribute18"
+    PrecisionRule="true"
+    EntityAttrName="Attribute18"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE18"/>
+  <ViewAttribute
+    Name="Attribute19"
+    PrecisionRule="true"
+    EntityAttrName="Attribute19"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE19"/>
+  <ViewAttribute
+    Name="Attribute20"
+    PrecisionRule="true"
+    EntityAttrName="Attribute20"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE20"/>
+  <ViewAttribute
+    Name="Attribute21"
+    PrecisionRule="true"
+    EntityAttrName="Attribute21"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE21"/>
+  <ViewAttribute
+    Name="Attribute22"
+    PrecisionRule="true"
+    EntityAttrName="Attribute22"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE22"/>
+  <ViewAttribute
+    Name="Attribute23"
+    PrecisionRule="true"
+    EntityAttrName="Attribute23"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE23"/>
+  <ViewAttribute
+    Name="Attribute24"
+    PrecisionRule="true"
+    EntityAttrName="Attribute24"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE24"/>
+  <ViewAttribute
+    Name="Attribute25"
+    PrecisionRule="true"
+    EntityAttrName="Attribute25"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE25"/>
+  <ViewAttribute
+    Name="Attribute26"
+    PrecisionRule="true"
+    EntityAttrName="Attribute26"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE26"/>
+  <ViewAttribute
+    Name="Attribute27"
+    PrecisionRule="true"
+    EntityAttrName="Attribute27"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE27"/>
+  <ViewAttribute
+    Name="Attribute28"
+    PrecisionRule="true"
+    EntityAttrName="Attribute28"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE28"/>
+  <ViewAttribute
+    Name="Attribute29"
+    PrecisionRule="true"
+    EntityAttrName="Attribute29"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE29"/>
+  <ViewAttribute
+    Name="Attribute30"
+    PrecisionRule="true"
+    EntityAttrName="Attribute30"
+    EntityUsage="BBLCDetailsAiEO"
+    AliasName="ATTRIBUTE30"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

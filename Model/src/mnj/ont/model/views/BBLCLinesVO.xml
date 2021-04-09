@@ -1,0 +1,1582 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BBLCLinesVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="mnj.ont.model.views.BBLCLinesVORowImpl"
+  ComponentClass="mnj.ont.model.views.BBLCLinesVOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="BBLCTypeVO1"
+    ViewObjectName="mnj.ont.model.lov.views.BBLCTypeVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="IncoTermsVO1"
+    ViewObjectName="mnj.ont.model.lov.views.IncoTermsVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="UsanceVO1"
+    ViewObjectName="mnj.ont.model.lov.views.UsanceVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ShipModeVO1"
+    ViewObjectName="mnj.ont.model.lov.views.ShipModeVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="SupplierVO1"
+    ViewObjectName="mnj.ont.model.lov.views.SupplierVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItemTypeVO1"
+    ViewObjectName="mnj.ont.model.lov.views.ItemTypeVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ConfirmTypeVO1"
+    ViewObjectName="mnj.ont.model.lov.views.ConfirmTypeVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="LCStatusVO1"
+    ViewObjectName="mnj.ont.model.lov.views.LCStatusVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CommTypeVO1"
+    ViewObjectName="mnj.ont.model.lov.views.CommTypeVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CountryVO1"
+    ViewObjectName="mnj.ont.model.lov.views.CountryVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CurrencyVO1"
+    ViewObjectName="mnj.ont.model.lov.views.CurrencyVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AmendmentTypeVO1"
+    ViewObjectName="mnj.ont.model.lov.views.AmendmentTypeVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="PaymentModeVO1"
+    ViewObjectName="mnj.ont.model.lov.views.PaymentModeVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="InsuranceCompanyNameLOV1"
+    ViewObjectName="mnj.ont.model.lov.views.InsuranceCompanyNameLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="InsuranceCompanyVO1"
+    ViewObjectName="mnj.ont.model.lov.views.InsuranceCompanyVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_BblcType"
+    ListVOName="BBLCTypeVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_BblcType_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BblcType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IncoTerm"
+    ListVOName="IncoTermsVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_IncoTerm_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IncoTerm"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_UsancePeriod"
+    ListVOName="UsanceVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_UsancePeriod_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UsancePeriod"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ShipmentMode"
+    ListVOName="ShipModeVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_ShipmentMode_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ShipmentMode"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BeneficiaryName"
+    ListVOName="SupplierVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_BeneficiaryName_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BeneficiaryName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="VendorName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="VendorName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Item"
+    ListVOName="ItemTypeVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Item_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Item"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Confirmation"
+    ListVOName="ConfirmTypeVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Confirmation_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Confirmation"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LcStatus"
+    ListVOName="LCStatusVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_LcStatus_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LcStatus"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CommunicationType"
+    ListVOName="CommTypeVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_CommunicationType_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CommunicationType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute2"
+    ListVOName="CountryVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute2_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute2"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute3"
+    ListVOName="CountryVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute3_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute3"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute4"
+    ListVOName="CountryVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute4_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute4"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute5"
+    ListVOName="CountryVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute5_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute5"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"
+      Name="CountryVOCriteria"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute6"
+    ListVOName="CountryVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute6_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute6"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"
+      Name="CountryVOCriteria"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute7"
+    ListVOName="CountryVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute7_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute7"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute8"
+    ListVOName="CountryVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute8_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute8"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"
+      Name="CountryVOCriteria"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute9"
+    ListVOName="CountryVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute9_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute9"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"
+      Name="CountryVOCriteria"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute10"
+    ListVOName="CountryVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute10_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute10"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"
+      Name="CountryVOCriteria"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute11"
+    ListVOName="CountryVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute11_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute11"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"
+      Name="CountryVOCriteria"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute12"
+    ListVOName="CountryVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute12_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute12"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"
+      Name="CountryVOCriteria"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute13"
+    ListVOName="CountryVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute13_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute13"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"
+      Name="CountryVOCriteria"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Currency"
+    ListVOName="CurrencyVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Currency_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Currency"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CurrencyCode"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute17"
+    ListVOName="AmendmentTypeVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute17_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute17"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Attribute22"
+    ListVOName="PaymentModeVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Attribute22_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Attribute22"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CountryOfOrigion"
+    ListVOName="CountryVO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CountryOfOrigion"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TerritoryShortName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_InsuranceCompanyName"
+    ListVOName="InsuranceCompanyVO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="InsuranceCompanyName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery>
+    <![CDATA[SELECT BBLCLinesEO.IMP_BBLC_LINE_ID, 
+       BBLCLinesEO.IMP_BBLC_HEADER_ID, 
+       BBLCLinesEO.BBLC_TYPE, 
+       BBLCLinesEO.BBLC_NO, 
+       BBLCLinesEO.LC_ISSUE_DATE, 
+       BBLCLinesEO.LAST_SHIPMENT_DATE, 
+       BBLCLinesEO.NEGOTIATION_DAY, 
+       BBLCLinesEO.EXPIRY_DATE, 
+       BBLCLinesEO.INCO_TERM, 
+       BBLCLinesEO.USANCE_PERIOD, 
+       BBLCLinesEO.SHIPMENT_MODE, 
+       BBLCLinesEO.BENEFICIARY_NAME, 
+       BBLCLinesEO.PI_NO, 
+       BBLCLinesEO.TOTAL_BBLC_VALUE, 
+       BBLCLinesEO.ITEM, 
+       BBLCLinesEO.LCAF_NO, 
+       BBLCLinesEO.COUNTRY_OF_ORIGION, 
+       BBLCLinesEO.CONFIRMATION, 
+       BBLCLinesEO.CONFIRAMTION_CHARGES, 
+       BBLCLinesEO.FREIGHT_CHARGE, 
+       BBLCLinesEO.OTHER_CHARGE, 
+       BBLCLinesEO.COMMISSION, 
+       BBLCLinesEO.INSURANCE_COMPANY_NAME, 
+       BBLCLinesEO.INSURANCE_POLICY_NO, 
+       BBLCLinesEO.UD_AMENDMENT_NO, 
+       BBLCLinesEO.LC_STATUS, 
+       BBLCLinesEO.LAST_UPDATE_LOGIN, 
+       BBLCLinesEO.LAST_UPDATE_DATE, 
+       BBLCLinesEO.LAST_UPDATED_BY, 
+       BBLCLinesEO.CREATION_DATE, 
+       BBLCLinesEO.CREATED_BY, 
+       BBLCLinesEO.ATTRIBUTE1, 
+       BBLCLinesEO.ATTRIBUTE2, 
+       BBLCLinesEO.ATTRIBUTE3, 
+       BBLCLinesEO.ATTRIBUTE4, 
+       BBLCLinesEO.ATTRIBUTE5, 
+       BBLCLinesEO.ATTRIBUTE6, 
+       BBLCLinesEO.ATTRIBUTE7, 
+       BBLCLinesEO.ATTRIBUTE8, 
+       BBLCLinesEO.ATTRIBUTE9, 
+       BBLCLinesEO.ATTRIBUTE10, 
+       BBLCLinesEO.ATTRIBUTE11, 
+       BBLCLinesEO.ATTRIBUTE12, 
+       BBLCLinesEO.ATTRIBUTE13, 
+       BBLCLinesEO.ATTRIBUTE14, 
+       BBLCLinesEO.ATTRIBUTE15, 
+       BBLCLinesEO.ATTRIBUTE16, 
+       BBLCLinesEO.ATTRIBUTE17, 
+       BBLCLinesEO.ATTRIBUTE18, 
+       BBLCLinesEO.ATTRIBUTE19, 
+       BBLCLinesEO.ATTRIBUTE20, 
+       BBLCLinesEO.ATTRIBUTE21, 
+       BBLCLinesEO.ATTRIBUTE22, 
+       BBLCLinesEO.ATTRIBUTE23, 
+       BBLCLinesEO.ATTRIBUTE24, 
+       BBLCLinesEO.ATTRIBUTE25, 
+       BBLCLinesEO.ATTRIBUTE26, 
+       BBLCLinesEO.ATTRIBUTE27, 
+       BBLCLinesEO.ATTRIBUTE28, 
+       BBLCLinesEO.ATTRIBUTE29, 
+       BBLCLinesEO.ATTRIBUTE30, 
+       BBLCLinesEO.COMMUNICATION_TYPE, 
+       BBLCLinesEO.UPASS_DAYS, 
+       BBLCLinesEO.INSURANCE_COVER_NOTE_DATE, 
+       BBLCLinesEO.CURRENCY, 
+       BBLCLinesEO.CONVERSION_RATE, 
+       BBLCLinesEO.CONVERTED_AMOUNT,
+       (
+SELECT EXPORT_LC_NUMBER||' / '||IIUH.ATTRIBUTE3
+  FROM IEDOC_IMP_UD_DETAIL_CONSUM IIUDC,
+       IEDOC_IMP_UD_LINES_CONTRACT IIULC,
+       IEDOC_IMP_UD_HEADERS IIUH
+ WHERE IIUDC.IMP_UD_LINE_CONTRACT_ID = IIULC.IMP_UD_LINE_CONTRACT_ID
+   AND IIULC.IMP_UD_HEADER_ID = IIUH.IMP_UD_HEADER_ID
+   AND BBLC_NO = BBLCLinesEO.BBLC_NO
+   AND BBLCLinesEO.ATTRIBUTE15 = IIUDC.ATTRIBUTE1 
+   AND ROWNUM = 1
+       ) UD_AMENDMENT_NUMBER, 
+       BBLCLinesEO.AMENDMENT_DATE,
+(select iibpd.ATTRIBUTE1 USD from 
+IEDOC_IMP_PI_LINES PIL ,ap_suppliers ap,IEDOC_IMP_BBLC_PI_DETAILS iibpd
+where ap.VENDOR_ID=pil.SUPPLIER_ID
+and iibpd.PI_NO=pil.PI_NO
+and iibpd.IMP_BBLC_LINE_ID=BBLCLinesEO.IMP_BBLC_LINE_ID
+and rownum=1) Curr,
+
+BBLCLinesEO.BENEFICIARY_ID,
+
+BBLCLinesEO.AMENDED_VALUE ,
+BBLCLinesEO.PAID_AMOUNT_FOR_BBLC 
+FROM IEDOC_IMP_BBLC_LINES BBLCLinesEO
+ORDER BY BBLCLinesEO.IMP_BBLC_LINE_ID ASC
+/*Order by BBLC_NO,Decode(attribute15,'Original',0,Substr(attribute15,7))*/]]>
+  </SQLQuery>
+  <EntityUsage
+    Name="BBLCLinesEO"
+    Entity="mnj.ont.model.entities.BBLCLinesEO"/>
+  <ViewAttribute
+    Name="ImpBblcLineId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ImpBblcLineId"
+    EntityUsage="BBLCLinesEO"
+    AliasName="IMP_BBLC_LINE_ID"/>
+  <ViewAttribute
+    Name="ImpBblcHeaderId"
+    PrecisionRule="true"
+    EntityAttrName="ImpBblcHeaderId"
+    EntityUsage="BBLCLinesEO"
+    AliasName="IMP_BBLC_HEADER_ID"/>
+  <ViewAttribute
+    Name="BblcType"
+    PrecisionRule="true"
+    EntityAttrName="BblcType"
+    EntityUsage="BBLCLinesEO"
+    AliasName="BBLC_TYPE"
+    LOVName="LOV_BblcType">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.BblcType_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BblcNo"
+    PrecisionRule="true"
+    EntityAttrName="BblcNo"
+    EntityUsage="BBLCLinesEO"
+    AliasName="BBLC_NO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.BblcNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LcIssueDate"
+    PrecisionRule="true"
+    EntityAttrName="LcIssueDate"
+    EntityUsage="BBLCLinesEO"
+    AliasName="LC_ISSUE_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.LcIssueDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastShipmentDate"
+    PrecisionRule="true"
+    EntityAttrName="LastShipmentDate"
+    EntityUsage="BBLCLinesEO"
+    AliasName="LAST_SHIPMENT_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.LastShipmentDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NegotiationDay"
+    PrecisionRule="true"
+    EntityAttrName="NegotiationDay"
+    EntityUsage="BBLCLinesEO"
+    AliasName="NEGOTIATION_DAY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.NegotiationDay_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ExpiryDate"
+    PrecisionRule="true"
+    EntityAttrName="ExpiryDate"
+    EntityUsage="BBLCLinesEO"
+    AliasName="EXPIRY_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.ExpiryDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IncoTerm"
+    PrecisionRule="true"
+    EntityAttrName="IncoTerm"
+    EntityUsage="BBLCLinesEO"
+    AliasName="INCO_TERM"
+    LOVName="LOV_IncoTerm">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.IncoTerm_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UsancePeriod"
+    PrecisionRule="true"
+    EntityAttrName="UsancePeriod"
+    EntityUsage="BBLCLinesEO"
+    AliasName="USANCE_PERIOD"
+    LOVName="LOV_UsancePeriod">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.UsancePeriod_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ShipmentMode"
+    PrecisionRule="true"
+    EntityAttrName="ShipmentMode"
+    EntityUsage="BBLCLinesEO"
+    AliasName="SHIPMENT_MODE"
+    LOVName="LOV_ShipmentMode">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.ShipmentMode_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BeneficiaryName"
+    PrecisionRule="true"
+    EntityAttrName="BeneficiaryName"
+    EntityUsage="BBLCLinesEO"
+    AliasName="BENEFICIARY_NAME"
+    LOVName="LOV_BeneficiaryName">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.BeneficiaryName_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PiNo"
+    PrecisionRule="true"
+    EntityAttrName="PiNo"
+    EntityUsage="BBLCLinesEO"
+    AliasName="PI_NO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.PiNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TotalBblcValue"
+    PrecisionRule="true"
+    EntityAttrName="TotalBblcValue"
+    EntityUsage="BBLCLinesEO"
+    AliasName="TOTAL_BBLC_VALUE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.TotalBblcValue_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Item"
+    PrecisionRule="true"
+    EntityAttrName="Item"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ITEM"
+    LOVName="LOV_Item">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LcafNo"
+    PrecisionRule="true"
+    EntityAttrName="LcafNo"
+    EntityUsage="BBLCLinesEO"
+    AliasName="LCAF_NO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.LcafNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CountryOfOrigion"
+    PrecisionRule="true"
+    EntityAttrName="CountryOfOrigion"
+    EntityUsage="BBLCLinesEO"
+    AliasName="COUNTRY_OF_ORIGION"
+    LOVName="LOV_CountryOfOrigion">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.CountryOfOrigion_LABEL"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Confirmation"
+    PrecisionRule="true"
+    EntityAttrName="Confirmation"
+    EntityUsage="BBLCLinesEO"
+    AliasName="CONFIRMATION"
+    LOVName="LOV_Confirmation">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ConfiramtionCharges"
+    PrecisionRule="true"
+    EntityAttrName="ConfiramtionCharges"
+    EntityUsage="BBLCLinesEO"
+    AliasName="CONFIRAMTION_CHARGES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.ConfiramtionCharges_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FreightCharge"
+    PrecisionRule="true"
+    EntityAttrName="FreightCharge"
+    EntityUsage="BBLCLinesEO"
+    AliasName="FREIGHT_CHARGE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.FreightCharge_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OtherCharge"
+    PrecisionRule="true"
+    EntityAttrName="OtherCharge"
+    EntityUsage="BBLCLinesEO"
+    AliasName="OTHER_CHARGE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.OtherCharge_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Commission"
+    PrecisionRule="true"
+    EntityAttrName="Commission"
+    EntityUsage="BBLCLinesEO"
+    AliasName="COMMISSION"/>
+  <ViewAttribute
+    Name="InsuranceCompanyName"
+    PrecisionRule="true"
+    EntityAttrName="InsuranceCompanyName"
+    EntityUsage="BBLCLinesEO"
+    AliasName="INSURANCE_COMPANY_NAME"
+    LOVName="LOV_InsuranceCompanyName">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.InsuranceCompanyName_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="InsurancePolicyNo"
+    PrecisionRule="true"
+    EntityAttrName="InsurancePolicyNo"
+    EntityUsage="BBLCLinesEO"
+    AliasName="INSURANCE_POLICY_NO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.InsurancePolicyNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UdAmendmentNo"
+    PrecisionRule="true"
+    EntityAttrName="UdAmendmentNo"
+    EntityUsage="BBLCLinesEO"
+    AliasName="UD_AMENDMENT_NO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.UdAmendmentNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LcStatus"
+    PrecisionRule="true"
+    EntityAttrName="LcStatus"
+    EntityUsage="BBLCLinesEO"
+    AliasName="LC_STATUS"
+    LOVName="LOV_LcStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.LcStatus_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastUpdateLogin"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateLogin"
+    EntityUsage="BBLCLinesEO"
+    AliasName="LAST_UPDATE_LOGIN">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.LastUpdateLogin_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastUpdateDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateDate"
+    EntityUsage="BBLCLinesEO"
+    AliasName="LAST_UPDATE_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.LastUpdateDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="BBLCLinesEO"
+    AliasName="LAST_UPDATED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.LastUpdatedBy_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreationDate"
+    PrecisionRule="true"
+    EntityAttrName="CreationDate"
+    EntityUsage="BBLCLinesEO"
+    AliasName="CREATION_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.CreationDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="BBLCLinesEO"
+    AliasName="CREATED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.CreatedBy_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute1"
+    PrecisionRule="true"
+    EntityAttrName="Attribute1"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE1">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.Attribute1_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute2"
+    PrecisionRule="true"
+    EntityAttrName="Attribute2"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE2"
+    LOVName="LOV_Attribute2">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute3"
+    PrecisionRule="true"
+    EntityAttrName="Attribute3"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE3"
+    LOVName="LOV_Attribute3">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute4"
+    PrecisionRule="true"
+    EntityAttrName="Attribute4"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE4"
+    LOVName="LOV_Attribute4">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute5"
+    PrecisionRule="true"
+    EntityAttrName="Attribute5"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE5"
+    LOVName="LOV_Attribute5">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute6"
+    PrecisionRule="true"
+    EntityAttrName="Attribute6"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE6"
+    LOVName="LOV_Attribute6">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute7"
+    PrecisionRule="true"
+    EntityAttrName="Attribute7"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE7"
+    LOVName="LOV_Attribute7">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute8"
+    PrecisionRule="true"
+    EntityAttrName="Attribute8"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE8"
+    LOVName="LOV_Attribute8">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute9"
+    PrecisionRule="true"
+    EntityAttrName="Attribute9"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE9"
+    LOVName="LOV_Attribute9">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute10"
+    PrecisionRule="true"
+    EntityAttrName="Attribute10"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE10"
+    LOVName="LOV_Attribute10">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute11"
+    PrecisionRule="true"
+    EntityAttrName="Attribute11"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE11"
+    LOVName="LOV_Attribute11">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute12"
+    PrecisionRule="true"
+    EntityAttrName="Attribute12"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE12"
+    LOVName="LOV_Attribute12">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute13"
+    PrecisionRule="true"
+    EntityAttrName="Attribute13"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE13"
+    LOVName="LOV_Attribute13">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute14"
+    PrecisionRule="true"
+    EntityAttrName="Attribute14"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE14">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute15"
+    PrecisionRule="true"
+    EntityAttrName="Attribute15"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE15">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.Attribute15_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute16"
+    PrecisionRule="true"
+    EntityAttrName="Attribute16"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE16">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute17"
+    PrecisionRule="true"
+    EntityAttrName="Attribute17"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE17"
+    LOVName="LOV_Attribute17">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.Attribute17_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute18"
+    PrecisionRule="true"
+    EntityAttrName="Attribute18"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE18"/>
+  <ViewAttribute
+    Name="Attribute19"
+    PrecisionRule="true"
+    EntityAttrName="Attribute19"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE19"/>
+  <ViewAttribute
+    Name="Attribute20"
+    PrecisionRule="true"
+    EntityAttrName="Attribute20"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE20"/>
+  <ViewAttribute
+    Name="Attribute21"
+    PrecisionRule="true"
+    EntityAttrName="Attribute21"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE21"/>
+  <ViewAttribute
+    Name="Attribute22"
+    PrecisionRule="true"
+    EntityAttrName="Attribute22"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE22"
+    LOVName="LOV_Attribute22">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.Attribute22_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute23"
+    PrecisionRule="true"
+    EntityAttrName="Attribute23"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE23"/>
+  <ViewAttribute
+    Name="Attribute24"
+    PrecisionRule="true"
+    EntityAttrName="Attribute24"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE24"/>
+  <ViewAttribute
+    Name="Attribute25"
+    PrecisionRule="true"
+    EntityAttrName="Attribute25"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE25"/>
+  <ViewAttribute
+    Name="Attribute26"
+    PrecisionRule="true"
+    EntityAttrName="Attribute26"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE26"/>
+  <ViewAttribute
+    Name="Attribute27"
+    PrecisionRule="true"
+    EntityAttrName="Attribute27"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE27"/>
+  <ViewAttribute
+    Name="Attribute28"
+    PrecisionRule="true"
+    EntityAttrName="Attribute28"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE28"/>
+  <ViewAttribute
+    Name="Attribute29"
+    PrecisionRule="true"
+    EntityAttrName="Attribute29"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE29">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.Attribute29_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute30"
+    PrecisionRule="true"
+    EntityAttrName="Attribute30"
+    EntityUsage="BBLCLinesEO"
+    AliasName="ATTRIBUTE30"/>
+  <ViewAttribute
+    Name="CommunicationType"
+    PrecisionRule="true"
+    EntityAttrName="CommunicationType"
+    EntityUsage="BBLCLinesEO"
+    AliasName="COMMUNICATION_TYPE"
+    LOVName="LOV_CommunicationType">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.CommunicationType_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UpassDays"
+    PrecisionRule="true"
+    EntityAttrName="UpassDays"
+    EntityUsage="BBLCLinesEO"
+    AliasName="UPASS_DAYS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.UpassDays_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="InsuranceCoverNoteDate"
+    PrecisionRule="true"
+    EntityAttrName="InsuranceCoverNoteDate"
+    EntityUsage="BBLCLinesEO"
+    AliasName="INSURANCE_COVER_NOTE_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.InsuranceCoverNoteDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Currency"
+    PrecisionRule="true"
+    EntityAttrName="Currency"
+    EntityUsage="BBLCLinesEO"
+    AliasName="CURRENCY"
+    LOVName="LOV_Currency">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ConversionRate"
+    PrecisionRule="true"
+    EntityAttrName="ConversionRate"
+    EntityUsage="BBLCLinesEO"
+    AliasName="CONVERSION_RATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.ConversionRate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ConvertedAmount"
+    PrecisionRule="true"
+    EntityAttrName="ConvertedAmount"
+    EntityUsage="BBLCLinesEO"
+    AliasName="CONVERTED_AMOUNT"/>
+  <ViewAttribute
+    Name="UdAmendmentNumber"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="UD_AMENDMENT_NUMBER"
+    Expression="UD_AMENDMENT_NUMBER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.UdAmendmentNumber_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AmendmentDate"
+    PrecisionRule="true"
+    EntityAttrName="AmendmentDate"
+    EntityUsage="BBLCLinesEO"
+    AliasName="AMENDMENT_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.AmendmentDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Curr"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CURR"
+    Expression="CURR"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BeneficiaryId"
+    PrecisionRule="true"
+    AliasName="BENEFICIARY_ID"
+    EntityAttrName="BeneficiaryId"
+    EntityUsage="BBLCLinesEO"/>
+  <ViewAttribute
+    Name="AmendedValue"
+    PrecisionRule="true"
+    AliasName="AMENDED_VALUE"
+    EntityAttrName="AmendedValue"
+    EntityUsage="BBLCLinesEO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.AmendedValue_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PaidAmountForBblc"
+    PrecisionRule="true"
+    EntityAttrName="PaidAmountForBblc"
+    EntityUsage="BBLCLinesEO"
+    AliasName="PAID_AMOUNT_FOR_BBLC">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCLinesVO.PaidAmountForBblc_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="BBLCDetails"
+    ViewLink="mnj.ont.model.views.IedocImpBblcDetailsFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="BBLCPiDetails"
+    ViewLink="mnj.ont.model.views.IedocImpBblcPiDetailsFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="BBLCAcceptance"
+    ViewLink="mnj.ont.model.views.ImpBblcLineIdFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

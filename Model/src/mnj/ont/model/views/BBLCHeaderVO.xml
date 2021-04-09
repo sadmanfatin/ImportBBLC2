@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BBLCHeaderVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="mnj.ont.model.views.BBLCHeaderVORowImpl"
+  ComponentClass="mnj.ont.model.views.BBLCHeaderVOImpl">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="BanksVO1"
+    ViewObjectName="mnj.ont.model.lov.views.BanksVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="OrgVO1"
+    ViewObjectName="mnj.ont.model.lov.views.OrgVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ProposalOpenStatusLov1"
+    ViewObjectName="mnj.ont.model.lov.ProposalOpenStatusLov"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_NegotiationBank"
+    ListVOName="BanksVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_NegotiationBank_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="NegotiationBank"/>
+    </AttrArray>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="NegotiationBankId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="BankName"/>
+      <Item Value="BankPartyId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="BankName"/>
+      <Item Value="HomeCountry"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_OrgName"
+    ListVOName="OrgVO1"
+    ListRangeSize="10"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OrgName"/>
+    </AttrArray>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="OrgId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="InternalAddressLine"/>
+      <Item Value="OrganizationId"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ProposalOpenStatus"
+    ListVOName="ProposalOpenStatusLov1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProposalOpenStatus"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ProposalOpenStatus"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery>
+    <![CDATA[SELECT BBLCHeaderEO.IMP_BBLC_HEADER_ID, 
+       BBLCHeaderEO.PROPOSAL_NUMBER, 
+       BBLCHeaderEO.PROPOSAL_DATE, 
+       BBLCHeaderEO.IMPORT_AGAINST_CONTRACT, 
+       BBLCHeaderEO.NEGOTIATION_BANK, 
+       BBLCHeaderEO.CONTRACT_VALUE, 
+       BBLCHeaderEO.LAST_SHIP_DATE, 
+       BBLCHeaderEO.ENTITLE_BTB_VALUE, 
+       BBLCHeaderEO.AVAILABLE_BTB_VALUE, 
+       BBLCHeaderEO.VERSION_NO, 
+       BBLCHeaderEO.VERSION_DATE, 
+       BBLCHeaderEO.ORG_ID, 
+       BBLCHeaderEO.LAST_UPDATE_LOGIN, 
+       BBLCHeaderEO.LAST_UPDATE_DATE, 
+       BBLCHeaderEO.LAST_UPDATED_BY, 
+       BBLCHeaderEO.CREATION_DATE, 
+       BBLCHeaderEO.CREATED_BY, 
+       BBLCHeaderEO.ATTRIBUTE1, 
+       BBLCHeaderEO.ATTRIBUTE2, 
+       BBLCHeaderEO.ATTRIBUTE3, 
+       BBLCHeaderEO.ATTRIBUTE4, 
+       BBLCHeaderEO.ATTRIBUTE5, 
+       BBLCHeaderEO.ATTRIBUTE6, 
+       BBLCHeaderEO.ATTRIBUTE7, 
+       BBLCHeaderEO.ATTRIBUTE8, 
+       BBLCHeaderEO.ATTRIBUTE9, 
+       BBLCHeaderEO.ATTRIBUTE10, 
+       BBLCHeaderEO.ATTRIBUTE11, 
+       BBLCHeaderEO.ATTRIBUTE12, 
+       BBLCHeaderEO.ATTRIBUTE13, 
+       BBLCHeaderEO.ATTRIBUTE14, 
+       BBLCHeaderEO.ATTRIBUTE15, 
+       BBLCHeaderEO.ATTRIBUTE16, 
+       BBLCHeaderEO.ATTRIBUTE17, 
+       BBLCHeaderEO.ATTRIBUTE18, 
+       BBLCHeaderEO.ATTRIBUTE19, 
+       BBLCHeaderEO.ATTRIBUTE20, 
+       BBLCHeaderEO.ATTRIBUTE21, 
+       BBLCHeaderEO.ATTRIBUTE22, 
+       BBLCHeaderEO.ATTRIBUTE23, 
+       BBLCHeaderEO.ATTRIBUTE24, 
+       BBLCHeaderEO.ATTRIBUTE25, 
+       BBLCHeaderEO.ATTRIBUTE26, 
+       BBLCHeaderEO.ATTRIBUTE27, 
+       BBLCHeaderEO.ATTRIBUTE28, 
+       BBLCHeaderEO.ATTRIBUTE29, 
+       (SELECT HOU.INTERNAL_ADDRESS_LINE
+        FROM HR_ORGANIZATION_UNITS HOU 
+        WHERE HOU.ORGANIZATION_ID = BBLCHeaderEO.ORG_ID AND ROWNUM = 1) ORG_NAME,
+        
+          (SELECT   substr(HOU.name , 0 , instr(HOU.name, ' ' )-1 )  
+        FROM HR_ORGANIZATION_UNITS HOU 
+        WHERE HOU.ORGANIZATION_ID = BBLCHeaderEO.ORG_ID AND ROWNUM = 1) ORG_SHORT_NAME,
+        
+        
+        
+       BBLCHeaderEO.ATTRIBUTE30,
+       BBLCHeaderEO.BBLC_DOC_NUMBER,
+        BBLCHeaderEO.PAID_AMOUNT_FOR_PROPOSAL ,
+       (SELECT SUBSTR(HOU.NAME,0,INSTR(HOU.NAME,' '))||' / '||TO_CHAR(SYSDATE,'YYYY')||' / '||BBLCHeaderEO.BBLC_DOC_NUMBER
+        FROM HR_ORGANIZATION_UNITS HOU 
+        WHERE HOU.ORGANIZATION_ID = BBLCHeaderEO.ORG_ID AND ROWNUM = 1) PROPOSAL_NO_NEW,
+BBLCHeaderEO.NEGOTIATION_BANK_ID,
+(SELECT FU.USER_NAME FROM FND_USER FU WHERE FU.USER_ID = BBLCHeaderEO.CREATED_BY) CREATED_BY_NAME ,
+
+--
+--(SELECT SUM(CONTRACT_VALUE) FROM
+--IEDOC_IMP_BBLC_CONTRACTS CC
+--WHERE CC.IMP_BBLC_HEADER_ID=BBLCHEADEREO.IMP_BBLC_HEADER_ID) CONTRACT_VAL   ,
+
+ 
+--  CONTRACT_VAL modified on 18 april 18 to handle version ; 
+--  nvl ( (  nullif ( (SELECT SUM(CONTRACT_VALUE) FROM
+--    IEDOC_IMP_BBLC_CONTRACTS CC
+--    WHERE CC.IMP_BBLC_HEADER_ID=BBLCHEADEREO.IMP_BBLC_HEADER_ID
+--    AND   CC.ATTRIBUTE10  =  (
+--                                  select  max( attribute10) from IEDOC_IMP_BBLC_CONTRACTS CC1 
+--                                  where cc1.IMP_BBLC_HEADER_ID = cc.IMP_BBLC_HEADER_ID
+--                                  and CC1.BBLC_CONTRACT_NO = CC.BBLC_CONTRACT_NO
+--                                            
+--                                )),0)  
+--            )  , 1) CONTRACT_VAL ,
+--            
+--            
+--             nvl((select sum(l.TOTAL_BBLC_VALUE) 
+--             from iedoc_imp_bblc_lines l 
+--             where l.imp_bblc_header_id =BBLCHeaderEO.imp_bblc_header_id  
+--             and l.imp_bblc_line_id =  (select max(l2.imp_bblc_line_id )from iedoc_imp_bblc_lines l2 where l2.bblc_no  = l.bblc_no )
+--             
+--               ), 0) TOTAL_BBLC_VALUE  ,
+--               
+               BBLCHeaderEO.CREATED_BY_ORIGINAL ,
+               BBLCHeaderEO.CREATED_BY_CHANGE_DATE , 
+               BBLCHeaderEO.TT_FDD_VALUE , 
+                
+                (SELECT LISTAGG ( BC.BBLC_CONTRACT_NO, ', ' )   WITHIN GROUP( ORDER BY BC.BBLC_CONTRACT_NO )FROM              
+               (  SELECT DISTINCT  BC.BBLC_CONTRACT_NO FROM 
+                IEDOC_IMP_BBLC_CONTRACTS BC WHERE  BC.IMP_BBLC_HEADER_ID =BBLCHEADEREO.IMP_BBLC_HEADER_ID) BC
+               ) CONTRACT_NUMBERS,
+               
+               
+                 BBLCHeaderEO.SHIPPING_GURANTEE_NUMBER   ,
+                 
+                 BBLCHeaderEO.TOTAL_CONTRACT_LIABILITY ,
+                 BBLCHeaderEO.TOTAL_COMMISSION_VALUE,
+                  BBLCHeaderEO.TOTAL_GOODS_VALUE,
+                  BBLCHeaderEO.PROPOSAL_OPEN_STATUS
+                   
+FROM IEDOC_IMP_BBLC_HEADERS BBLCHeaderEO
+Where 1=1
+ORDER BY BBLCHeaderEO.BBLC_DOC_NUMBER DESC]]>
+  </SQLQuery>
+  <EntityUsage
+    Name="BBLCHeaderEO"
+    Entity="mnj.ont.model.entities.BBLCHeaderEO"/>
+  <ViewAttribute
+    Name="ImpBblcHeaderId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ImpBblcHeaderId"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="IMP_BBLC_HEADER_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProposalNumber"
+    PrecisionRule="true"
+    EntityAttrName="ProposalNumber"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="PROPOSAL_NUMBER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.ProposalNumber_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProposalDate"
+    PrecisionRule="true"
+    EntityAttrName="ProposalDate"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="PROPOSAL_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.ProposalDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ImportAgainstContract"
+    PrecisionRule="true"
+    EntityAttrName="ImportAgainstContract"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="IMPORT_AGAINST_CONTRACT">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NegotiationBank"
+    PrecisionRule="true"
+    EntityAttrName="NegotiationBank"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="NEGOTIATION_BANK"
+    LOVName="LOV_NegotiationBank">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.NegotiationBank_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContractValue"
+    PrecisionRule="true"
+    EntityAttrName="ContractValue"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="CONTRACT_VALUE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastShipDate"
+    PrecisionRule="true"
+    EntityAttrName="LastShipDate"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="LAST_SHIP_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EntitleBtbValue"
+    PrecisionRule="true"
+    EntityAttrName="EntitleBtbValue"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ENTITLE_BTB_VALUE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.EntitleBtbValue_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AvailableBtbValue"
+    PrecisionRule="true"
+    EntityAttrName="AvailableBtbValue"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="AVAILABLE_BTB_VALUE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.AvailableBtbValue_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VersionNo"
+    PrecisionRule="true"
+    EntityAttrName="VersionNo"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="VERSION_NO"/>
+  <ViewAttribute
+    Name="VersionDate"
+    PrecisionRule="true"
+    EntityAttrName="VersionDate"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="VERSION_DATE"/>
+  <ViewAttribute
+    Name="OrgId"
+    PrecisionRule="true"
+    EntityAttrName="OrgId"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ORG_ID"/>
+  <ViewAttribute
+    Name="LastUpdateLogin"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateLogin"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="LAST_UPDATE_LOGIN"/>
+  <ViewAttribute
+    Name="LastUpdateDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateDate"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="LAST_UPDATE_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="CreationDate"
+    PrecisionRule="true"
+    EntityAttrName="CreationDate"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="CREATION_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="Attribute1"
+    PrecisionRule="true"
+    EntityAttrName="Attribute1"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE1">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.Attribute1_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute2"
+    PrecisionRule="true"
+    EntityAttrName="Attribute2"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE2">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.Attribute2_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute3"
+    PrecisionRule="true"
+    EntityAttrName="Attribute3"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE3">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.Attribute3_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute4"
+    PrecisionRule="true"
+    EntityAttrName="Attribute4"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE4">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.Attribute4_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute5"
+    PrecisionRule="true"
+    EntityAttrName="Attribute5"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE5">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.Attribute5_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute6"
+    PrecisionRule="true"
+    EntityAttrName="Attribute6"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE6">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute7"
+    PrecisionRule="true"
+    EntityAttrName="Attribute7"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE7">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute8"
+    PrecisionRule="true"
+    EntityAttrName="Attribute8"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE8"/>
+  <ViewAttribute
+    Name="Attribute9"
+    PrecisionRule="true"
+    EntityAttrName="Attribute9"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE9"/>
+  <ViewAttribute
+    Name="Attribute10"
+    PrecisionRule="true"
+    EntityAttrName="Attribute10"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE10"/>
+  <ViewAttribute
+    Name="Attribute11"
+    PrecisionRule="true"
+    EntityAttrName="Attribute11"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE11"/>
+  <ViewAttribute
+    Name="Attribute12"
+    PrecisionRule="true"
+    EntityAttrName="Attribute12"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE12"/>
+  <ViewAttribute
+    Name="Attribute13"
+    PrecisionRule="true"
+    EntityAttrName="Attribute13"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE13"/>
+  <ViewAttribute
+    Name="Attribute14"
+    PrecisionRule="true"
+    EntityAttrName="Attribute14"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE14"/>
+  <ViewAttribute
+    Name="Attribute15"
+    PrecisionRule="true"
+    EntityAttrName="Attribute15"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE15"/>
+  <ViewAttribute
+    Name="Attribute16"
+    PrecisionRule="true"
+    EntityAttrName="Attribute16"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE16"/>
+  <ViewAttribute
+    Name="Attribute17"
+    PrecisionRule="true"
+    EntityAttrName="Attribute17"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE17"/>
+  <ViewAttribute
+    Name="Attribute18"
+    PrecisionRule="true"
+    EntityAttrName="Attribute18"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE18"/>
+  <ViewAttribute
+    Name="Attribute19"
+    PrecisionRule="true"
+    EntityAttrName="Attribute19"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE19"/>
+  <ViewAttribute
+    Name="Attribute20"
+    PrecisionRule="true"
+    EntityAttrName="Attribute20"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE20"/>
+  <ViewAttribute
+    Name="Attribute21"
+    PrecisionRule="true"
+    EntityAttrName="Attribute21"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE21"/>
+  <ViewAttribute
+    Name="Attribute22"
+    PrecisionRule="true"
+    EntityAttrName="Attribute22"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE22"/>
+  <ViewAttribute
+    Name="Attribute23"
+    PrecisionRule="true"
+    EntityAttrName="Attribute23"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE23"/>
+  <ViewAttribute
+    Name="Attribute24"
+    PrecisionRule="true"
+    EntityAttrName="Attribute24"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE24"/>
+  <ViewAttribute
+    Name="Attribute25"
+    PrecisionRule="true"
+    EntityAttrName="Attribute25"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE25"/>
+  <ViewAttribute
+    Name="Attribute26"
+    PrecisionRule="true"
+    EntityAttrName="Attribute26"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE26"/>
+  <ViewAttribute
+    Name="Attribute27"
+    PrecisionRule="true"
+    EntityAttrName="Attribute27"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE27"/>
+  <ViewAttribute
+    Name="Attribute28"
+    PrecisionRule="true"
+    EntityAttrName="Attribute28"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE28"/>
+  <ViewAttribute
+    Name="Attribute29"
+    PrecisionRule="true"
+    EntityAttrName="Attribute29"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE29"/>
+  <ViewAttribute
+    Name="OrgName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ORG_NAME"
+    Expression="ORG_NAME"
+    SQLType="VARCHAR"
+    LOVName="LOV_OrgName">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OrgShortName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="240"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ORG_SHORT_NAME"
+    Expression="ORG_SHORT_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attribute30"
+    PrecisionRule="true"
+    EntityAttrName="Attribute30"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="ATTRIBUTE30"/>
+  <ViewAttribute
+    Name="BblcDocNumber"
+    PrecisionRule="true"
+    EntityAttrName="BblcDocNumber"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="BBLC_DOC_NUMBER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.BblcDocNumber_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PaidAmountForProposal"
+    PrecisionRule="true"
+    EntityAttrName="PaidAmountForProposal"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="PAID_AMOUNT_FOR_PROPOSAL">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.PaidAmountForProposal_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProposalNoNew"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="290"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PROPOSAL_NO_NEW"
+    Expression="PROPOSAL_NO_NEW"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="290"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NegotiationBankId"
+    PrecisionRule="true"
+    EntityAttrName="NegotiationBankId"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="NEGOTIATION_BANK_ID"/>
+  <ViewAttribute
+    Name="CreatedByName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CREATED_BY_NAME"
+    Expression="CREATED_BY_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedByOriginal"
+    PrecisionRule="true"
+    EntityAttrName="CreatedByOriginal"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="CREATED_BY_ORIGINAL"/>
+  <ViewAttribute
+    Name="CreatedByChangeDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedByChangeDate"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="CREATED_BY_CHANGE_DATE"/>
+  <ViewAttribute
+    Name="TtFddValue"
+    PrecisionRule="true"
+    EntityAttrName="TtFddValue"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="TT_FDD_VALUE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContractNumbers"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="4000"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CONTRACT_NUMBERS"
+    Expression="CONTRACT_NUMBERS"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ShippingGuranteeNumber"
+    PrecisionRule="true"
+    EntityAttrName="ShippingGuranteeNumber"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="SHIPPING_GURANTEE_NUMBER">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TotalContractLiability"
+    PrecisionRule="true"
+    EntityAttrName="TotalContractLiability"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="TOTAL_CONTRACT_LIABILITY"/>
+  <ViewAttribute
+    Name="TotalCommissionValue"
+    PrecisionRule="true"
+    EntityAttrName="TotalCommissionValue"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="TOTAL_COMMISSION_VALUE"/>
+  <ViewAttribute
+    Name="TotalGoodsValue"
+    PrecisionRule="true"
+    EntityAttrName="TotalGoodsValue"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="TOTAL_GOODS_VALUE"/>
+  <ViewAttribute
+    Name="ProposalOpenStatus"
+    PrecisionRule="true"
+    EntityAttrName="ProposalOpenStatus"
+    EntityUsage="BBLCHeaderEO"
+    AliasName="PROPOSAL_OPEN_STATUS"
+    LOVName="LOV_ProposalOpenStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TotalBblcValue"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_BBLC_VALUE"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BblcNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BBLC_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.BblcNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BblcContractNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BBLC_CONTRACT_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.BblcContractNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="InvoiceNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="INVOICE_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.InvoiceNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AcceptanceNumber"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ACCEPTANCE_NUMBER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.BBLCHeaderVO.AcceptanceNumber_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BblcPercentOfContract"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Double"
+    ColumnType="DOUBLE PRECISION"
+    AliasName="VIEW_ATTR"
+    SQLType="DOUBLE">
+    <TransientExpression><![CDATA[(Attribute5 / Attribute4)*100]]></TransientExpression>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="BBLCLines"
+    ViewLink="mnj.ont.model.views.IedocImpBblcLinesFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="BBLCCountry"
+    ViewLink="mnj.ont.model.views.IedocImpBblcCountryFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="BBLCContract"
+    ViewLink="mnj.ont.model.views.IedocImpBblcContractsFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="BBLCLines_MaxAmend"
+    ViewLink="mnj.ont.model.views.HeaderVO_vs_BBLCLines_MaxAmendVO_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllInvoices"
+    ViewLink="mnj.ont.model.views.BBLCHeaderVo_VS_AllInvoicesVo_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="BBLCItemPercentage"
+    ViewLink="mnj.ont.model.views.BBLCHeaderVO_Vs_BBLCItemPercentagerVO_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="BankHeadBranches"
+    ViewLink="mnj.ont.model.views.BBLCHeaderVO_Vs_BankHeadBranchesVO_VL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

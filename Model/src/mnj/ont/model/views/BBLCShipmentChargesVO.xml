@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BBLCShipmentChargesVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="mnj.ont.model.views.BBLCShipmentChargesVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="YesNo1"
+    ViewObjectName="mnj.ont.model.lov.views.YesNo"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="YN1"
+    ViewObjectName="mnj.ont.model.lov.views.YN"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="YN2"
+    ViewObjectName="mnj.ont.model.lov.views.YN"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ShipmentNo_LOV1"
+    ViewObjectName="mnj.ont.model.lov.views.ShipmentNo_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ShipmentNo_LOV2"
+    ViewObjectName="mnj.ont.model.lov.views.ShipmentNo_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_FirstShipment"
+    ListVOName="YesNo1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_FirstShipment_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FirstShipment"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="YesNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="YesNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ShipmentNum"
+    ListVOName="ShipmentNo_LOV2"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_ShipmentNum_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ShipmentNum"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ShipNum"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ShipNum"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <SQLQuery>
+    <![CDATA[SELECT BBLCShipmentChargesEO.FIRST_SHIPMENT, 
+       BBLCShipmentChargesEO.IMP_BBLC_DET_CHARGE_ID, 
+       BBLCShipmentChargesEO.IMP_BBLC_DETAIL_ID, 
+BBLCShipmentChargesEO.SHIPMENT_NUM,BBLC_ORG_V.BBLC_NO,BBLC_ORG_V.ORG_NAME
+FROM IEDOC_IMP_BBLC_DET_CHARGES BBLCShipmentChargesEO,
+(SELECT IIBL.BBLC_NO,HOU.INTERNAL_ADDRESS_LINE ORG_NAME,IIBD.IMP_BBLC_DETAIL_ID IBDI_ID 
+FROM IEDOC_IMP_BBLC_DETAILS IIBD,                                           IEDOC_IMP_BBLC_LINES IIBL,                                                   IEDOC_IMP_BBLC_HEADERS IIBH,                                                 HR_ORGANIZATION_UNITS HOU                                                    WHERE IIBD.IMP_BBLC_LINE_ID=IIBL.IMP_BBLC_LINE_ID
+AND IIBH.IMP_BBLC_HEADER_ID=IIBL.IMP_BBLC_HEADER_ID
+AND HOU.ORGANIZATION_ID=IIBH.ORG_ID) BBLC_ORG_V
+WHERE BBLCShipmentChargesEO.IMP_BBLC_DETAIL_ID=BBLC_ORG_V.IBDI_ID]]>
+  </SQLQuery>
+  <EntityUsage
+    Name="BBLCShipmentChargesEO"
+    Entity="mnj.ont.model.entities.BBLCShipmentChargesEO"/>
+  <ViewAttribute
+    Name="FirstShipment"
+    PrecisionRule="true"
+    EntityAttrName="FirstShipment"
+    EntityUsage="BBLCShipmentChargesEO"
+    AliasName="FIRST_SHIPMENT"
+    LOVName="LOV_FirstShipment">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="4"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ImpBblcDetChargeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ImpBblcDetChargeId"
+    EntityUsage="BBLCShipmentChargesEO"
+    AliasName="IMP_BBLC_DET_CHARGE_ID"/>
+  <ViewAttribute
+    Name="ImpBblcDetailId"
+    PrecisionRule="true"
+    EntityAttrName="ImpBblcDetailId"
+    EntityUsage="BBLCShipmentChargesEO"
+    AliasName="IMP_BBLC_DETAIL_ID"/>
+  <ViewAttribute
+    Name="ShipmentNum"
+    PrecisionRule="true"
+    EntityAttrName="ShipmentNum"
+    EntityUsage="BBLCShipmentChargesEO"
+    AliasName="SHIPMENT_NUM"
+    LOVName="LOV_ShipmentNum">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BblcNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BBLC_NO"
+    Expression="BBLC_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OrgName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ORG_NAME"
+    Expression="ORG_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="MnjChargesInterface"
+    ViewLink="mnj.ont.model.views.MnjChargesInterfaceVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

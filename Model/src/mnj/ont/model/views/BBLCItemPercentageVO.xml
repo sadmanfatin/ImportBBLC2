@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BBLCItemPercentageVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="mnj.ont.model.views.BBLCItemPercentageVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery>
+    <![CDATA[SELECT    H.IMP_BBLC_HEADER_ID, H.PROPOSAL_NUMBER, H.ATTRIBUTE4 TOTAL_CONTRACT_VALUE    ,  SUM( L.TOTAL_BBLC_VALUE) TOTAL_BBLC_VALUE ,ROUND ( SUM( L.TOTAL_BBLC_VALUE)/ decode (H.ATTRIBUTE4, 0 ,100 ,H.ATTRIBUTE4), 4 )*100 BBLC_PERCENT,
+
+                  nvl(
+                  
+                   ( SELECT   SUM( TOTAL_BBLC_VALUE )  
+                        FROM IEDOC_IMP_BBLC_LINES LL  
+
+                    WHERE 1=1 
+                     AND  LL.IMP_BBLC_LINE_ID =
+                                        (SELECT MAX (LL2.IMP_BBLC_LINE_ID)
+                                           FROM IEDOC_IMP_BBLC_LINES LL2
+                                          WHERE LL2.IMP_BBLC_HEADER_ID = LL.IMP_BBLC_HEADER_ID
+                                            AND LL2.BBLC_NO = LL.BBLC_NO)
+
+                        AND LL.ITEM = 'Fabric' 
+                        
+                        AND  LL.IMP_BBLC_HEADER_ID = H.IMP_BBLC_HEADER_ID 
+                         
+                   ) , 0  )  FABRIC_VALUE,
+                   
+                   
+                   nvl(
+                   
+                    ROUND( ( SELECT   SUM( TOTAL_BBLC_VALUE )  
+                        FROM IEDOC_IMP_BBLC_LINES LL  
+
+                    WHERE 1=1 
+                     AND  LL.IMP_BBLC_LINE_ID =
+                                        (SELECT MAX (LL2.IMP_BBLC_LINE_ID)
+                                           FROM IEDOC_IMP_BBLC_LINES LL2
+                                          WHERE LL2.IMP_BBLC_HEADER_ID = LL.IMP_BBLC_HEADER_ID
+                                            AND LL2.BBLC_NO = LL.BBLC_NO)
+
+                        AND LL.ITEM = 'Fabric' 
+                        
+                        AND  LL.IMP_BBLC_HEADER_ID = H.IMP_BBLC_HEADER_ID 
+                         
+                   ) /decode (H.ATTRIBUTE4, 0 ,100 ,H.ATTRIBUTE4), 4 ) * 100   , 0
+                   
+                    )   FABRIC_PERCNTAGE,
+                   
+                   
+                   
+                   
+            nvl(
+            
+            ( SELECT   SUM( TOTAL_BBLC_VALUE )  
+                        FROM IEDOC_IMP_BBLC_LINES LL  
+
+                    WHERE 1=1 
+                     AND  LL.IMP_BBLC_LINE_ID =
+                                        (SELECT MAX (LL2.IMP_BBLC_LINE_ID)
+                                           FROM IEDOC_IMP_BBLC_LINES LL2
+                                          WHERE LL2.IMP_BBLC_HEADER_ID = LL.IMP_BBLC_HEADER_ID
+                                            AND LL2.BBLC_NO = LL.BBLC_NO)
+                       AND LL.ITEM = 'Accessories'
+                        AND  LL.IMP_BBLC_HEADER_ID = H.IMP_BBLC_HEADER_ID 
+                         
+                   ) , 0
+            
+            
+            )  ACCESSORIES_VALUE ,
+                   
+                   
+             nvl(  
+             
+             
+             ROUND( ( SELECT   SUM( TOTAL_BBLC_VALUE )  
+                        FROM IEDOC_IMP_BBLC_LINES LL  
+
+                    WHERE 1=1 
+                     AND  LL.IMP_BBLC_LINE_ID =
+                                        (SELECT MAX (LL2.IMP_BBLC_LINE_ID)
+                                           FROM IEDOC_IMP_BBLC_LINES LL2
+                                          WHERE LL2.IMP_BBLC_HEADER_ID = LL.IMP_BBLC_HEADER_ID
+                                            AND LL2.BBLC_NO = LL.BBLC_NO)
+
+                        AND LL.ITEM = 'Accessories' 
+                        
+                        AND  LL.IMP_BBLC_HEADER_ID = H.IMP_BBLC_HEADER_ID 
+                         
+                   ) /decode (H.ATTRIBUTE4, 0 ,100 ,H.ATTRIBUTE4), 4 ) * 100 , 0
+             
+             
+             
+             )       
+             
+             
+               ACCESSORIES_PERCNTAGE,
+                   
+                   
+                   
+                   
+                   
+                   
+               nvl(   ( SELECT   SUM( TOTAL_BBLC_VALUE )  
+                        FROM IEDOC_IMP_BBLC_LINES LL  
+
+                    WHERE 1=1 
+                     AND  LL.IMP_BBLC_LINE_ID =
+                                        (SELECT MAX (LL2.IMP_BBLC_LINE_ID)
+                                           FROM IEDOC_IMP_BBLC_LINES LL2
+                                          WHERE LL2.IMP_BBLC_HEADER_ID = LL.IMP_BBLC_HEADER_ID
+                                            AND LL2.BBLC_NO = LL.BBLC_NO)
+
+                        AND LL.ITEM = 'Wash'
+                        
+                        AND  LL.IMP_BBLC_HEADER_ID = H.IMP_BBLC_HEADER_ID 
+                         
+                   )   , 0)          WASH_VALUE  ,
+                   
+                   
+                 nvl(   ROUND( ( SELECT   SUM( TOTAL_BBLC_VALUE )  
+                        FROM IEDOC_IMP_BBLC_LINES LL  
+
+                    WHERE 1=1 
+                     AND  LL.IMP_BBLC_LINE_ID =
+                                        (SELECT MAX (LL2.IMP_BBLC_LINE_ID)
+                                           FROM IEDOC_IMP_BBLC_LINES LL2
+                                          WHERE LL2.IMP_BBLC_HEADER_ID = LL.IMP_BBLC_HEADER_ID
+                                            AND LL2.BBLC_NO = LL.BBLC_NO)
+
+                        AND LL.ITEM = 'Wash' 
+                        
+                        AND  LL.IMP_BBLC_HEADER_ID = H.IMP_BBLC_HEADER_ID 
+                         
+                   ) /decode (H.ATTRIBUTE4, 0 ,100 ,H.ATTRIBUTE4), 4 ) * 100  , 0) WASH_PERCNTAGE
+                   
+                   
+
+           FROM IEDOC_IMP_BBLC_HEADERS H, IEDOC_IMP_BBLC_LINES L 
+           WHERE H.IMP_BBLC_HEADER_ID = L.IMP_BBLC_HEADER_ID
+           
+               AND  L.IMP_BBLC_LINE_ID =
+                                        (SELECT MAX (L2.IMP_BBLC_LINE_ID)
+                                           FROM IEDOC_IMP_BBLC_LINES L2
+                                          WHERE L2.IMP_BBLC_HEADER_ID = L.IMP_BBLC_HEADER_ID
+                                            AND L2.BBLC_NO = L.BBLC_NO)
+
+                       
+                        
+                        AND  L.IMP_BBLC_HEADER_ID = H.IMP_BBLC_HEADER_ID  
+
+GROUP BY H.PROPOSAL_NUMBER , H.IMP_BBLC_HEADER_ID , H.ATTRIBUTE4
+
+ORDER BY IMP_BBLC_HEADER_ID DESC]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="ImpBblcHeaderId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="IMP_BBLC_HEADER_ID"
+    Expression="IMP_BBLC_HEADER_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProposalNumber"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PROPOSAL_NUMBER"
+    Expression="PROPOSAL_NUMBER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TotalContractValue"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TOTAL_CONTRACT_VALUE"
+    Expression="TOTAL_CONTRACT_VALUE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TotalBblcValue"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_BBLC_VALUE"
+    Expression="TOTAL_BBLC_VALUE"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BblcPercent"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="BBLC_PERCENT"
+    Expression="BBLC_PERCENT"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FabricValue"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="FABRIC_VALUE"
+    Expression="FABRIC_VALUE"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FabricPercntage"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="FABRIC_PERCNTAGE"
+    Expression="FABRIC_PERCNTAGE"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AccessoriesValue"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="ACCESSORIES_VALUE"
+    Expression="ACCESSORIES_VALUE"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AccessoriesPercntage"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="ACCESSORIES_PERCNTAGE"
+    Expression="ACCESSORIES_PERCNTAGE"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="WashValue"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="WASH_VALUE"
+    Expression="WASH_VALUE"
+    SQLType="NUMERIC"
+    DefaultValue="0">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="WashPercntage"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="WASH_PERCNTAGE"
+    Expression="WASH_PERCNTAGE"
+    SQLType="NUMERIC"
+    DefaultValue="0">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

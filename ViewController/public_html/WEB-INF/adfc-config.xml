@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="CreatePG">
+    <page>/CreatePG.jspx</page>
+  </view>
+  <view id="SearchPG2">
+    <page>/SearchPG2.jspx</page>
+    <input-page-parameter>
+      <from-value>#{param.ParamOrgId}</from-value>
+      <to-value>#{viewScope.OrgId}</to-value>
+    </input-page-parameter>
+    <input-page-parameter>
+      <from-value>#{param.ParamUserId}</from-value>
+      <to-value>#{viewScope.UserId}</to-value>
+    </input-page-parameter>
+    <input-page-parameter>
+      <from-value>#{param.ParamRespId}</from-value>
+      <to-value>#{viewScope.RespId}</to-value>
+    </input-page-parameter>
+    <input-page-parameter>
+      <from-value>#{param.ParamRespApplId}</from-value>
+      <to-value>#{viewScope.RespApplId}</to-value>
+    </input-page-parameter>
+  </view>
+  <control-flow-rule id="__6">
+    <from-activity-id id="__7">CreatePG</from-activity-id>
+    <control-flow-case id="__16">
+      <from-outcome id="__22">GoSearchPG</from-outcome>
+      <to-activity-id id="__15">SearchPG2</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__17">
+    <from-activity-id id="__18">SearchPG2</from-activity-id>
+    <control-flow-case id="__20">
+      <from-outcome id="__21">GoCreatePG</from-outcome>
+      <to-activity-id id="__19">CreatePG</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__14">
+    <managed-bean-name id="__12">ManagedBean</managed-bean-name>
+    <managed-bean-class id="__13">mnj.ont.model.managedbean</managed-bean-class>
+    <managed-bean-scope id="__11">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__23">
+    <managed-bean-name id="__25">backingBean</managed-bean-name>
+    <managed-bean-class id="__24">shipmentVsBBLC</managed-bean-class>
+    <managed-bean-scope id="__26">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__30">
+    <managed-bean-name id="__29">shipmentVsBBLC</managed-bean-name>
+    <managed-bean-class id="__28">shipmentVsBBLC</managed-bean-class>
+    <managed-bean-scope id="__27">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__42">
+    <managed-bean-name id="__45">attachBean</managed-bean-name>
+    <managed-bean-class id="__44">attach</managed-bean-class>
+    <managed-bean-scope id="__43">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name id="__4">CreatePdf</managed-bean-name>
+    <managed-bean-class id="__3">mnj.ont.model.CreatePDF</managed-bean-class>
+    <managed-bean-scope id="__1">request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

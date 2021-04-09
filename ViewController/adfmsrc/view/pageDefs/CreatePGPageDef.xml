@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="CreatePGPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BBLCLines1" RangeSize="20" DataControl="MainAMDataControl"
+              id="BBLCLines1Iterator"/>
+    <iterator Binds="BBLCHeader1" RangeSize="25" DataControl="MainAMDataControl"
+              id="BBLCHeader1Iterator"/>
+    <searchRegion Binds="BBLCLines1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BBLCLines1Query"/>
+    <iterator Binds="BBLCDetails1" RangeSize="20"
+              DataControl="MainAMDataControl" id="BBLCDetails1Iterator"/>
+    <iterator Binds="BBLCDetailsPi1" RangeSize="200"
+              DataControl="MainAMDataControl" id="BBLCDetailsPi1Iterator"/>
+    <searchRegion Binds="BBLCDetailsPi1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BBLCDetailsPi1Query"/>
+    <iterator Binds="BBLCDetailsAi1" RangeSize="20"
+              DataControl="MainAMDataControl" id="BBLCDetailsAi1Iterator"/>
+    <iterator Binds="FillPI1" RangeSize="200" DataControl="MainAMDataControl"
+              id="FillPI1Iterator"/>
+    <searchRegion Binds="FillPI1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="FillPI1Query"/>
+    <iterator Binds="BBLCCountry1" RangeSize="25"
+              DataControl="MainAMDataControl" id="BBLCCountry1Iterator"/>
+    <searchRegion Binds="BBLCCountry1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BBLCCountry1Query"/>
+    <iterator Binds="FillCountry1" RangeSize="25"
+              DataControl="MainAMDataControl" id="FillCountry1Iterator"/>
+    <searchRegion Binds="FillCountry1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="FillCountry1Query"/>
+    <iterator Binds="BBLCPiDetails1" RangeSize="200"
+              DataControl="MainAMDataControl" id="BBLCPiDetails1Iterator"/>
+    <searchRegion Binds="BBLCPiDetails1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BBLCPiDetails1Query"/>
+    <iterator Binds="FillItems1" RangeSize="25" DataControl="MainAMDataControl"
+              id="FillItems1Iterator"/>
+    <searchRegion Binds="FillItems1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="FillItems1Query"/>
+    <iterator Binds="Dummy1" RangeSize="25" DataControl="MainAMDataControl"
+              id="Dummy1Iterator"/>
+    <searchRegion Binds="Dummy1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="Dummy1Query"/>
+    <iterator Binds="PI_SPO_DETAILS_VO1" RangeSize="25"
+              DataControl="MainAMDataControl" id="PI_SPO_DETAILS_VO1Iterator"/>
+    <searchRegion Binds="PI_SPO_DETAILS_VO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PI_SPO_DETAILS_VO1Query"/>
+    <iterator Binds="FillGRN1" RangeSize="200" DataControl="MainAMDataControl"
+              id="FillGRN1Iterator"/>
+    <searchRegion Binds="FillGRN1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="FillGRN1Query"/>
+    <iterator Binds="BBLCAcceptance1" RangeSize="200"
+              DataControl="MainAMDataControl" id="BBLCAcceptance1Iterator"/>
+    <iterator Binds="BBLC_Acceptance_Inv_det_1" RangeSize="200"
+              DataControl="MainAMDataControl"
+              id="BBLC_Acceptance_Inv_det_1Iterator"/>
+    <searchRegion Binds="BBLCDetails1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BBLCDetails1Query"/>
+    <searchRegion Binds="BBLC_Acceptance_Inv_det_1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BBLC_Acceptance_Inv_det_1Query"/>
+    <iterator Binds="InvoicesForAcceptance1" RangeSize="200"
+              DataControl="MainAMDataControl"
+              id="InvoicesForAcceptance1Iterator"/>
+    <searchRegion Binds="InvoicesForAcceptance1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="InvoicesForAcceptance1Query"/>
+    <searchRegion Binds="BBLCAcceptance1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BBLCAcceptance1Query"/>
+    <iterator Binds="FillContracts1" RangeSize="25"
+              DataControl="MainAMDataControl" id="FillContracts1Iterator"/>
+    <searchRegion Binds="FillContracts1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="FillContracts1Query"/>
+    <iterator Binds="BBLCContract1" RangeSize="25"
+              DataControl="MainAMDataControl" id="BBLCContract1Iterator"/>
+    <searchRegion Binds="BBLCContract1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BBLCContract1Query"/>
+    <iterator Binds="fabricRollVO1" RangeSize="25"
+              DataControl="MainAMDataControl" id="fabricRollVO1Iterator"/>
+    <searchRegion Binds="fabricRollVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="fabricRollVO1Query"/>
+    <iterator Binds="BBLCShipmentChargesVO1" RangeSize="10"
+              DataControl="MainAMDataControl"
+              id="BBLCShipmentChargesVO1Iterator"/>
+              
+       <searchRegion Binds="BBLCShipmentChargesVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BBLCShipmentChargesVO1Query"/>       
+              
+    <iterator Binds="MnjChargesInterfaceVO1" RangeSize="25"
+              DataControl="MainAMDataControl"
+              id="MnjChargesInterfaceVO1Iterator"/>
+    <searchRegion Binds="MnjChargesInterfaceVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MnjChargesInterfaceVO1Query"/>
+    <iterator Binds="BBLCLines_MaxAmendVO1" RangeSize="25"
+              DataControl="MainAMDataControl"
+              id="BBLCLines_MaxAmendVO1Iterator"/>
+    <iterator Binds="AllInvoicesVO1" RangeSize="25"
+              DataControl="MainAMDataControl" id="AllInvoicesVO1Iterator"/>
+    <searchRegion Binds="AllInvoicesVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="AllInvoicesVO1Query"/>
+    <iterator Binds="BBLCItemPercentageVO1" RangeSize="25"
+              DataControl="MainAMDataControl"
+              id="BBLCItemPercentageVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="ProposalNumber">
+      <AttrNames>
+        <Item Value="ProposalNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="ProposalDate">
+      <AttrNames>
+        <Item Value="ProposalDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="ContractValue">
+      <AttrNames>
+        <Item Value="ContractValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="LastShipDate">
+      <AttrNames>
+        <Item Value="LastShipDate"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="BBLCLines1Iterator" id="BBLCLines1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCLinesVO"
+                      Name="BBLCLines10">
+        <AttrNames>
+          <Item Value="BblcType"/>
+          <Item Value="BblcNo"/>
+          <Item Value="LcIssueDate"/>
+          <Item Value="LastShipmentDate"/>
+          <Item Value="NegotiationDay"/>
+          <Item Value="ExpiryDate"/>
+          <Item Value="IncoTerm"/>
+          <Item Value="UsancePeriod"/>
+          <Item Value="ShipmentMode"/>
+          <Item Value="BeneficiaryName"/>
+          <Item Value="PiNo"/>
+          <Item Value="TotalBblcValue"/>
+          <Item Value="Item"/>
+          <Item Value="LcafNo"/>
+          <Item Value="CountryOfOrigion"/>
+          <Item Value="Confirmation"/>
+          <Item Value="ConfiramtionCharges"/>
+          <Item Value="FreightCharge"/>
+          <Item Value="OtherCharge"/>
+          <Item Value="Commission"/>
+          <Item Value="InsuranceCompanyName"/>
+          <Item Value="InsurancePolicyNo"/>
+          <Item Value="UdAmendmentNo"/>
+          <Item Value="LcStatus"/>
+          <Item Value="Attribute2"/>
+          <Item Value="Attribute3"/>
+          <Item Value="Attribute4"/>
+          <Item Value="Attribute5"/>
+          <Item Value="Attribute6"/>
+          <Item Value="Attribute7"/>
+          <Item Value="Attribute8"/>
+          <Item Value="Attribute9"/>
+          <Item Value="Attribute10"/>
+          <Item Value="Attribute11"/>
+          <Item Value="Attribute12"/>
+          <Item Value="Attribute13"/>
+          <Item Value="CommunicationType"/>
+          <Item Value="UpassDays"/>
+          <Item Value="Currency"/>
+          <Item Value="ConversionRate"/>
+          <Item Value="InsuranceCoverNoteDate"/>
+          <Item Value="ConvertedAmount"/>
+          <Item Value="UdAmendmentNumber"/>
+          <Item Value="Attribute15"/>
+          <Item Value="Attribute16"/>
+          <Item Value="Attribute17"/>
+          <Item Value="Attribute18"/>
+          <Item Value="AmendmentDate"/>
+          <Item Value="Attribute22"/>
+         
+          <Item Value="Curr"/>
+          <Item Value="AmendedValue"/>
+          <Item Value="Attribute29"/>
+          <Item Value="ImpBblcHeaderId"/>
+          <Item Value="ImpBblcLineId"/>
+          <Item Value="PaidAmountForBblc"/>
+          <Item Value="BeneficiaryId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="BBLCDetailsPi1Iterator" id="BBLCDetailsPi1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCDetailsPiVO"
+                      Name="BBLCDetailsPi10">
+        <AttrNames>
+          <Item Value="ImpBblcPiDetailId"/>
+          <Item Value="Attribute1"/>
+          <Item Value="Attribute10"/>
+          <Item Value="Attribute11"/>
+          <Item Value="Attribute12"/>
+          <Item Value="Attribute13"/>
+          <Item Value="Attribute14"/>
+          <Item Value="Attribute15"/>
+          <Item Value="Attribute16"/>
+          <Item Value="Attribute17"/>
+          <Item Value="Attribute18"/>
+          <Item Value="Attribute19"/>
+          <Item Value="Attribute2"/>
+          <Item Value="Attribute20"/>
+          <Item Value="Attribute21"/>
+          <Item Value="Attribute22"/>
+          <Item Value="Attribute23"/>
+          <Item Value="Attribute24"/>
+          <Item Value="Attribute25"/>
+          <Item Value="Attribute26"/>
+          <Item Value="Attribute27"/>
+          <Item Value="Attribute28"/>
+          <Item Value="Attribute29"/>
+          <Item Value="Attribute3"/>
+          <Item Value="Attribute30"/>
+          <Item Value="Attribute4"/>
+          <Item Value="Attribute5"/>
+          <Item Value="Attribute6"/>
+          <Item Value="Attribute7"/>
+          <Item Value="Attribute8"/>
+          <Item Value="Attribute9"/>
+          <Item Value="BalanceQuantity"/>
+          <Item Value="Bpo"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreationDate"/>
+          <Item Value="DocQuantity"/>
+          <Item Value="Grn"/>
+          <Item Value="ImpBblcDetailId"/>
+          <Item Value="InvoiceQuantity"/>
+          <Item Value="ItemDescription"/>
+          <Item Value="LastUpdateDate"/>
+          <Item Value="LastUpdatedBy"/>
+          <Item Value="LastUpdateLogin"/>
+          <Item Value="PartialPl"/>
+          <Item Value="PiNo"/>
+          <Item Value="Quantity"/>
+          <Item Value="ReceivedQuantity"/>
+          <Item Value="ShortExcessQty"/>
+          <Item Value="StyleBpoNo"/>
+          <Item Value="UnitPrice"/>
+          <Item Value="GrnQuantity"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="MainAMDataControl"/>
+    <action IterBinding="BBLCLines1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="BBLCLines1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="BBLCDetails1Iterator" id="CreateInsert1"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="BBLCDetails1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="BBLCDetailsPi1Iterator" id="Delete2"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="BBLCDetailsAi1Iterator" id="Delete3"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <listOfValues StaticList="false" IterBinding="BBLCHeader1Iterator"
+                  Uses="LOV_NegotiationBank" id="NegotiationBank"/>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="Attribute1">
+      <AttrNames>
+        <Item Value="Attribute1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="Attribute3">
+      <AttrNames>
+        <Item Value="Attribute3"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="FillPI1Iterator" id="FillPI1">
+      <nodeDefinition DefName="mnj.ont.model.views.FillPIVO" Name="FillPI10">
+        <AttrNames>
+          <Item Value="PiNo"/>
+          <Item Value="PiDate"/>
+          <Item Value="OrgId"/>
+          <Item Value="ItemDesc"/>
+          <Item Value="UnitPrice"/>
+          <Item Value="Quantity"/>
+          <Item Value="BalanceQty"/>
+          <Item Value="PICheckBox"/>
+          <Item Value="PiValue"/>
+          <Item Value="FreightCharges"/>
+          <Item Value="BankCharges"/>
+          <Item Value="HandlingCharges"/>
+          <Item Value="Discount"/>
+          <Item Value="Other"/>
+          <Item Value="SupplierName"/>
+          <Item Value="PICheckBoxNew" Binds="PICheckBoxNew"/>
+          <Item Value="BuyerName"/>
+          <Item Value="Season"/>
+          <Item Value="SupplierId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="BBLCCountry1Iterator" id="BBLCCountry1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCCountryVO"
+                      Name="BBLCCountry10">
+        <AttrNames>
+          <Item Value="CountryCode"/>
+          <Item Value="CountryName"/>
+          <Item Value="CountryDesc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="BBLCCountry1Iterator" id="CreateInsert5"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="BBLCCountry1Iterator" id="Delete5"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="FillCountry1Iterator" id="FillCountry1">
+      <nodeDefinition DefName="mnj.ont.model.views.FillCountryVO"
+                      Name="FillCountry10">
+        <AttrNames>
+          <Item Value="TerritoryCode"/>
+          <Item Value="TerritoryShortName"/>
+          <Item Value="Description"/>
+          <Item Value="CountryCheckBox"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <listOfValues StaticList="false" IterBinding="BBLCHeader1Iterator"
+                  Uses="LOV_OrgName" id="OrgName"/>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="OrgId">
+      <AttrNames>
+        <Item Value="OrgId"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="callPiFetch" InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="callPiFetch"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="createPiLines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="createPiLines"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.createPiLines_MainAMDataControl_dataProvider_createPiLines_result"/>
+    <methodAction id="getOrgId" InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getOrgId"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.getOrgId_MainAMDataControl_dataProvider_getOrgId_result"/>
+    <methodAction id="getPopulateValue"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getPopulateValue"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.getPopulateValue_MainAMDataControl_dataProvider_getPopulateValue_result">
+      <NamedData NDName="r" NDType="oracle.jbo.Row"/>
+      <NamedData NDName="columnName" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="populatePiLines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="populatePiLines"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="poprow" NDType="oracle.jbo.Row"/>
+    </methodAction>
+    <methodAction id="populatePiLines1"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="populatePiLines1"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="OrgId" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="callContractFetch"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="callContractFetch"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="createContractLines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="createContractLines"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.createContractLines_MainAMDataControl_dataProvider_createContractLines_result"/>
+    <methodAction id="populateContractLines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="populateContractLines"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="poprow" NDType="oracle.jbo.Row"/>
+    </methodAction>
+    <methodAction id="populateContractLines1"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="populateContractLines1"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="OrgId" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="callCountryFetch"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="callCountryFetch"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="createCountryLines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="createCountryLines"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.createCountryLines_MainAMDataControl_dataProvider_createCountryLines_result"/>
+    <methodAction id="populateCountryLines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="populateCountryLines"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="poprow" NDType="oracle.jbo.Row"/>
+    </methodAction>
+    <methodAction id="populateCountryLines1"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="populateCountryLines1"
+                  IsViewObjectMethod="false"/>
+    <tree IterBinding="BBLCPiDetails1Iterator" id="BBLCPiDetails1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCPiDetailsVO"
+                      Name="BBLCPiDetails10">
+        <AttrNames>
+          <Item Value="PiNo"/>
+          <Item Value="PiDate"/>
+          <Item Value="PiValue"/>
+          <Item Value="BpoNo"/>
+          <Item Value="StyleNo"/>
+          <Item Value="Attribute1"/>
+          <Item Value="Attribute5"/>
+          <Item Value="Attribute6"/>
+          <Item Value="BeneficiaryId"/>
+          <Item Value="BeneficiaryName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="BBLCPiDetails1Iterator" id="CreateInsert6"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="BBLCPiDetails1Iterator" id="Delete6"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="FillItems1Iterator" id="FillItems1">
+      <nodeDefinition DefName="mnj.ont.model.views.FillItemsVO"
+                      Name="FillItems10">
+        <AttrNames>
+          <Item Value="PiNo"/>
+          <Item Value="Style"/>
+          <Item Value="Bpo"/>
+          <Item Value="ItemDescription"/>
+          <Item Value="Quantity"/>
+          <Item Value="UnitPrice"/>
+          <Item Value="BalanceQuantity"/>
+          <Item Value="TotalInvoiceQuantity"/>
+          <Item Value="ReceivedQuantity"/>
+          <Item Value="ShortExcessQty"/>
+          <Item Value="ItemCheckBox"/>
+          <Item Value="SpoNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="ImpBblcHeaderId">
+      <AttrNames>
+        <Item Value="ImpBblcHeaderId"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="callItemFetch"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="callItemFetch"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="createItemLines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="createItemLines"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.createItemLines_MainAMDataControl_dataProvider_createItemLines_result"/>
+    <methodAction id="getHeaderId" InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getHeaderId"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.getHeaderId_MainAMDataControl_dataProvider_getHeaderId_result"/>
+    <methodAction id="populateItemLines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="populateItemLines"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="poprow" NDType="oracle.jbo.Row"/>
+    </methodAction>
+    <methodAction id="populateItemLines1"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="populateItemLines1"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="OrgId" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="BblcDocNumber">
+      <AttrNames>
+        <Item Value="BblcDocNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false" IterBinding="BBLCLines1Iterator"
+                  Uses="LOV_Attribute5" id="Attribute5"/>
+    <listOfValues StaticList="false" IterBinding="BBLCLines1Iterator"
+                  Uses="LOV_Attribute6" id="Attribute6"/>
+    <listOfValues StaticList="false" IterBinding="BBLCLines1Iterator"
+                  Uses="LOV_Attribute7" id="Attribute7"/>
+    <listOfValues StaticList="false" IterBinding="BBLCLines1Iterator"
+                  Uses="LOV_Attribute8" id="Attribute8"/>
+    <listOfValues StaticList="false" IterBinding="BBLCLines1Iterator"
+                  Uses="LOV_Attribute9" id="Attribute9"/>
+    <listOfValues StaticList="false" IterBinding="BBLCLines1Iterator"
+                  Uses="LOV_Attribute10" id="Attribute10"/>
+    <listOfValues StaticList="false" IterBinding="BBLCLines1Iterator"
+                  Uses="LOV_Attribute11" id="Attribute11"/>
+    <listOfValues StaticList="false" IterBinding="BBLCLines1Iterator"
+                  Uses="LOV_Attribute12" id="Attribute12"/>
+    <listOfValues StaticList="false" IterBinding="BBLCLines1Iterator"
+                  Uses="LOV_Attribute13" id="Attribute13"/>
+    <methodAction id="copy" InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="copy"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.copy_MainAMDataControl_dataProvider_copy_result">
+      <NamedData NDName="headerId" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="selectAllLines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="selectAllLines"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="flag" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="HeaderFormulaCalculation"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="HeaderFormulaCalculation"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="HeaderId" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="NegotiationBankId">
+      <AttrNames>
+        <Item Value="NegotiationBankId"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="bblcvalidation"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="bblcvalidation"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.bblcvalidation_MainAMDataControl_dataProvider_bblcvalidation_result">
+      <NamedData NDName="bblcnumber" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="billofentrynovalidation"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="billofentrynovalidation"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.billofentrynovalidation_MainAMDataControl_dataProvider_billofentrynovalidation_result">
+      <NamedData NDName="billofentryno" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="billrefnovalidation"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="billrefnovalidation"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.billrefnovalidation_MainAMDataControl_dataProvider_billrefnovalidation_result">
+      <NamedData NDName="billrefno" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="invoicenovalidation"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="invoicenovalidation"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.invoicenovalidation_MainAMDataControl_dataProvider_invoicenovalidation_result">
+      <NamedData NDName="invoiceno" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="copybblc" InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="copybblc"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.copybblc_MainAMDataControl_dataProvider_copybblc_result">
+      <NamedData NDName="headerId" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="ExecuteBBLCLines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="ExecuteBBLCLines"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="UploadFabrincRoll"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="UploadFabrincRoll"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="InvoiceNo" NDType="java.lang.String"/>
+      <NamedData NDName="ContractNo" NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="Dummy1Iterator" id="Dummy1">
+      <nodeDefinition DefName="mnj.ont.model.views.DummyVO" Name="Dummy10">
+        <AttrNames>
+          <Item Value="ShipmentNO"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="Dummy1Iterator" id="CreateInsert7"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="Dummy1Iterator" id="Delete7"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <methodAction id="MnjDetItemsPopulate"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="MnjDetItemsPopulate"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="ShipmentNo" NDType="java.lang.String"/>
+      <NamedData NDName="DetailLine_Id" NDType="int"/>
+    </methodAction>
+    <tree IterBinding="PI_SPO_DETAILS_VO1Iterator" id="PI_SPO_DETAILS_VO1">
+      <nodeDefinition DefName="mnj.ont.model.views.PI_SPO_DETAILS_VO"
+                      Name="PI_SPO_DETAILS_VO10">
+        <AttrNames>
+          <Item Value="PiNo"/>
+          <Item Value="PoNumber"/>
+          <Item Value="VendorProductNum"/>
+          <Item Value="PoNo"/>
+          <Item Value="Styleno"/>
+          <Item Value="Stylename"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="GetBBLCPiCount"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="GetBBLCPiCount"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.GetBBLCPiCount_MainAMDataControl_dataProvider_GetBBLCPiCount_result">
+      <NamedData NDName="Header_Id" NDType="int"/>
+    </methodAction>
+    <methodAction id="GetBBLCInvoiceItemCount"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="GetBBLCInvoiceItemCount"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.GetBBLCInvoiceItemCount_MainAMDataControl_dataProvider_GetBBLCInvoiceItemCount_result">
+      <NamedData NDName="Header_Id" NDType="int"/>
+    </methodAction>
+    <listOfValues StaticList="false" IterBinding="BBLCDetailsAi1Iterator"
+                  Uses="LOV_Attribute15" id="Attribute15"/>
+    <methodAction id="CopyBBLCLinesAM"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="CopyBBLCLinesAM"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.CopyBBLCLinesAM_MainAMDataControl_dataProvider_CopyBBLCLinesAM_result"/>
+    <methodAction id="callBBLCReport"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="callBBLCReport"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.callBBLCReport_MainAMDataControl_dataProvider_callBBLCReport_result"/>
+    <methodAction id="selectAllLinesNew"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="selectAllLinesNew"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="flag" NDType="java.lang.String"/>
+    </methodAction>
+    <button IterBinding="FillPI1Iterator" id="PICheckBoxNew"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="PICheckBoxNew"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="N"/>
+      </ValueList>
+    </button>
+    <attributeValues IterBinding="BBLCDetails1Iterator" id="InvoiceNo">
+      <AttrNames>
+        <Item Value="InvoiceNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCDetails1Iterator" id="ImportValue">
+      <AttrNames>
+        <Item Value="ImportValue"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="FillGRN1Iterator" id="FillGRN1">
+      <nodeDefinition DefName="mnj.ont.model.views.FillGRN" Name="FillGRN10">
+        <AttrNames>
+          <Item Value="PiNo"/>
+          <Item Value="BalanceQuantity"/>
+          <Item Value="Grn"/>
+          <Item Value="GrnQuantity"/>
+          <Item Value="GrnUom"/>
+          <Item Value="ImpBblcHeaderId"/>
+          <Item Value="ImpBblcPiDetailId"/>
+          <Item Value="InvoiceQuantity"/>
+          <Item Value="ItemCheckBox"/>
+          <Item Value="ItemDescription"/>
+          <Item Value="ItemId"/>
+          <Item Value="ItemPrefix"/>
+          <Item Value="Quantity"/>
+          <Item Value="ReceivedQuantity"/>
+          <Item Value="ShortExcessQty"/>
+          <Item Value="SpoNo"/>
+          <Item Value="UnitPrice"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="callItemWithGRNFetch"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="callItemWithGRNFetch"
+                  IsViewObjectMethod="false"/>
+    <button IterBinding="BBLCDetailsPi1Iterator" id="PartialPl"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="PartialPl"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="Y"/>
+        <Item Value="N"/>
+      </ValueList>
+    </button>
+    <action IterBinding="BBLCAcceptance1Iterator" id="CreateInsert2"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="BBLCAcceptance1Iterator" id="Delete8"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="BBLC_Acceptance_Inv_det_1Iterator" id="CreateInsert3"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="BBLC_Acceptance_Inv_det_1Iterator" id="Delete9"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="BBLCLines1Iterator" id="ImpBblcLineId">
+      <AttrNames>
+        <Item Value="ImpBblcLineId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="BBLCDetails1Iterator" id="BBLCDetails1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCDetailsVO"
+                      Name="BBLCDetails10">
+        <AttrNames>
+          <Item Value="ImpBblcDetailId"/>
+          <Item Value="ImpBblcLineId"/>
+          <Item Value="BblcNo"/>
+          <Item Value="InvoiceNo"/>
+          <Item Value="InvoiceDate"/>
+          <Item Value="ShipmentStatus"/>
+          <Item Value="ShipmentMode"/>
+          <Item Value="ShippmentTagDate"/>
+          <Item Value="ImportItem"/>
+          <Item Value="Attribute30"/>
+          <Item Value="FreightCostFlag"/>
+          <Item Value="FreightCost"/>
+          <Item Value="ItemsValue"/>
+          <Item Value="ImportValue"/>
+          <Item Value="NoOfPackages"/>
+          <Item Value="Uom"/>
+          <Item Value="PortOfLoading"/>
+          <Item Value="PortOfDischarge"/>
+          <Item Value="Endorsement"/>
+          <Item Value="EndorsementDate"/>
+          <Item Value="NnCopyRcvdDate"/>
+          <Item Value="MVesselVoyage"/>
+          <Item Value="FVesselVoyage"/>
+          <Item Value="ContainerNo"/>
+          <Item Value="ContainerStatus"/>
+          <Item Value="Weight"/>
+          <Item Value="ConsignmentNo"/>
+          <Item Value="TransportDocumentDate"/>
+          <Item Value="DoxToCfagentDate"/>
+          <Item Value="CfAgentName"/>
+          <Item Value="CourierNameBbDox"/>
+          <Item Value="DispatchAwbNo"/>
+          <Item Value="LetterShipIsueDate"/>
+          <Item Value="EtdOrigion"/>
+          <Item Value="EtdHubPort"/>
+          <Item Value="AtdOrigion"/>
+          <Item Value="AtdHubPort"/>
+          <Item Value="EtaHubPort"/>
+          <Item Value="EtaDestination"/>
+          <Item Value="AtaHubPort"/>
+          <Item Value="AtaDestination"/>
+          <Item Value="BerthingDate"/>
+          <Item Value="ConsignmentDate"/>
+          <Item Value="InHouseDate"/>
+          <Item Value="OriginalBlCollectBank"/>
+          <Item Value="BlToCnfCollectDate"/>
+          <Item Value="SgTeeCollectCnfDate"/>
+          <Item Value="CoRcptHoConcernDate"/>
+          <Item Value="SgTeeSubmitBank"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreationDate"/>
+          <Item Value="LastUpdatedBy"/>
+          <Item Value="LastUpdateDate"/>
+          <Item Value="LastUpdateLogin"/>
+          <Item Value="BillExchangeAvailable"/>
+          <Item Value="ShipmentFromCountry"/>
+          <Item Value="ForwarderName"/>
+          <Item Value="BillEntryNo"/>
+          <Item Value="BillEntryDate"/>
+          <Item Value="BillSubmitBankDate"/>
+          <Item Value="Cbm"/>
+          <Item Value="OtherCharge"/>
+          <Item Value="BblcLineIncoTerm"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier1_1" id="Contanier1_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier2_1" id="Contanier2_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier3_1" id="Contanier3_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier4_1" id="Contanier4_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier5_1" id="Contanier5_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier6_1" id="Contanier6_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier7_1" id="Contanier7_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier8_1" id="Contanier8_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier9_1" id="Contanier9_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier10_1" id="Contanier10_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier11_1" id="Contanier11_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier12_1" id="Contanier12_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier13_1" id="Contanier13_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier14_1" id="Contanier14_1"/>
+    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
+                  Uses="LOV_Contanier15_1" id="Contanier15_1"/>
+    <tree IterBinding="BBLC_Acceptance_Inv_det_1Iterator"
+          id="BBLC_Acceptance_Inv_det_1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLC_Acceptance_inv_det_VO"
+                      Name="BBLC_Acceptance_Inv_det_10">
+        <AttrNames>
+          <Item Value="ImpBblcAcceptInvDetId"/>
+          <Item Value="ImpBblcAcceptanceId"/>
+          <Item Value="InvoiceNo"/>
+          <Item Value="ItemsValue"/>
+          <Item Value="ImportValue"/>
+          <Item Value="BillReferenceNo"/>
+          <Item Value="BillValue"/>
+          <Item Value="ImpBblcDetailId"/>
+          <Item Value="Currency"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="InvoicesForAcceptance1Iterator"
+          id="InvoicesForAcceptance1">
+      <nodeDefinition DefName="mnj.ont.model.views.InvoicesForAcceptance"
+                      Name="InvoicesForAcceptance10">
+        <AttrNames>
+          <Item Value="SelectInvoice"/>
+          <Item Value="ImpBblcDetailId"/>
+          <Item Value="ImpBblcLineId"/>
+          <Item Value="InvoiceNo"/>
+          <Item Value="ImportValue"/>
+          <Item Value="ItemsValue"/>
+          <Item Value="Currency"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="BBLCLines1Iterator" id="Currency">
+      <AttrNames>
+        <Item Value="Currency"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="BBLCAcceptance1Iterator" id="BBLCAcceptance1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCAcceptanceVO"
+                      Name="BBLCAcceptance10">
+        <AttrNames>
+          <Item Value="ImpBblcAcceptanceId"/>
+          <Item Value="ImpBblcLineId"/>
+          <Item Value="BillReferenceNo"/>
+          <Item Value="BillReferenceDate"/>
+          <Item Value="BillValue"/>
+          <Item Value="AcceptanceDate"/>
+          <Item Value="MaturityDate"/>
+          <Item Value="BillEntryNo"/>
+          <Item Value="BillEntryDate"/>
+          <Item Value="BillSubmitBank"/>
+          <Item Value="CreationDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="LastUpdatedBy"/>
+          <Item Value="LastUpdateDate"/>
+          <Item Value="Currency"/>
+          <Item Value="NotificationSent"/>
+          <Item Value="NotificationCount"/>
+          <Item Value="PaymentAmount"/>
+          <Item Value="PaymentNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="EntitleBtbValue">
+      <AttrNames>
+        <Item Value="EntitleBtbValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="AvailableBtbValue">
+      <AttrNames>
+        <Item Value="AvailableBtbValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="Attribute2">
+      <AttrNames>
+        <Item Value="Attribute2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="Attribute4">
+      <AttrNames>
+        <Item Value="Attribute4"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="FillContracts1Iterator" id="FillContracts1">
+      <nodeDefinition DefName="mnj.ont.model.views.FillContractsVO"
+                      Name="FillContracts10">
+        <AttrNames>
+          <Item Value="ContractCheckBox" Binds="ContractCheckBox"/>
+          <Item Value="ImpSaleContractNo"/>
+          <Item Value="ContractDate"/>
+          <Item Value="ExportLcNo"/>
+          <Item Value="ContractValue"/>
+          <Item Value="ContractQuantity"/>
+          <Item Value="VersionNo"/>
+          <Item Value="BuyerNameNew"/>
+          <Item Value="Season"/>
+          <Item Value="OrgId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="FillContracts1Iterator" id="ContractCheckBox"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="ContractCheckBox"/>
+      </AttrNames>
+    </button>
+    <tree IterBinding="FillContracts1Iterator" id="FillContracts11">
+      <nodeDefinition DefName="mnj.ont.model.views.FillContractsVO"
+                      Name="FillContracts110">
+        <AttrNames>
+          <Item Value="ContractCheckBox"/>
+          <Item Value="ImpSaleContractNo"/>
+          <Item Value="ContractDate"/>
+          <Item Value="ExportLcNo"/>
+          <Item Value="ContractValue"/>
+          <Item Value="ContractQuantity"/>
+          <Item Value="VersionNo"/>
+          <Item Value="BuyerNameNew"/>
+          <Item Value="Season"/>
+          <Item Value="OrgId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="BBLCContract1Iterator" id="BBLCContract1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCContractVO"
+                      Name="BBLCContract10">
+        <AttrNames>
+          <Item Value="BblcContractNo"/>
+          <Item Value="ExportLcNo"/>
+          <Item Value="ContractDate"/>
+          <Item Value="ContractValue"/>
+          <Item Value="ContractQuantity"/>
+          <Item Value="Attribute5"/>
+          <Item Value="Attribute6"/>
+          <Item Value="Attribute9"/>
+          <Item Value="Attribute10"/>
+          <Item Value="GoodsValue"/>
+          <Item Value="BuyerId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="BBLCContract1Iterator" id="Delete4"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="fabricRollVO1Iterator" id="fabricRollVO1">
+      <nodeDefinition DefName="mnj.ont.model.lov.fabricRollVO"
+                      Name="fabricRollVO10">
+        <AttrNames>
+          <Item Value="InvoiceNo"/>
+          <Item Value="LineId"/>
+          <Item Value="HeaderId"/>
+          <Item Value="Color"/>
+          <Item Value="TotalRolls"/>
+          <Item Value="TotalYards"/>
+          <Item Value="FinishClor"/>
+          <Item Value="FabConst"/>
+          <Item Value="FabComp"/>
+          <Item Value="FabOunce"/>
+          <Item Value="Norow"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="CreatedByName">
+      <AttrNames>
+        <Item Value="CreatedByName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="BBLCShipmentChargesVO1Iterator"
+          id="BBLCShipmentChargesVO1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCShipmentChargesVO"
+                      Name="BBLCShipmentChargesVO10">
+        <AttrNames>
+          <Item Value="FirstShipment"/>
+          <Item Value="OrgName"/>
+          <Item Value="BblcNo"/>
+          <Item Value="ShipmentNum"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="MnjChargesInterfaceVO1Iterator"
+                     id="CreationDate">
+      <AttrNames>
+        <Item Value="CreationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="BBLCShipmentChargesVO1Iterator" id="CreateInsert4"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="BBLCShipmentChargesVO1Iterator" id="Delete10"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="MnjChargesInterfaceVO1Iterator" id="Delete11"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <methodAction id="GenerateCharge_Lines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="GenerateCharge_Lines"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="Header_Id" NDType="int"/>
+      <NamedData NDName="Detail_Id" NDType="int"/>
+      <NamedData NDName="User_Id" NDType="int"/>
+    </methodAction>
+    <methodAction id="ProcessLines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="ProcessLines"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="CopyLine_ChargeInterface"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="CopyLine_ChargeInterface"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="Interface_Id" NDType="int"/>
+    </methodAction>
+    <tree IterBinding="MnjChargesInterfaceVO1Iterator"
+          id="MnjChargesInterfaceVO1">
+      <nodeDefinition DefName="mnj.ont.model.views.MnjChargesInterfaceVO"
+                      Name="MnjChargesInterfaceVO10">
+        <AttrNames>
+          <Item Value="MajorChargeName"/>
+          <Item Value="ChargeName"/>
+          <Item Value="ChargeAmount"/>
+          <Item Value="CreationDate"/>
+          <Item Value="ProcessFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" DataControl="MainAMDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <attributeValues IterBinding="BBLCHeader1Iterator"
+                     id="BblcPercentOfContract">
+      <AttrNames>
+        <Item Value="BblcPercentOfContract"/>
+      </AttrNames>
+    </attributeValues>
+   
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="Attribute51">
+      <AttrNames>
+        <Item Value="Attribute5"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="Attribute61">
+      <AttrNames>
+        <Item Value="Attribute6"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="BBLCLines_MaxAmendVO1Iterator"
+          id="BBLCLines_MaxAmendVO1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCLines_MaxAmendVO"
+                      Name="BBLCLines_MaxAmendVO10">
+        <AttrNames>
+          <Item Value="BblcType"/>
+          <Item Value="BblcNo"/>
+          <Item Value="LcIssueDate"/>
+          <Item Value="LastShipmentDate"/>
+          <Item Value="NegotiationDay"/>
+          <Item Value="ExpiryDate"/>
+          <Item Value="IncoTerm"/>
+          <Item Value="UsancePeriod"/>
+          <Item Value="ShipmentMode"/>
+          <Item Value="BeneficiaryName"/>
+          <Item Value="TotalBblcValue"/>
+          <Item Value="Item"/>
+          <Item Value="LcafNo"/>
+          <Item Value="CountryOfOrigion"/>
+          <Item Value="Confirmation"/>
+          <Item Value="ConfiramtionCharges"/>
+          <Item Value="FreightCharge"/>
+          <Item Value="OtherCharge"/>
+          <Item Value="Commission"/>
+          <Item Value="InsuranceCompanyName"/>
+          <Item Value="InsurancePolicyNo"/>
+          <Item Value="UdAmendmentNo"/>
+          <Item Value="LcStatus"/>
+          <Item Value="LastUpdateLogin"/>
+          <Item Value="LastUpdateDate"/>
+          <Item Value="LastUpdatedBy"/>
+          <Item Value="Attribute15"/>
+          <Item Value="Attribute16"/>
+          <Item Value="Attribute17"/>
+          <Item Value="Attribute18"/>
+          <Item Value="Attribute19"/>
+          <Item Value="Attribute22"/>
+          <Item Value="Attribute29"/>
+          <Item Value="CommunicationType"/>
+          <Item Value="UpassDays"/>
+          <Item Value="InsuranceCoverNoteDate"/>
+          <Item Value="Currency"/>
+          <Item Value="ConversionRate"/>
+          <Item Value="ConvertedAmount"/>
+          <Item Value="AmendmentDate"/>
+          <Item Value="AmendedValue"/>
+          <Item Value="PaidAmountForBblc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="AllInvoicesVO1Iterator" id="AllInvoicesVO1">
+      <nodeDefinition DefName="mnj.ont.model.views.AllInvoicesVO"
+                      Name="AllInvoicesVO10">
+        <AttrNames>
+          <Item Value="ImpBblcHeaderId"/>
+          <Item Value="ProposalNumber"/>
+          <Item Value="BblcNo"/>
+          <Item Value="LcStatus"/>
+          <Item Value="InvoiceNo"/>
+          <Item Value="InvoiceDate"/>
+          <Item Value="ShipmentStatus"/>
+          <Item Value="ShipmentMode"/>
+          <Item Value="ImportItem"/>
+          <Item Value="ImportValue"/>
+          <Item Value="FreightCost"/>
+          <Item Value="NoOfPackages"/>
+          <Item Value="EtdOrigion"/>
+          <Item Value="AtdOrigion"/>
+          <Item Value="EtaHubPort"/>
+          <Item Value="AtaHubPort"/>
+          <Item Value="EtdHubPort"/>
+          <Item Value="AtdHubPort"/>
+          <Item Value="EtaDestination"/>
+          <Item Value="AtaDestination"/>
+          <Item Value="BerthingDate"/>
+          <Item Value="NnCopyRcvdDate"/>
+          <Item Value="PortOfLoading"/>
+          <Item Value="PortOfDischarge"/>
+          <Item Value="MVesselVoyage"/>
+          <Item Value="ContainerNo"/>
+          <Item Value="ContainerStatus"/>
+          <Item Value="ConsignmentDate"/>
+          <Item Value="Endorsement"/>
+          <Item Value="EndorsementDate"/>
+          <Item Value="DoxToCfagentDate"/>
+          <Item Value="CfAgentName"/>
+          <Item Value="CourierNameBbDox"/>
+          <Item Value="DispatchAwbNo"/>
+          <Item Value="LetterShipIsueDate"/>
+          <Item Value="OriginalBlCollectBank"/>
+          <Item Value="BlToCnfCollectDate"/>
+          <Item Value="SgTeeCollectCnfDate"/>
+          <Item Value="SgTeeSubmitBank"/>
+          <Item Value="CoRcptHoConcernDate"/>
+          <Item Value="InHouseDate"/>
+          <Item Value="BillReferenceNo"/>
+          <Item Value="BillReferenceDate"/>
+          <Item Value="BillValue"/>
+          <Item Value="AcceptanceDate"/>
+          <Item Value="MaturityDate"/>
+          <Item Value="Currency"/>
+          <Item Value="PaymentNo"/>
+          <Item Value="PaymentAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="BBLCItemPercentageVO1Iterator"
+                     id="ImpBblcHeaderId1">
+      <AttrNames>
+        <Item Value="ImpBblcHeaderId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCItemPercentageVO1Iterator"
+                     id="ProposalNumber1">
+      <AttrNames>
+        <Item Value="ProposalNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCItemPercentageVO1Iterator"
+                     id="TotalBblcValue1">
+      <AttrNames>
+        <Item Value="TotalBblcValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCItemPercentageVO1Iterator"
+                     id="BblcPercent">
+      <AttrNames>
+        <Item Value="BblcPercent"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCItemPercentageVO1Iterator"
+                     id="FabricValue">
+      <AttrNames>
+        <Item Value="FabricValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCItemPercentageVO1Iterator"
+                     id="FabricPercntage">
+      <AttrNames>
+        <Item Value="FabricPercntage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCItemPercentageVO1Iterator" id="WashValue">
+      <AttrNames>
+        <Item Value="WashValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCItemPercentageVO1Iterator"
+                     id="WashPercntage">
+      <AttrNames>
+        <Item Value="WashPercntage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCItemPercentageVO1Iterator"
+                     id="TotalContractValue">
+      <AttrNames>
+        <Item Value="TotalContractValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCItemPercentageVO1Iterator"
+                     id="AccessoriesValue">
+      <AttrNames>
+        <Item Value="AccessoriesValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCItemPercentageVO1Iterator"
+                     id="AccessoriesPercntage">
+      <AttrNames>
+        <Item Value="AccessoriesPercntage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCDetails1Iterator" id="Cbm">
+      <AttrNames>
+        <Item Value="Cbm"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="TtFddValue">
+      <AttrNames>
+        <Item Value="TtFddValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator"
+                     id="ShippingGuranteeNumber">
+      <AttrNames>
+        <Item Value="ShippingGuranteeNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator"
+                     id="PaidAmountForProposal">
+      <AttrNames>
+        <Item Value="PaidAmountForProposal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator"
+                     id="TotalContractLiability">
+      <AttrNames>
+        <Item Value="TotalContractLiability"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator"
+                     id="TotalCommissionValue">
+      <AttrNames>
+        <Item Value="TotalCommissionValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="TotalGoodsValue">
+      <AttrNames>
+        <Item Value="TotalGoodsValue"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="BBLCHeader1Iterator" StaticList="false"
+          Uses="LOV_ProposalOpenStatus" id="ProposalOpenStatus"
+          DTSupportsMRU="true"/>
+  </bindings>
+</pageDefinition>

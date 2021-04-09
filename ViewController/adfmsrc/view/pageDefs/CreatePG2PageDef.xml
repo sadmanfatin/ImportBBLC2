@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="CreatePG2PageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BBLCHeader1" RangeSize="25" DataControl="MainAMDataControl"
+              id="BBLCHeader1Iterator"/>
+    <iterator Binds="BBLCLines1" RangeSize="25" DataControl="MainAMDataControl"
+              id="BBLCLines1Iterator"/>
+    <iterator Binds="BBLCDetails1" RangeSize="25"
+              DataControl="MainAMDataControl" id="BBLCDetails1Iterator"/>
+    <searchRegion Binds="BBLCDetails1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BBLCDetails1Query"/>
+  </executables>
+  <bindings>
+    <listOfValues StaticList="false" IterBinding="BBLCHeader1Iterator"
+                  Uses="LOV_NegotiationBank" id="NegotiationBank"/>
+    <listOfValues StaticList="false" IterBinding="BBLCHeader1Iterator"
+                  Uses="LOV_OrgName" id="OrgName"/>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="ProposalNumber">
+      <AttrNames>
+        <Item Value="ProposalNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="ProposalDate">
+      <AttrNames>
+        <Item Value="ProposalDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="LastShipDate">
+      <AttrNames>
+        <Item Value="LastShipDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="EntitleBtbValue">
+      <AttrNames>
+        <Item Value="EntitleBtbValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="AvailableBtbValue">
+      <AttrNames>
+        <Item Value="AvailableBtbValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="Attribute1">
+      <AttrNames>
+        <Item Value="Attribute1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="Attribute2">
+      <AttrNames>
+        <Item Value="Attribute2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="Attribute3">
+      <AttrNames>
+        <Item Value="Attribute3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="Attribute4">
+      <AttrNames>
+        <Item Value="Attribute4"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BBLCHeader1Iterator" id="BblcDocNumber">
+      <AttrNames>
+        <Item Value="BblcDocNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="BBLCLines1Iterator" id="Create"
+            RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="BBLCLines1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="BBLCDetails1Iterator" id="BBLCDetails1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCDetailsVO"
+                      Name="BBLCDetails10">
+        <AttrNames>
+          <Item Value="ImpBblcDetailId"/>
+          <Item Value="ImpBblcLineId"/>
+          <Item Value="BblcNo"/>
+          <Item Value="InvoiceNo"/>
+          <Item Value="InvoiceDate"/>
+          <Item Value="ShipmentStatus"/>
+          <Item Value="ShipmentMode"/>
+          <Item Value="ImportItem"/>
+          <Item Value="ImportValue"/>
+          <Item Value="FreightCost"/>
+          <Item Value="NoOfPackages"/>
+          <Item Value="EtdOrigion"/>
+          <Item Value="AtdOrigion"/>
+          <Item Value="EtaHubPort"/>
+          <Item Value="AtaHubPort"/>
+          <Item Value="EtdHubPort"/>
+          <Item Value="AtdHubPort"/>
+          <Item Value="EtaDestination"/>
+          <Item Value="AtaDestination"/>
+          <Item Value="BerthingDate"/>
+          <Item Value="NnCopyRcvdDate"/>
+          <Item Value="PortOfLoading"/>
+          <Item Value="PortOfDischarge"/>
+          <Item Value="MVesselVoyage"/>
+          <Item Value="ContainerNo"/>
+          <Item Value="ContainerStatus"/>
+          <Item Value="ConsignmentNo"/>
+          <Item Value="ConsignmentDate"/>
+          <Item Value="Endorsement"/>
+          <Item Value="EndorsementDate"/>
+          <Item Value="DoxToCfagentDate"/>
+          <Item Value="CfAgentName"/>
+          <Item Value="CourierNameBbDox"/>
+          <Item Value="DispatchAwbNo"/>
+          <Item Value="LetterShipIsueDate"/>
+          <Item Value="OriginalBlCollectBank"/>
+          <Item Value="BlToCnfCollectDate"/>
+          <Item Value="SgTeeCollectCnfDate"/>
+          <Item Value="SgTeeSubmitBank"/>
+          <Item Value="CoRcptHoConcernDate"/>
+          <Item Value="InHouseDate"/>
+          <Item Value="LastUpdateLogin"/>
+          <Item Value="LastUpdateDate"/>
+          <Item Value="LastUpdatedBy"/>
+          <Item Value="CreationDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="Attribute1"/>
+          <Item Value="Attribute2"/>
+          <Item Value="Attribute3"/>
+          <Item Value="Attribute4"/>
+          <Item Value="Attribute5"/>
+          <Item Value="Attribute6"/>
+          <Item Value="Attribute7"/>
+          <Item Value="Attribute8"/>
+          <Item Value="Attribute9"/>
+          <Item Value="Attribute10"/>
+          <Item Value="Attribute11"/>
+          <Item Value="Attribute12"/>
+          <Item Value="Attribute13"/>
+          <Item Value="Attribute14"/>
+          <Item Value="Attribute15"/>
+          <Item Value="Attribute16"/>
+          <Item Value="Attribute17"/>
+          <Item Value="Attribute18"/>
+          <Item Value="Attribute19"/>
+          <Item Value="Attribute20"/>
+          <Item Value="Attribute21"/>
+          <Item Value="Attribute22"/>
+          <Item Value="Attribute23"/>
+          <Item Value="Attribute24"/>
+          <Item Value="Attribute25"/>
+          <Item Value="Attribute26"/>
+          <Item Value="Attribute27"/>
+          <Item Value="Attribute28"/>
+          <Item Value="Attribute29"/>
+          <Item Value="Attribute30"/>
+          <Item Value="Attribute31"/>
+          <Item Value="Attribute32"/>
+          <Item Value="Attribute33"/>
+          <Item Value="Attribute34"/>
+          <Item Value="Attribute35"/>
+          <Item Value="Attribute36"/>
+          <Item Value="Attribute37"/>
+          <Item Value="Attribute38"/>
+          <Item Value="Attribute39"/>
+          <Item Value="Attribute40"/>
+          <Item Value="Attribute41"/>
+          <Item Value="Attribute42"/>
+          <Item Value="Attribute43"/>
+          <Item Value="Attribute44"/>
+          <Item Value="Attribute45"/>
+          <Item Value="TransportDocumentDate"/>
+          <Item Value="BillExchangeAvailable"/>
+          <Item Value="ShipmentFromCountry"/>
+          <Item Value="ShipmentNumber"/>
+          <Item Value="BillEntryNo"/>
+          <Item Value="BillEntryDate"/>
+          <Item Value="BillSubmitBankDate"/>
+          <Item Value="Uom"/>
+          <Item Value="ForwarderName"/>
+          <Item Value="FVesselVoyage"/>
+          <Item Value="ItemsValue"/>
+          <Item Value="FreightCostFlag"/>
+          <Item Value="ShippmentTagDate"/>
+          <Item Value="Contanier1_1"/>
+          <Item Value="Contanier2_1"/>
+          <Item Value="Contanier3_1"/>
+          <Item Value="Contanier4_1"/>
+          <Item Value="Contanier5_1"/>
+          <Item Value="Contanier6_1"/>
+          <Item Value="Contanier7_1"/>
+          <Item Value="Contanier8_1"/>
+          <Item Value="Contanier9_1"/>
+          <Item Value="Contanier10_1"/>
+          <Item Value="Contanier11_1"/>
+          <Item Value="Contanier12_1"/>
+          <Item Value="Contanier13_1"/>
+          <Item Value="Contanier14_1"/>
+          <Item Value="Contanier15_1"/>
+          <Item Value="Contanier16_1"/>
+          <Item Value="Contanier17_1"/>
+          <Item Value="Contanier18_1"/>
+          <Item Value="Contanier19_1"/>
+          <Item Value="Contanier20_1"/>
+          <Item Value="Contanier21_1"/>
+          <Item Value="Contanier22_1"/>
+          <Item Value="Contanier23_1"/>
+          <Item Value="Contanier24_1"/>
+          <Item Value="Contanier25_1"/>
+          <Item Value="Contanier26_1"/>
+          <Item Value="Contanier27_1"/>
+          <Item Value="Contanier28_1"/>
+          <Item Value="Contanier29_1"/>
+          <Item Value="Weight"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="BBLCDetails1Iterator" id="Create1"
+            RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="BBLCDetails1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

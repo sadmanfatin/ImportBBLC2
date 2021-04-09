@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BBLCShipmentChargesVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  SelectList="BBLCShipmentChargesEO.FIRST_SHIPMENT, 
+       BBLCShipmentChargesEO.IMP_BBLC_DET_CHARGE_ID, 
+       BBLCShipmentChargesEO.IMP_BBLC_DETAIL_ID, 
+       BBLCShipmentChargesEO.SHIPMENT_NUM"
+  FromList="IEDOC_IMP_BBLC_DET_CHARGES BBLCShipmentChargesEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="mnj.ont.model.entities.BBLCShipmentChargesVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="BBLCShipmentChargesEO"
+    Entity="mnj.ont.model.entities.BBLCShipmentChargesEO"/>
+  <ViewAttribute
+    Name="FirstShipment"
+    PrecisionRule="true"
+    EntityAttrName="FirstShipment"
+    EntityUsage="BBLCShipmentChargesEO"
+    AliasName="FIRST_SHIPMENT"/>
+  <ViewAttribute
+    Name="ImpBblcDetChargeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ImpBblcDetChargeId"
+    EntityUsage="BBLCShipmentChargesEO"
+    AliasName="IMP_BBLC_DET_CHARGE_ID"/>
+  <ViewAttribute
+    Name="ImpBblcDetailId"
+    PrecisionRule="true"
+    EntityAttrName="ImpBblcDetailId"
+    EntityUsage="BBLCShipmentChargesEO"
+    AliasName="IMP_BBLC_DETAIL_ID"/>
+  <ViewAttribute
+    Name="ShipmentNum"
+    PrecisionRule="true"
+    EntityAttrName="ShipmentNum"
+    EntityUsage="BBLCShipmentChargesEO"
+    AliasName="SHIPMENT_NUM"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

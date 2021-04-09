@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ShipCharg_MnjInterface_Assoc"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="BBLCShipmentCharges"
+    Cardinality="1"
+    Source="true"
+    Owner="mnj.ont.model.entities.BBLCShipmentChargesEO"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="BBLCShipmentCharges"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="mnj.ont.model.entities.BBLCShipmentChargesEO.ImpBblcDetChargeId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="MnjChargesInterface"
+    Cardinality="-1"
+    Owner="mnj.ont.model.entities.MnjChargesInterfaceEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="MnjChargesInterface"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="mnj.ont.model.entities.MnjChargesInterfaceEO.RequestId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

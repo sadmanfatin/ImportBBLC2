@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="SearchPG2PageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BBLCHeader1" RangeSize="200" DataControl="MainAMDataControl"
+              id="BBLCHeader1Iterator"/>
+    <invokeAction id="SearchPGSessionVal_Exec" Binds="setSessionValues"
+                  Refresh="always"/>
+    <searchRegion Binds="BBLCHeader1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BBLCHeader1Query"/>
+    <iterator Binds="BBLCLines1" RangeSize="25" DataControl="MainAMDataControl"
+              id="BBLCLines1Iterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="BBLCHeaderDynamWhere"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="BBLCHeaderDynamWhere"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="a" NDValue="#{bindings.bbLCNo.inputValue}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="b" NDType="java.lang.String"/>
+      <NamedData NDName="c" NDType="java.lang.String"/>
+      <NamedData NDName="d" NDType="java.lang.String"/>
+    </methodAction>
+    <action IterBinding="BBLCHeader1Iterator" id="setCurrentRowWithKey"
+            RequiresUpdateModel="false" Action="setCurrentRowWithKey">
+      <NamedData NDName="rowKey" NDType="java.lang.String"/>
+    </action>
+    <action IterBinding="BBLCHeader1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="BBLCHeader1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <methodAction id="setSessionValues"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="setSessionValues"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="orgId" NDValue="#{viewScope.OrgId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="userId" NDValue="#{viewScope.UserId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respId" NDValue="#{viewScope.RespId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respAppl" NDValue="#{viewScope.RespApplId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="BBLCHeader1Iterator" id="BBLCHeader1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCHeaderVO"
+                      Name="BBLCHeader10">
+        <AttrNames>
+          <Item Value="ImpBblcHeaderId"/>
+          <Item Value="AcceptanceNumber"/>
+          <Item Value="Attribute1"/>
+          <Item Value="Attribute10"/>
+          <Item Value="Attribute11"/>
+          <Item Value="Attribute12"/>
+          <Item Value="Attribute13"/>
+          <Item Value="Attribute14"/>
+          <Item Value="Attribute15"/>
+          <Item Value="Attribute16"/>
+          <Item Value="Attribute17"/>
+          <Item Value="Attribute18"/>
+          <Item Value="Attribute19"/>
+          <Item Value="Attribute2"/>
+          <Item Value="Attribute20"/>
+          <Item Value="Attribute21"/>
+          <Item Value="Attribute22"/>
+          <Item Value="Attribute23"/>
+          <Item Value="Attribute24"/>
+          <Item Value="Attribute25"/>
+          <Item Value="Attribute26"/>
+          <Item Value="Attribute27"/>
+          <Item Value="Attribute28"/>
+          <Item Value="Attribute29"/>
+          <Item Value="Attribute3"/>
+          <Item Value="Attribute30"/>
+          <Item Value="Attribute4"/>
+          <Item Value="Attribute5"/>
+          <Item Value="Attribute6"/>
+          <Item Value="Attribute7"/>
+          <Item Value="Attribute8"/>
+          <Item Value="Attribute9"/>
+          <Item Value="AvailableBtbValue"/>
+          <Item Value="BblcContractNo"/>
+          <Item Value="BblcDocNumber"/>
+          <Item Value="BblcNo"/>
+        
+        
+          <Item Value="ContractValue"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedByName"/>
+          <Item Value="CreationDate"/>
+          <Item Value="EntitleBtbValue"/>
+          <Item Value="ImportAgainstContract"/>
+          <Item Value="InvoiceNo"/>
+          <Item Value="LastShipDate"/>
+          <Item Value="LastUpdateDate"/>
+          <Item Value="LastUpdatedBy"/>
+          <Item Value="LastUpdateLogin"/>
+          <Item Value="NegotiationBank"/>
+          <Item Value="NegotiationBankId"/>
+          <Item Value="OrgId"/>
+          <Item Value="OrgName"/>
+          <Item Value="PaidAmountForProposal"/>
+          <Item Value="ProposalDate"/>
+          <Item Value="ProposalNoNew"/>
+          <Item Value="ProposalNumber"/>
+          <Item Value="VersionDate"/>
+          <Item Value="VersionNo"/>
+          <Item Value="ContractNumbers"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="BBLCLines1Iterator" id="Attribute29">
+      <AttrNames>
+        <Item Value="Attribute29"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="MainAMDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

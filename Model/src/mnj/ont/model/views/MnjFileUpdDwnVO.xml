@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MnjFileUpdDwnVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  SelectList="MnjFileUpdDwnEO.FILE_NAME, 
+       MnjFileUpdDwnEO.PATH, 
+       MnjFileUpdDwnEO.CONTENT_TYPE, 
+       MnjFileUpdDwnEO.FILE_ID, 
+       MnjFileUpdDwnEO.FILE_SIZE, 
+       MnjFileUpdDwnEO.DOCUMENT_TYPE, 
+       MnjFileUpdDwnEO.HEADER_ID, 
+       MnjFileUpdDwnEO.DCOC_TYPE, 
+       MnjFileUpdDwnEO.ROWID"
+  FromList="MNJ_FILE_UPD_DWN MnjFileUpdDwnEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="DocTypeVO1"
+    ViewObjectName="mnj.ont.model.lov.views.DocTypeVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_DcocType"
+    ListVOName="DocTypeVO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DcocType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <EntityUsage
+    Name="MnjFileUpdDwnEO"
+    Entity="mnj.ont.model.entities.MnjFileUpdDwnEO"/>
+  <ViewAttribute
+    Name="FileName"
+    PrecisionRule="true"
+    EntityAttrName="FileName"
+    EntityUsage="MnjFileUpdDwnEO"
+    AliasName="FILE_NAME"/>
+  <ViewAttribute
+    Name="Path"
+    PrecisionRule="true"
+    EntityAttrName="Path"
+    EntityUsage="MnjFileUpdDwnEO"
+    AliasName="PATH"/>
+  <ViewAttribute
+    Name="ContentType"
+    PrecisionRule="true"
+    EntityAttrName="ContentType"
+    EntityUsage="MnjFileUpdDwnEO"
+    AliasName="CONTENT_TYPE"/>
+  <ViewAttribute
+    Name="FileId"
+    PrecisionRule="true"
+    EntityAttrName="FileId"
+    EntityUsage="MnjFileUpdDwnEO"
+    AliasName="FILE_ID"/>
+  <ViewAttribute
+    Name="FileSize"
+    PrecisionRule="true"
+    EntityAttrName="FileSize"
+    EntityUsage="MnjFileUpdDwnEO"
+    AliasName="FILE_SIZE"/>
+  <ViewAttribute
+    Name="DocumentType"
+    PrecisionRule="true"
+    EntityAttrName="DocumentType"
+    EntityUsage="MnjFileUpdDwnEO"
+    AliasName="DOCUMENT_TYPE"/>
+  <ViewAttribute
+    Name="HeaderId"
+    PrecisionRule="true"
+    EntityAttrName="HeaderId"
+    EntityUsage="MnjFileUpdDwnEO"
+    AliasName="HEADER_ID"/>
+  <ViewAttribute
+    Name="DcocType"
+    PrecisionRule="true"
+    EntityAttrName="DcocType"
+    EntityUsage="MnjFileUpdDwnEO"
+    AliasName="DCOC_TYPE"
+    LOVName="LOV_DcocType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RowID"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="RowID"
+    EntityUsage="MnjFileUpdDwnEO"
+    AliasName="ROWID"/>
+</ViewObject>

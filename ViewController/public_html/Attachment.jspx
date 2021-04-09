@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1" usesUpload="true">
+        <af:panelBox text="Attachments" id="pb1">
+          <f:facet name="toolbar"/>
+          <af:panelGroupLayout id="pgl1" layout="horizontal">
+            <af:inputFile id="if1" label="Select" columns="50"
+                          valueChangeListener="#{backingBeanScope.attachBean.uploadFileVCE}"/>
+            <af:statusIndicator id="si1"/>
+            <af:spacer width="50" height="10" id="s1"/>
+            <af:outputText value=" ** Min- 1 Byte &amp; Max- 100 MB" id="ot1"
+                           inlineStyle="color:Red;"/>
+          </af:panelGroupLayout>
+          <af:separator id="s2"/>
+          <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar">
+              <af:toolbar id="t2">
+                <af:commandToolbarButton text="Back to BBLC"
+                                         id="ctb1" action="backtoCreate"/>
+              </af:toolbar>
+            </f:facet>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.MnjFileUpdDwn1.collectionModel}"
+                      var="row" rows="#{bindings.MnjFileUpdDwn1.rangeSize}"
+                      emptyText="#{bindings.MnjFileUpdDwn1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.MnjFileUpdDwn1.rangeSize}"
+                      rowBandingInterval="0"
+                      filterModel="#{bindings.MnjFileUpdDwn1Query.queryDescriptor}"
+                      queryListener="#{bindings.MnjFileUpdDwn1Query.processQuery}"
+                      filterVisible="true" varStatus="vs"
+                      selectedRowKeys="#{bindings.MnjFileUpdDwn1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.MnjFileUpdDwn1.collectionModel.makeCurrent}"
+                      rowSelection="single" id="t1">
+              <af:column id="c7" width="40" headerText="SL." align="center">
+                <af:outputText value="#{vs.index+1}" id="ot2"/>
+              </af:column>
+              <af:column sortProperty="FileId" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjFileUpdDwn1.hints.FileId.label}"
+                         id="c3" width="300" align="center" noWrap="false">
+                <af:inputText value="#{row.bindings.FileId.inputValue}"
+                              label="#{bindings.MnjFileUpdDwn1.hints.FileId.label}"
+                              required="#{bindings.MnjFileUpdDwn1.hints.FileId.mandatory}"
+                              columns="#{bindings.MnjFileUpdDwn1.hints.FileId.displayWidth}"
+                              maximumLength="#{bindings.MnjFileUpdDwn1.hints.FileId.precision}"
+                              shortDesc="#{bindings.MnjFileUpdDwn1.hints.FileId.tooltip}"
+                              id="it7" readOnly="true">
+                  <f:validator binding="#{row.bindings.FileId.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="FileName" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjFileUpdDwn1.hints.FileName.label}"
+                         id="c1" width="200" align="center" noWrap="false">
+                <af:inputText value="#{row.bindings.FileName.inputValue}"
+                              label="#{bindings.MnjFileUpdDwn1.hints.FileName.label}"
+                              required="#{bindings.MnjFileUpdDwn1.hints.FileName.mandatory}"
+                              columns="#{bindings.MnjFileUpdDwn1.hints.FileName.displayWidth}"
+                              maximumLength="#{bindings.MnjFileUpdDwn1.hints.FileName.precision}"
+                              shortDesc="#{bindings.MnjFileUpdDwn1.hints.FileName.tooltip}"
+                              id="it4" readOnly="true"
+                              binding="#{backingBeanScope.attachBean.fileNameBind}">
+                  <f:validator binding="#{row.bindings.FileName.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column headerText="#{bindings.MnjFileUpdDwn1.hints.Path.label}"
+                         id="c8" align="center" sortable="true"
+                         filterable="true" sortProperty="Path" noWrap="false"
+                         visible="false">
+                <af:inputText value="#{row.bindings.Path.inputValue}"
+                              label="#{bindings.MnjFileUpdDwn1.hints.Path.label}"
+                              required="#{bindings.MnjFileUpdDwn1.hints.Path.mandatory}"
+                              columns="#{bindings.MnjFileUpdDwn1.hints.Path.displayWidth}"
+                              maximumLength="#{bindings.MnjFileUpdDwn1.hints.Path.precision}"
+                              shortDesc="#{bindings.MnjFileUpdDwn1.hints.Path.tooltip}"
+                              id="it1" readOnly="true"
+                              binding="#{backingBeanScope.attachBean.pathBind}">
+                  <f:validator binding="#{row.bindings.Path.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="FileSize" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjFileUpdDwn1.hints.FileSize.label}"
+                         id="c5" align="center">
+                <af:inputText value="#{row.bindings.FileSize.inputValue}"
+                              label="#{bindings.MnjFileUpdDwn1.hints.FileSize.label}"
+                              required="#{bindings.MnjFileUpdDwn1.hints.FileSize.mandatory}"
+                              columns="#{bindings.MnjFileUpdDwn1.hints.FileSize.displayWidth}"
+                              maximumLength="#{bindings.MnjFileUpdDwn1.hints.FileSize.precision}"
+                              shortDesc="#{bindings.MnjFileUpdDwn1.hints.FileSize.tooltip}"
+                              id="it2" readOnly="true">
+                  <f:validator binding="#{row.bindings.FileSize.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column headerText="#{bindings.MnjFileUpdDwn1.hints.DcocType.label}"
+                         id="c2" sortable="true" filterable="true"
+                         align="center" sortProperty="DcocType">
+                <af:inputComboboxListOfValues id="dcocTypeId"
+                                              popupTitle="Search and Select: #{bindings.MnjFileUpdDwn1.hints.DcocType.label}"
+                                              value="#{row.bindings.DcocType.inputValue}"
+                                              model="#{row.bindings.DcocType.listOfValuesModel}"
+                                              required="#{bindings.MnjFileUpdDwn1.hints.DcocType.mandatory}"
+                                              columns="#{bindings.MnjFileUpdDwn1.hints.DcocType.displayWidth}"
+                                              shortDesc="#{bindings.MnjFileUpdDwn1.hints.DcocType.tooltip}">
+                  <f:validator binding="#{row.bindings.DcocType.validator}"/>
+                </af:inputComboboxListOfValues>
+              </af:column>
+              <af:column id="c4" align="center">
+                <af:commandLink text="Delete" id="cl1"
+                                actionListener="#{backingBeanScope.attachBean.DeleteFile}"/>
+              </af:column>
+              <af:column id="c6" align="center">
+                <af:commandLink text="Download" id="cl2">
+                  <af:fileDownloadActionListener filename="#{row.bindings.FileName.inputValue}"
+                                                 method="#{backingBeanScope.attachBean.downloadFileListener}"/>
+                </af:commandLink>
+              </af:column>
+            </af:table>
+          </af:panelCollection>
+        </af:panelBox>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

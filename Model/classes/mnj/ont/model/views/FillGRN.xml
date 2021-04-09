@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FillGRN"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  ComponentClass="mnj.ont.model.views.FillGRNImpl">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="mnj.ont.model.views.FillGRN_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery>
+    <![CDATA[select distinct * from (
+SELECT PI_NO,
+     --  STYLE,(added by fatin on 6.aug.2017)
+    --   BPO, (added by fatin on 6.aug.2017)
+       ITEM_DESCRIPTION,
+      QUANTITY,
+      UNIT_PRICE,
+       BALANCE_QUANTITY,
+       INVOICE_QUANTITY,
+       RECEIVED_QUANTITY,
+       SHORT_EXCESS_QTY,
+       ITEM_PREFIX,SPO_NO,
+     --  UOM ,
+       ITEM_ID  , 
+       GRN ,
+       GRN_QUANTITY , 
+       GRN_UOM 
+       
+       
+FROM          
+(
+SELECT DISTINCT
+       IPL.PI_NO,
+     --  IPDI.ATTRIBUTE10/*IPD.ATTRIBUTE5*/ STYLE,
+     --  IPD.ATTRIBUTE7 BPO,
+       IPD.PO_NO SPO_NO ,
+   --  IBH.ORG_ID ORGID,
+       IPDI.ITEM_ID ITEMID,
+       C.RECEIPT_NUM GRN,
+       D.UNIT_OF_MEASURE  GRN_UOM ,
+       D.QUANTITY_RECEIVED GRN_QUANTITY,
+       (SELECT  SUM(RT.QUANTITY) FROM PO_LINES_ALL PLA,PO_HEADERS_ALL PHA,RCV_TRANSACTIONS RT
+        WHERE RT.PO_HEADER_ID=PHA.PO_HEADER_ID
+        AND RT.PO_LINE_ID=PLA.PO_LINE_ID
+        AND PHA.PO_HEADER_ID=PLA.PO_HEADER_ID
+        AND PHA.SEGMENT1=IPD.PO_NO
+       
+        AND PLA.ITEM_ID=IPDI.ITEM_ID
+        AND RT.TRANSACTION_TYPE='RECEIVE') INVOICE_QUANTITY,
+        IPDI.ATTRIBUTE2  ITEM_DESCRIPTION,
+      TO_NUMBER(D.QUANTITY_RECEIVED) QUANTITY,
+      -- TO_NUMBER(IPDI.ATTRIBUTE3) UNIT_PRICE,
+       TO_NUMBER(E.AMOUNT_BILLED/E.QUANTITY_BILLED) UNIT_PRICE ,
+       00 BALANCE_QUANTITY,
+       --00 INVOICE_QUANTITY,
+       00 RECEIVED_QUANTITY,
+       00 SHORT_EXCESS_QTY,
+       -- B.UNIT_MEAS_LOOKUP_CODE UOM ,
+      (SELECT SEGMENT1
+         FROM MTL_SYSTEM_ITEMS MSI
+        WHERE MSI.DESCRIPTION = IPDI.ATTRIBUTE2
+          AND MSI.ORGANIZATION_ID = 353 AND ROWNUM=1)ITEM_PREFIX,
+      (SELECT INVENTORY_ITEM_ID
+         FROM MTL_SYSTEM_ITEMS MSI
+        WHERE MSI.DESCRIPTION = IPDI.ATTRIBUTE2
+          AND MSI.ORGANIZATION_ID = 353 AND ROWNUM=1)ITEM_ID     
+  FROM 
+       IEDOC_IMP_PI_LINES IPL,
+       IEDOC_IMP_PI_DETAILS IPD,
+       IEDOC_IMP_PI_ITEM_DETAIL IPDI,
+     
+       
+        PO_HEADERS_ALL A,PO_LINES_ALL B,RCV_SHIPMENT_HEADERS C,RCV_SHIPMENT_LINES D , RCV_TRANSACTIONS E 
+        
+ WHERE IPL.IMP_PI_LINE_ID   = IPD.IMP_PI_LINE_ID
+   AND IPD.IMP_PI_DETAIL_ID = IPDI.IMP_PI_DETAIL_ID
+   AND IPD.PO_NO=A.SEGMENT1
+   AND IPDI.ITEM_ID = B.ITEM_ID
+   AND A.PO_HEADER_ID = B.PO_HEADER_ID
+   AND  A.PO_HEADER_ID = D.PO_HEADER_ID
+   AND C.SHIPMENT_HEADER_ID = D.SHIPMENT_HEADER_ID
+   AND D.PO_LINE_ID = B.PO_LINE_ID
+   AND  C.SHIPMENT_HEADER_ID = E.SHIPMENT_HEADER_ID
+   AND D.SHIPMENT_HEADER_ID = E.SHIPMENT_HEADER_ID
+   AND A.PO_HEADER_ID = E.PO_HEADER_ID
+    AND B.PO_LINE_ID = E.PO_LINE_ID
+   
+   
+   AND E.TRANSACTION_TYPE = 'RECEIVE'
+   AND E.QUANTITY_BILLED != 0
+   AND C.RECEIPT_NUM IS NOT NULL
+  
+  -- AND IBH.IMP_BBLC_HEADER_ID = :1
+   
+   
+   
+) PO_V
+)]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="PiNo"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PI_NO"
+    Expression="PI_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ItemDescription"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ITEM_DESCRIPTION"
+    Expression="ITEM_DESCRIPTION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Quantity"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="QUANTITY"
+    SQLType="NUMERIC"
+    Expression="QUANTITY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UnitPrice"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="UNIT_PRICE"
+    Expression="UNIT_PRICE"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BalanceQuantity"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="BALANCE_QUANTITY"
+    Expression="BALANCE_QUANTITY"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="InvoiceQuantity"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="INVOICE_QUANTITY"
+    Expression="INVOICE_QUANTITY"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ReceivedQuantity"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="RECEIVED_QUANTITY"
+    Expression="RECEIVED_QUANTITY"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ShortExcessQty"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="SHORT_EXCESS_QTY"
+    Expression="SHORT_EXCESS_QTY"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ItemPrefix"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="40"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ITEM_PREFIX"
+    Expression="ITEM_PREFIX"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SpoNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="SPO_NO"
+    Expression="SPO_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ItemId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="ITEM_ID"
+    Expression="ITEM_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Grn"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="GRN"
+    Expression="GRN"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GrnQuantity"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="GRN_QUANTITY"
+    Expression="GRN_QUANTITY"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GrnUom"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="25"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="GRN_UOM"
+    Expression="GRN_UOM"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ImpBblcHeaderId"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="IMP_BBLC_HEADER_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ImpBblcPiDetailId"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="IMP_BBLC_PI_DETAIL_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ItemCheckBox"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Boolean"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="BIT">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="check_box"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

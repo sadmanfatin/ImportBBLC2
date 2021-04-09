@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="AttachmentPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MnjFileUpdDwn1" RangeSize="25"
+              DataControl="MainAMDataControl" id="MnjFileUpdDwn1Iterator"/>
+    <searchRegion Binds="MnjFileUpdDwn1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MnjFileUpdDwn1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="MnjFileUpdDwn1Iterator" id="MnjFileUpdDwn1">
+      <nodeDefinition DefName="mnj.ont.model.views.MnjFileUpdDwnVO"
+                      Name="MnjFileUpdDwn10">
+        <AttrNames>
+          <Item Value="FileName"/>
+          <Item Value="Path"/>
+          <Item Value="ContentType"/>
+          <Item Value="FileId"/>
+          <Item Value="FileSize"/>
+          <Item Value="DocumentType"/>
+          <Item Value="HeaderId"/>
+          <Item Value="DcocType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

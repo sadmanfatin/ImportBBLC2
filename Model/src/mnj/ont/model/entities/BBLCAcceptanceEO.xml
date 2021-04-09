@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BBLCAcceptanceEO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="IEDOC_IMP_BBLC_ACCEPTANCE"
+  AliasName="BBLCAcceptanceEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="mnj.ont.model.entities.BBLCAcceptanceEOImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="ImpBblcAcceptanceId"
+    IsNotNull="true"
+    ColumnName="IMP_BBLC_ACCEPTANCE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ImpBblcLineId"
+    ColumnName="IMP_BBLC_LINE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BillReferenceNo"
+    Precision="250"
+    ColumnName="BILL_REFERENCE_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BillReferenceDate"
+    ColumnName="BILL_REFERENCE_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BillValue"
+    ColumnName="BILL_VALUE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AcceptanceDate"
+    ColumnName="ACCEPTANCE_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MaturityDate"
+    ColumnName="MATURITY_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BillEntryNo"
+    Precision="250"
+    ColumnName="BILL_ENTRY_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BillEntryDate"
+    ColumnName="BILL_ENTRY_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BillSubmitBank"
+    ColumnName="BILL_SUBMIT_BANK"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    ColumnName="CREATION_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    ColumnName="LAST_UPDATE_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Currency"
+    Precision="50"
+    ColumnName="CURRENCY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NotificationSent"
+    ColumnName="NOTIFICATION_SENT"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NotificationCount"
+    ColumnName="NOTIFICATION_COUNT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PaymentAmount"
+    ColumnName="PAYMENT_AMOUNT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PaymentNo"
+    ColumnName="PAYMENT_NO"
+    SQLType="NUMERIC"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IEDOC_IMP_BBLC_ACCEPTANCE"
+    Precision="255">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="BBLCLines"
+    Association="mnj.ont.model.entities.ImpBblcLineIdFkAssoc"
+    AssociationEnd="mnj.ont.model.entities.ImpBblcLineIdFkAssoc.BBLCLines"
+    AssociationOtherEnd="mnj.ont.model.entities.ImpBblcLineIdFkAssoc.BBLCAcceptance"
+    Type="mnj.ont.model.entities.BBLCLinesEOImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="BBLC_Acceptance_inv_det_"
+    Association="mnj.ont.model.entities.ImpBblcAcceptanceIdFkAssoc"
+    AssociationEnd="mnj.ont.model.entities.ImpBblcAcceptanceIdFkAssoc.BBLC_Acceptance_inv_det_"
+    AssociationOtherEnd="mnj.ont.model.entities.ImpBblcAcceptanceIdFkAssoc.BBLCAcceptance"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="IedocImpBblcAcceptancePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="IEDOC_IMP_BBLC_ACCEPTANCE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="mnj.ont.model.entities.BBLCAcceptanceEO.ImpBblcAcceptanceId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC00671325">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00671325"/>
+      <Attr Name="_checkCondition"
+        Value='"IMP_BBLC_ACCEPTANCE_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="mnj.ont.model.entities.BBLCAcceptanceEO.ImpBblcAcceptanceId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ImpBblcLineIdFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="IEDOC_IMP_BBLC_LINES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="IMP_BBLC_LINE_ID_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="mnj.ont.model.entities.BBLCAcceptanceEO.ImpBblcLineId"/>
+    </AttrArray>
+  </Key>
+</Entity>

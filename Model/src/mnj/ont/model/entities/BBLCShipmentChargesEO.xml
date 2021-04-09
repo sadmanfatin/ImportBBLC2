@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BBLCShipmentChargesEO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="IEDOC_IMP_BBLC_DET_CHARGES"
+  AliasName="BBLCShipmentChargesEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="mnj.ont.model.entities.BBLCShipmentChargesEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="ImpBblcDetChargeId"
+    IsNotNull="true"
+    ColumnName="IMP_BBLC_DET_CHARGE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="IEDOC_IMP_BBLC_DET_CHARGES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ImpBblcDetailId"
+    ColumnName="IMP_BBLC_DETAIL_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="IEDOC_IMP_BBLC_DET_CHARGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ShipmentNum"
+    Precision="50"
+    ColumnName="SHIPMENT_NUM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IEDOC_IMP_BBLC_DET_CHARGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FirstShipment"
+    Precision="3"
+    ColumnName="FIRST_SHIPMENT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IEDOC_IMP_BBLC_DET_CHARGES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="BBLCDetails"
+    Association="mnj.ont.model.entities.ImpBblcDetailFkAssoc"
+    AssociationEnd="mnj.ont.model.entities.ImpBblcDetailFkAssoc.BBLCDetails"
+    AssociationOtherEnd="mnj.ont.model.entities.ImpBblcDetailFkAssoc.BBLCShipmentCharges"
+    Type="mnj.ont.model.entities.BBLCDetailsEOImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="BBLCDetails1"
+    Association="mnj.ont.model.entities.BBLCDetail_ShipmentCharges_Assoc"
+    AssociationEnd="mnj.ont.model.entities.BBLCDetail_ShipmentCharges_Assoc.BBLCDetails1"
+    AssociationOtherEnd="mnj.ont.model.entities.BBLCDetail_ShipmentCharges_Assoc.BBLCShipmentCharges1"
+    Type="mnj.ont.model.entities.BBLCDetailsEOImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="MnjChargesInterface"
+    Association="mnj.ont.model.entities.ShipCharg_MnjInterface_Assoc"
+    AssociationEnd="mnj.ont.model.entities.ShipCharg_MnjInterface_Assoc.MnjChargesInterface"
+    AssociationOtherEnd="mnj.ont.model.entities.ShipCharg_MnjInterface_Assoc.BBLCShipmentCharges"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ImpBblcDetChrgPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="IMP_BBLC_DET_CHRG_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="mnj.ont.model.entities.BBLCShipmentChargesEO.ImpBblcDetChargeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ImpBblcDetailFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="IEDOC_IMP_BBLC_DETAILS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="IMP_BBLC_DETAIL_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="mnj.ont.model.entities.BBLCShipmentChargesEO.ImpBblcDetailId"/>
+    </AttrArray>
+  </Key>
+</Entity>

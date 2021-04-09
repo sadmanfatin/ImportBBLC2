@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="ShipmentChargesPGPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BBLCShipmentChargesVO1" RangeSize="25"
+              DataControl="MainAMDataControl"
+              id="BBLCShipmentChargesVO1Iterator"/>
+    <searchRegion Binds="BBLCShipmentChargesVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BBLCShipmentChargesVO1Query"/>
+    <iterator Binds="MnjChargesInterfaceVO1" RangeSize="25"
+              DataControl="MainAMDataControl"
+              id="MnjChargesInterfaceVO1Iterator"/>
+    <searchRegion Binds="MnjChargesInterfaceVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MnjChargesInterfaceVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="BBLCShipmentChargesVO1Iterator"
+          id="BBLCShipmentChargesVO1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCShipmentChargesVO"
+                      Name="BBLCShipmentChargesVO10">
+        <AttrNames>
+          <Item Value="ShipmentNum"/>
+          <Item Value="FirstShipment"/>
+          <Item Value="ImpBblcDetChargeId"/>
+          <Item Value="ImpBblcDetailId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="BBLCShipmentChargesVO1Iterator"
+          id="BBLCShipmentChargesVO11">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCShipmentChargesVO"
+                      Name="BBLCShipmentChargesVO110">
+        <AttrNames>
+          <Item Value="ShipmentNum"/>
+          <Item Value="FirstShipment"/>
+          <Item Value="ImpBblcDetChargeId"/>
+          <Item Value="ImpBblcDetailId"/>
+          <Item Value="OrgName"/>
+          <Item Value="BblcNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="BBLCShipmentChargesVO1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="BBLCShipmentChargesVO1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="MnjChargesInterfaceVO1Iterator"
+          id="MnjChargesInterfaceVO1">
+      <nodeDefinition DefName="mnj.ont.model.views.MnjChargesInterfaceVO"
+                      Name="MnjChargesInterfaceVO10">
+        <AttrNames>
+          <Item Value="ActionFlag"/>
+          <Item Value="ApplyChargesFlag"/>
+          <Item Value="ChargeAmount"/>
+          <Item Value="ChargeName"/>
+          <Item Value="ChargeTypeId"/>
+          <Item Value="CreationDate"/>
+          <Item Value="CurrencyCode"/>
+          <Item Value="ErrorDescription"/>
+          <Item Value="EventType"/>
+          <Item Value="FirstShipmentFlag"/>
+          <Item Value="InterfaceDescription"/>
+          <Item Value="InterfaceFlag"/>
+          <Item Value="InterfaceId"/>
+          <Item Value="LandedCostFlag"/>
+          <Item Value="PlanType"/>
+          <Item Value="ProcessFlag"/>
+          <Item Value="RequestId"/>
+          <Item Value="RespApplId"/>
+          <Item Value="RespId"/>
+          <Item Value="ShipmentHeaderId"/>
+          <Item Value="ShipmentLineId"/>
+          <Item Value="ToParentTable"/>
+          <Item Value="UploadStatus"/>
+          <Item Value="UserId"/>
+          <Item Value="MajorChargeName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="MnjChargesInterfaceVO1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <methodAction id="CopyLine_ChargeInterface"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="CopyLine_ChargeInterface"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="Interface_Id" NDType="int"/>
+    </methodAction>
+    <methodAction id="GenerateCharge_Lines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="GenerateCharge_Lines"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="Header_Id" NDType="int"/>
+      <NamedData NDName="Detail_Id" NDType="int"/>
+      <NamedData NDName="User_Id" NDType="int"/>
+    </methodAction>
+    <methodAction id="ProcessLines"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="ProcessLines"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="ChrgDetId" NDType="int"/>
+    </methodAction>
+    <methodAction id="executeQuery_ShipmentChrg"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="executeQuery_ShipmentChrg"
+                  IsViewObjectMethod="false"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="MainAMDataControl"/>
+  </bindings>
+</pageDefinition>

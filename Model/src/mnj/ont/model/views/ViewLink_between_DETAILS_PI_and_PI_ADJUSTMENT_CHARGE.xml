@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ViewLink_between_DETAILS_PI_and_PI_ADJUSTMENT_CHARGE"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="mnj.ont.model.views.ViewLink_between_DETAILS_PI_and_PI_ADJUSTMENT_CHARGE_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="BBLCDetailsPi"
+    Cardinality="1"
+    Owner="mnj.ont.model.views.BBLCDetailsPiVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="BBLCDetailsPi"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="mnj.ont.model.views.BBLCDetailsPiVO.PiNo"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="PI_ADJUSTMENT_CHARGE_"
+    Cardinality="-1"
+    Owner="mnj.ont.model.views.PI_ADJUSTMENT_CHARGE_VO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="PI_ADJUSTMENT_CHARGE_"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="mnj.ont.model.views.PI_ADJUSTMENT_CHARGE_VO.PiNo"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

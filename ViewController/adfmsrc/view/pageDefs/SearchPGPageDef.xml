@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="SearchPGPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BBLCHeader1" RangeSize="25" DataControl="MainAMDataControl"
+              id="BBLCHeader1Iterator"/>
+    <searchRegion Criteria="BBLCHeaderVOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="BBLCHeader1Iterator" id="BBLCHeaderVOCriteriaQuery"/>
+    <invokeAction id="setSessionVal" Binds="setSessionValues" Refresh="always"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="BBLCHeader1Iterator" id="BBLCHeader1">
+      <nodeDefinition DefName="mnj.ont.model.views.BBLCHeaderVO"
+                      Name="BBLCHeader10">
+        <AttrNames>
+          <Item Value="ProposalNumber"/>
+          <Item Value="ProposalDate"/>
+          <Item Value="ImportAgainstContract"/>
+          <Item Value="NegotiationBank"/>
+          <Item Value="ContractValue"/>
+          <Item Value="LastShipDate"/>
+          <Item Value="EntitleBtbValue"/>
+          <Item Value="AvailableBtbValue"/>
+          <Item Value="BblcDocNumber"/>
+          <Item Value="VersionNo"/>
+          <Item Value="VersionDate"/>
+          <Item Value="Attribute4"/>
+          <Item Value="CreatedByName"/>
+          <Item Value="CreationDate"/>
+          <Item Value="BblcContractNo"/>
+          <Item Value="BblcNo"/>
+          <Item Value="InvoiceNo"/>
+          <Item Value="AcceptanceNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="BBLCHeader1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="BBLCHeader1Iterator" id="setCurrentRowWithKey"
+            RequiresUpdateModel="false" Action="setCurrentRowWithKey">
+      <NamedData NDName="rowKey" NDType="java.lang.String"/>
+    </action>
+    <action IterBinding="BBLCHeader1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <methodAction id="version" InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="version"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.MainAMDataControl.methodResults.version_MainAMDataControl_dataProvider_version_result"/>
+    <methodAction id="setSessionValues"
+                  InstanceName="MainAMDataControl.dataProvider"
+                  DataControl="MainAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="setSessionValues"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="orgId" NDValue="#{viewScope.OrgId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="userId" NDValue="#{viewScope.UserId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respId" NDValue="#{viewScope.RespId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respAppl" NDValue="#{viewScope.RespApplId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>
