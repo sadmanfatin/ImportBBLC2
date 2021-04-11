@@ -513,12 +513,6 @@ FROM IEDOC_IMP_BBLC_SUB_DET_PI BBLCDetailsPiEO]]>
     EntityUsage="BBLCDetailsPiEO"
     AliasName="GRN_QUANTITY"/>
   <ViewAttribute
-    Name="PocId"
-    PrecisionRule="true"
-    EntityAttrName="PocId"
-    EntityUsage="BBLCDetailsPiEO"
-    AliasName="POC_ID"/>
-  <ViewAttribute
     Name="TotalInvoiceQuantity"
     IsUpdateable="false"
     IsPersistent="false"
@@ -546,6 +540,12 @@ FROM IEDOC_IMP_BBLC_SUB_DET_PI BBLCDetailsPiEO]]>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
   </ViewAttribute>
+  <ViewAttribute
+    Name="PocId"
+    PrecisionRule="true"
+    EntityAttrName="PocId"
+    EntityUsage="BBLCDetailsPiEO"
+    AliasName="POC_ID"/>
   <ViewLinkAccessor
     Name="PI_SPO_DETAILS_"
     ViewLink="mnj.ont.model.views.SPO_PI_VL"

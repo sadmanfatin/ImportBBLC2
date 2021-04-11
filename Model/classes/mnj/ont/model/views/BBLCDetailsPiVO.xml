@@ -135,6 +135,7 @@
        BBLCDetailsPiEO.PARTIAL_PL ,
         BBLCDetailsPiEO.GRN, 
           BBLCDetailsPiEO.GRN_QUANTITY ,
+            BBLCDetailsPiEO.POC_ID ,
    nvl((   select sum (di.invoice_quantity ) invoice_quantity from
   
         IEDOC_IMP_BBLC_LINES l,
@@ -539,6 +540,12 @@ FROM IEDOC_IMP_BBLC_SUB_DET_PI BBLCDetailsPiEO]]>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
   </ViewAttribute>
+  <ViewAttribute
+    Name="PocId"
+    PrecisionRule="true"
+    EntityAttrName="PocId"
+    EntityUsage="BBLCDetailsPiEO"
+    AliasName="POC_ID"/>
   <ViewLinkAccessor
     Name="PI_SPO_DETAILS_"
     ViewLink="mnj.ont.model.views.SPO_PI_VL"
