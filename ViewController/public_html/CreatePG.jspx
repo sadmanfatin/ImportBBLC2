@@ -4632,7 +4632,7 @@
               </af:panelHeader>
             </af:panelGroupLayout>
             <af:panelCollection id="pc3"
-                                inlineStyle="height:450px; width:1250.0px;">
+                                inlineStyle="height:450px; width:1300.0px;">
               <f:facet name="toolbar">
                 <af:toolbar id="t7" inlineStyle="width:450.0px;">
                   <af:commandButton actionListener="#{bindings.Delete2.execute}"
@@ -4848,6 +4848,21 @@
                     <af:convertNumber groupingUsed="false"
                                       pattern="#{bindings.BBLCDetailsPi1.hints.GrnQuantity.format}"/>
                   </af:outputText>
+                </af:column>
+                <af:column headerText="#{bindings.BBLCDetailsPi1.hints.PocId.label}"
+                           id="c333" align="center" sortable="true"
+                           filterable="true" width="70">
+                  <af:inputText value="#{row.bindings.PocId.inputValue}"
+                                label="#{bindings.BBLCDetailsPi1.hints.PocId.label}"
+                                required="#{bindings.BBLCDetailsPi1.hints.PocId.mandatory}"
+                                columns="#{bindings.BBLCDetailsPi1.hints.PocId.displayWidth}"
+                                maximumLength="#{bindings.BBLCDetailsPi1.hints.PocId.precision}"
+                                shortDesc="#{bindings.BBLCDetailsPi1.hints.PocId.tooltip}"
+                                id="it142" readOnly="true">
+                    <f:validator binding="#{row.bindings.PocId.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.BBLCDetailsPi1.hints.PocId.format}"/>
+                  </af:inputText>
                 </af:column>
               </af:table>
             </af:panelCollection>
