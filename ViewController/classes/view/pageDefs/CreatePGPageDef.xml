@@ -262,6 +262,7 @@
           <Item Value="StyleBpoNo"/>
           <Item Value="UnitPrice"/>
           <Item Value="GrnQuantity"/>
+          <Item Value="PocId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -471,6 +472,7 @@
           <Item Value="ShortExcessQty"/>
           <Item Value="ItemCheckBox"/>
           <Item Value="SpoNo"/>
+          <Item Value="PocId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

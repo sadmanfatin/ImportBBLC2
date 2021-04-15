@@ -262,6 +262,7 @@
           <Item Value="StyleBpoNo"/>
           <Item Value="UnitPrice"/>
           <Item Value="GrnQuantity"/>
+          <Item Value="PocId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
