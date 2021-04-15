@@ -22,17 +22,18 @@
     </SchemaBasedProperties>
   </Properties>
   <SQLQuery>
-    <![CDATA[SELECT IMP_SALE_CONTRACT_NO, 
-       CONTRACT_DATE, 
-       EXPORT_LC_NO, 
-       ORG_ID,
-       GOODS_VALUE,
-       CONTRACT_VALUE, 
-       CONTRACT_QUANTITY,
-       VERSION_NO , 
-       BUYER_NAME_NEW ,
-       SEASON,
-       BUYER_ID             
+    <![CDATA[SELECT H.IMP_SALE_CONTRACT_NO, 
+       H.CONTRACT_DATE, 
+       H.EXPORT_LC_NO, 
+       H.ORG_ID,
+       H.GOODS_VALUE,
+       H.CONTRACT_VALUE, 
+       H.CONTRACT_QUANTITY,
+       H.VERSION_NO ,           
+       H.SEASON,
+       H.BUYER_ID  ,
+       (SELECT AC.CUSTOMER_NAME from AR_CUSTOMERS AC WHERE AC.CUSTOMER_ID  = H.BUYER_ID AND AC.STATUS = 'A' ) BUYER_NAME_NEW
+                  
   FROM XX_COM_SALES_CONTRACT_H_T H
   WHERE NOT EXISTS  (SELECT 1 FROM IEDOC_IMP_BBLC_CONTRACTS BBLCContractEO WHERE BBLCContractEO.BBLC_CONTRACT_NO=H.IMP_SALE_CONTRACT_NO
     and  BBLCContractEO.ATTRIBUTE10  = H.VERSION_NO
@@ -154,27 +155,6 @@
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="BuyerNameNew"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="250"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="BUYER_NAME_NEW"
-    Expression="BUYER_NAME_NEW"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="250"/>
-    </DesignTime>
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="mnj.ont.model.views.FillContractsVO.BuyerNameNew_LABEL"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
     Name="Season"
     IsUpdateable="false"
     IsPersistent="false"
@@ -203,6 +183,27 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BuyerNameNew"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="250"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BUYER_NAME_NEW"
+    Expression="BUYER_NAME_NEW"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.ont.model.views.FillContractsVO.BuyerNameNew_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="ContractCheckBox"
