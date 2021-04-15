@@ -135,7 +135,7 @@
        BBLCDetailsPiEO.PARTIAL_PL ,
         BBLCDetailsPiEO.GRN, 
           BBLCDetailsPiEO.GRN_QUANTITY ,
-            BBLCDetailsPiEO.POC_ID ,
+          
    nvl((   select sum (di.invoice_quantity ) invoice_quantity from
   
         IEDOC_IMP_BBLC_LINES l,
@@ -174,7 +174,9 @@
                                     l.imp_bblc_detail_id = BBLCDetailsPiEO.IMP_BBLC_DETAIL_ID
                                     
                                     )
-        group by l.imp_bblc_line_id ,di.PI_NO , di.attribute5 , di.bpo) ,0 )  ) BALANCE_QTY
+        group by l.imp_bblc_line_id ,di.PI_NO , di.attribute5 , di.bpo) ,0 )  ) BALANCE_QTY,
+        
+          BBLCDetailsPiEO.POC_ID 
 
 FROM IEDOC_IMP_BBLC_SUB_DET_PI BBLCDetailsPiEO]]>
   </SQLQuery>

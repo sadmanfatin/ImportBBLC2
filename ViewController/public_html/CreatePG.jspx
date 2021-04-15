@@ -4849,9 +4849,9 @@
                                       pattern="#{bindings.BBLCDetailsPi1.hints.GrnQuantity.format}"/>
                   </af:outputText>
                 </af:column>
-                <af:column headerText="#{bindings.BBLCDetailsPi1.hints.PocId.label}"
+                <af:column headerText="Poc Id"
                            id="c333" align="center" sortable="true"
-                           filterable="true" width="70">
+                           filterable="true" sortProperty="PocId">
                   <af:inputText value="#{row.bindings.PocId.inputValue}"
                                 label="#{bindings.BBLCDetailsPi1.hints.PocId.label}"
                                 required="#{bindings.BBLCDetailsPi1.hints.PocId.mandatory}"
