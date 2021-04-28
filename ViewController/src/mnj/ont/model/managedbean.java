@@ -4019,8 +4019,12 @@ Double.parseDouble(r.getAttribute("ContractValue").toString());
        ViewObject  bblcLinesVo = appM.getBBLCLines1();
         Row currentBblcRow = bblcLinesVo.getCurrentRow();
         
-        RowSet rs = (RowSet)currentBblcRow.getAttribute("BBLCPiDetails");
+        if(currentBblcRow == null){
+            return;
+        }
         
+        RowSet rs ;
+        rs=(RowSet)currentBblcRow.getAttribute("BBLCPiDetails");
         
         
         boolean  bblcBeneficiaryIsNull ;
