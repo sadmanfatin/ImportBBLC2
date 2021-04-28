@@ -210,6 +210,13 @@ public class managedbean {
 
     public void editDialogListenerPi(DialogEvent dialogEvent) {
         if (dialogEvent.getOutcome().name().equals("ok")) {
+            
+            if(appM.getBBLCLines1().getCurrentRow() == null){
+              
+                Message.showMessage("No BBLC row is selected!", "error");
+                return;
+            }
+            
             FillPi();
             AdfFacesContext.getCurrentInstance().addPartialTarget(newPiTable);
         } else if (dialogEvent.getOutcome().name().equals("cancel")) {
