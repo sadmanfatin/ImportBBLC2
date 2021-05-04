@@ -4728,7 +4728,7 @@ Double.parseDouble(r.getAttribute("ContractValue").toString());
         statement =  "BEGIN  IEDOC_DOC_NO_PKG.IMPORT_INVOICE_NO_UC(:1, :2, :3, :4, :5); end;";
          CallableStatement cs = appM.getDBTransaction().createCallableStatement(statement, 1);
          try {
-             cs.registerOutParameter(3, OracleTypes.VARCHAR);
+             cs.registerOutParameter(5, OracleTypes.VARCHAR);
              cs.setString(1, newInvoiceNo);
              cs.setString(2, invoiceId);
              cs.setString(3, supplierId);
@@ -4741,7 +4741,7 @@ Double.parseDouble(r.getAttribute("ContractValue").toString());
          } catch (Exception e) {
              
              flag=1;
-             status = e.getMessage();
+            e.printStackTrace();
          }
          
          if(flag ==1){
