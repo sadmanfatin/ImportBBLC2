@@ -4291,7 +4291,7 @@ Double.parseDouble(r.getAttribute("ContractValue").toString());
         
       //  String currentUser = "5219";
         
-      if(currentUser.equals("6086")  ||  currentUser.equals("1545") ){
+      if( currentUser != null && (currentUser.equals("6086")  ||  currentUser.equals("1545"))){
           // verify user for user: USER_EXPORT and Syed_harun
           return true;
       }
@@ -4690,9 +4690,11 @@ Double.parseDouble(r.getAttribute("ContractValue").toString());
       
         String message ;
         String invoiceId = appM.getBBLCDetails1().getCurrentRow().getAttribute("ImpBblcDetailId").toString();
+        String supplierId = appM.getBBLCLines1().getCurrentRow().getAttribute("BeneficiaryId").toString();
+        String orgId = appM.getBBLCHeader1().getCurrentRow().getAttribute("OrgId").toString();
         
          boolean duplicateInvoiceNo ; 
-            duplicateInvoiceNo =  checkInvoiceNoDuplicacy(newInvoiceNo , invoiceId);
+            duplicateInvoiceNo =  checkInvoiceNoDuplicacy(newInvoiceNo, invoiceId, supplierId, orgId );
             
             
             if(duplicateInvoiceNo){
@@ -4718,19 +4720,21 @@ Double.parseDouble(r.getAttribute("ContractValue").toString());
         
     }
 
-    private boolean checkInvoiceNoDuplicacy(String newInvoiceNo , String invoiceId) {
+    private boolean checkInvoiceNoDuplicacy(String newInvoiceNo , String invoiceId , String supplierId, String orgId) {
         
          
         String  statement , status ;
          int flag ;
-        statement =  "BEGIN  IEDOC_DOC_NO_PKG.IMPORT_INVOICE_NO_UC(:1,:2 ,:3); end;";
+        statement =  "BEGIN  IEDOC_DOC_NO_PKG.IMPORT_INVOICE_NO_UC(:1, :2, :3, :4, :5); end;";
          CallableStatement cs = appM.getDBTransaction().createCallableStatement(statement, 1);
          try {
              cs.registerOutParameter(3, OracleTypes.VARCHAR);
              cs.setString(1, newInvoiceNo);
              cs.setString(2, invoiceId);
+             cs.setString(3, supplierId);
+             cs.setString(4, orgId);
              cs.execute();
-             flag = cs.getInt(3);
+             flag = cs.getInt(5);
           
              cs.close();
 
