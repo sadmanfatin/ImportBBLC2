@@ -20,14 +20,29 @@
     </SchemaBasedProperties>
   </Properties>
   <SQLQuery>
-    <![CDATA[SELECT aia.vendor_id, aia.org_id, aia.attribute4 lc_no, aia.invoice_id,
-       aia.invoice_num, aia.invoice_amount, aia.amount_paid ,aia.INVOICE_DATE ,aia.INVOICE_RECEIVED_DATE
-  FROM ap_invoices_all aia
- WHERE aia.INVOICE_NUM  not in (  SELECT IBD.INVOICE_NO
-                                  FROM iedoc_imp_bblc_details ibd,      iedoc_imp_bblc_lines ibl
-                                  WHERE ibl.imp_bblc_line_id =ibd.imp_bblc_line_id
-                                  AND ibl.BBLC_NO = aia.attribute4 
-                                )]]>
+    <![CDATA[SELECT AIA.VENDOR_ID, AIA.ORG_ID, AIA.ATTRIBUTE4 LC_NO, AIA.INVOICE_ID,
+       AIA.INVOICE_NUM, AIA.INVOICE_AMOUNT, AIA.AMOUNT_PAID ,AIA.INVOICE_DATE ,AIA.INVOICE_RECEIVED_DATE
+  FROM AP_INVOICES_ALL AIA
+ WHERE 1=1
+
+ AND AIA.INVOICE_NUM  NOT IN (  SELECT IBD.INVOICE_NO
+                                  FROM IEDOC_IMP_BBLC_DETAILS IBD,      IEDOC_IMP_BBLC_LINES IBL
+                                  WHERE IBL.IMP_BBLC_LINE_ID =IBD.IMP_BBLC_LINE_ID
+                                  AND IBL.BBLC_NO = AIA.ATTRIBUTE4
+
+                              )
+AND NOT EXISTS ( 
+    SELECT IBD.INVOICE_NO
+      FROM IEDOC_IMP_BBLC_DETAILS IBD,
+           IEDOC_IMP_BBLC_LINES IBL,
+           IEDOC_IMP_BBLC_HEADERS IBH
+     WHERE     1 = 1
+           AND IBH.IMP_BBLC_HEADER_ID = IBL.IMP_BBLC_HEADER_ID
+           AND IBL.IMP_BBLC_LINE_ID = IBD.IMP_BBLC_LINE_ID
+           AND IBH.ORG_ID = AIA.ORG_ID
+           AND IBL.BENEFICIARY_ID = AIA.VENDOR_ID
+           AND IBD.INVOICE_NO = AIA.INVOICE_NUM
+    )]]>
   </SQLQuery>
   <ViewAttribute
     Name="VendorId"
@@ -146,7 +161,7 @@
     ColumnType="DATE"
     AliasName="INVOICE_DATE"
     Expression="INVOICE_DATE"
-    SQLType="TIMESTAMP">
+    SQLType="DATE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
@@ -160,7 +175,7 @@
     ColumnType="DATE"
     AliasName="INVOICE_RECEIVED_DATE"
     Expression="INVOICE_RECEIVED_DATE"
-    SQLType="TIMESTAMP">
+    SQLType="DATE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
