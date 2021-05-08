@@ -1985,21 +1985,24 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
             docCreatorName = "No Creator";
         }
         Map sessionScope = ADFContext.getCurrent().getSessionScope();
+        
         String currentUser = (String)sessionScope.get("userId");
-
-            if(currentUser.equals("6086")  ||  currentUser.equals("1545") ){
-                // verify user for user: USER_EXPORT and Syed_harun
-                return true;
-            }
-                             
-            else if(!docCreator.equals(currentUser)){
-                
-             return   false;   
-                
-             //  return   true; 
-                
-            }
-        return true;
+        
+        //  String currentUser = "5219";
+        
+        if( currentUser != null && (currentUser.equals("6086")  ||  currentUser.equals("1545"))){
+          // verify user for user: USER_EXPORT and Syed_harun
+          return true;
+        }
+                         
+        else if(!docCreator.equals(currentUser)){
+            
+         return   false;   
+            
+         //  return   true; 
+            
+        }
+         return true;
 
     }
 
