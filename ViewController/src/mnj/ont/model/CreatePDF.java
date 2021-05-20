@@ -240,7 +240,7 @@ public class CreatePDF {
             
           if( bankName != null){
               personRootElement = doc.createElement( "BankName" );
-              node.getFirstChild().insertBefore(personRootElement, node.getFirstChild().getFirstChild());
+              node.insertBefore(personRootElement, node.getFirstChild());
               personRootElement.appendChild( doc.createTextNode(   bankName ) );
           }
            
@@ -249,14 +249,14 @@ public class CreatePDF {
         if( shortBankName != null){   
             
         personRootElement = doc.createElement( "ShortBankName" );
-        node.getFirstChild().insertBefore(personRootElement, node.getFirstChild().getFirstChild());
+        node.insertBefore(personRootElement, node.getFirstChild());
         personRootElement.appendChild( doc.createTextNode(  shortBankName  ) );
         }
         
         addressLine1  =  bankHeadBranchVoRow.getAddressLine1();
         if( addressLine1 != null){
         personRootElement = doc.createElement( "AddressLine1" );
-        node.getFirstChild().insertBefore(personRootElement, node.getFirstChild().getFirstChild());
+        node.insertBefore(personRootElement, node.getFirstChild());
         personRootElement.appendChild( doc.createTextNode( addressLine1 ) );
         }
         
@@ -264,7 +264,7 @@ public class CreatePDF {
         addressLine2  =  bankHeadBranchVoRow.getAddressLine2();
         if( addressLine2 != null){
         personRootElement = doc.createElement( "AddressLine2" );
-        node.getFirstChild().insertBefore(personRootElement, node.getFirstChild().getFirstChild());
+        node.insertBefore(personRootElement, node.getFirstChild());
         personRootElement.appendChild( doc.createTextNode(   addressLine2 ) );
         }
         
@@ -272,7 +272,7 @@ public class CreatePDF {
         addressLine3  =  bankHeadBranchVoRow.getAddressLine3();
         if( addressLine3  != null){
         personRootElement = doc.createElement( "AddressLine3" );
-        node.getFirstChild().insertBefore(personRootElement, node.getFirstChild().getFirstChild());
+        node.insertBefore(personRootElement, node.getFirstChild());
         personRootElement.appendChild( doc.createTextNode(  addressLine3  ) );
         }
         
@@ -280,7 +280,7 @@ public class CreatePDF {
          addressLine4  =  bankHeadBranchVoRow.getAddressLine4();
         if( addressLine4  != null){
         personRootElement = doc.createElement( "AddressLine4" );
-        node.getFirstChild().insertBefore(personRootElement, node.getFirstChild().getFirstChild());
+        node.insertBefore(personRootElement, node.getFirstChild());
         personRootElement.appendChild( doc.createTextNode( addressLine4 ) );
         }
         
@@ -295,7 +295,7 @@ public class CreatePDF {
         
         if( orgShortName != null){
             personRootElement = doc.createElement( "OrgShortName" );
-            node.getFirstChild().insertBefore(personRootElement, node.getFirstChild().getFirstChild());
+            node.insertBefore(personRootElement, node.getFirstChild());
             personRootElement.appendChild( doc.createTextNode( orgShortName ) );
         }
         
@@ -309,7 +309,7 @@ public class CreatePDF {
         
        if( orgName != null){
         personRootElement = doc.createElement( "OrgName" );
-        node.getFirstChild().insertBefore(personRootElement, node.getFirstChild().getFirstChild());
+        node.insertBefore(personRootElement, node.getFirstChild());
         personRootElement.appendChild( doc.createTextNode( appM.getBBLCHeader1().getCurrentRow().getAttribute("OrgName").toString() ) );
         }
         
@@ -319,7 +319,7 @@ public class CreatePDF {
         
         if(factoryAddress != null){
          personRootElement = doc.createElement( "FactoryAddress" );
-         node.getFirstChild().insertBefore(personRootElement, node.getFirstChild().getFirstChild());
+         node.insertBefore(personRootElement, node.getFirstChild());
          personRootElement.appendChild( doc.createTextNode(factoryAddress ) );
          }
         
@@ -327,7 +327,7 @@ public class CreatePDF {
         corporateAddress = oraganizationAddressRow.getCorporateOfficeAddress();
         if(corporateAddress != null){
          personRootElement = doc.createElement( "CorporateAddress" );
-         node.getFirstChild().insertBefore(personRootElement, node.getFirstChild().getFirstChild());
+         node.insertBefore(personRootElement, node.getFirstChild());
          personRootElement.appendChild( doc.createTextNode(  corporateAddress ) );
          }
         
@@ -351,17 +351,17 @@ public class CreatePDF {
         vo= appM.getBBLCDetails1();
         //     Document xmlDoc = new DocumentImpl();
         
-        XMLElement node = (XMLElement)vo.writeXML(1, XMLInterface.XML_OPT_ALL_ROWS);
+        XMLElement node = (XMLElement)vo.getCurrentRow().writeXML(1, XMLInterface.XML_OPT_ALL_ROWS);
         //   XMLDocument doc = node.getDocument();
         
         
         updateBblcDetailsNode(node);
         
-//        try {
-//          printXML( node ) ;
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+          printXML( node ) ;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
  
         
         return node;

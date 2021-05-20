@@ -6,7 +6,7 @@ xmlns:java="http://xml.apache.org/xslt/java"
   <!--=========================-->
   <!--root element: DemoHeaderTVO-->
   <!--=========================-->
-  <xsl:template match="BBLCDetailsVO">
+  <xsl:template match="BBLCDetailsVORow">
     <fo:root  font-family="Times"  >
     <fo:layout-master-set>
         <fo:simple-page-master master-name="simple" 
@@ -22,19 +22,19 @@ xmlns:java="http://xml.apache.org/xslt/java"
 
            <fo:static-content flow-name="xsl-region-before">
             <fo:block text-align="center" font-size="9pt">            
-               <xsl:if test="BBLCDetailsVORow/OrgShortName='CAL'">
+               <xsl:if test="OrgShortName='CAL'">
                    <fo:external-graphic  src="url('unitimage/CAL image.jpg')" />
                </xsl:if>              
-                <xsl:if test="BBLCDetailsVORow/OrgShortName='CGL'">
+                <xsl:if test="OrgShortName='CGL'">
                    <fo:external-graphic  src="url('unitimage/CGL image.jpg')" />
                </xsl:if>
-                <xsl:if test="BBLCDetailsVORow/OrgShortName='CWPL'">               
+                <xsl:if test="OrgShortName='CWPL'">               
                    <fo:external-graphic  src="url('unitimage/CWPL image.jpg')" />               
                </xsl:if>
-                <xsl:if test="BBLCDetailsVORow/OrgShortName='GFL'">              
+                <xsl:if test="OrgShortName='GFL'">              
                    <fo:external-graphic  src="url('unitimage/GFL image.jpg')" />
                </xsl:if>
-                <xsl:if test="BBLCDetailsVORow/OrgShortName='GWL'">              
+                <xsl:if test="OrgShortName='GWL'">              
                    <fo:external-graphic  src="url('unitimage/GWL image.jpg')" />               
                </xsl:if>                  
             </fo:block>
@@ -46,11 +46,11 @@ xmlns:java="http://xml.apache.org/xslt/java"
              <fo:block text-align="left" font-size="7.5pt"  >
              
  <!--       <fo:block   linefeed-treatment="preserve" white-space-treatment="preserve" white-space-collapse="false"
-            >Corporate Office: <xsl:value-of select="BBLCDetailsVORow/CorporateAddress"/></fo:block>  -->
+            >Corporate Office: <xsl:value-of select="CorporateAddress"/></fo:block>  -->
              
             <fo:block  white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">Corporate Office: 8th, 9th, 10th, 12th &#x026; 13th Floors, RCC Tower, 17 Mohakhali C/A, Dhaka-1212 Tel: 88-02-9844356, Fax : 88-02-8837137</fo:block>        
             <fo:block   linefeed-treatment="preserve" white-space-treatment="preserve" white-space-collapse="false"
-            >Factory: <xsl:value-of select="BBLCDetailsVORow/FactoryAddress"/></fo:block>     
+            >Factory: <xsl:value-of select="FactoryAddress"/></fo:block>     
             </fo:block>
         </fo:static-content>
         
@@ -61,7 +61,7 @@ xmlns:java="http://xml.apache.org/xslt/java"
  <fo:flow flow-name="xsl-region-body" >
  
 <fo:block   font-size="12pt" linefeed-treatment="preserve" white-space-treatment="preserve" white-space-collapse="false"
->Ref No. <xsl:value-of select="BBLCDetailsVORow/OrgShortName"/>/<xsl:value-of select="BBLCDetailsVORow/ShortBankName"/>/IMP/<xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('yyyy'), java:java.util.Date.new())" />/<xsl:value-of select="BBLCDetailsVORow/ImpBblcDetailId"/>
+>Ref No. <xsl:value-of select="OrgShortName"/>/<xsl:value-of select="ShortBankName"/>/IMP/<xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('yyyy'), java:java.util.Date.new())" />/<xsl:value-of select="ImpBblcDetailId"/>
 </fo:block>
 <fo:block  font-size="12pt" >
 Dated: <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MMMMM dd, yyyy'), java:java.util.Date.new())" />
@@ -69,14 +69,14 @@ Dated: <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MM
 <fo:block>&#160;</fo:block>
 <fo:block  font-size="12pt" >The Manager</fo:block>
 <!-- <fo:block  font-size="13pt" >Import Department </fo:block> -->
-<fo:block  font-size="12pt" ><xsl:value-of select="BBLCDetailsVORow/BankName"/></fo:block>
-<fo:block  font-size="12pt" ><xsl:value-of select="BBLCDetailsVORow/AddressLine1"/></fo:block>
-<fo:block  font-size="12pt" ><xsl:value-of select="BBLCDetailsVORow/AddressLine2"/> </fo:block>
-<fo:block  font-size="12pt"><xsl:value-of select="BBLCDetailsVORow/AddressLine3"/></fo:block>
-<fo:block  font-size="12pt">  <xsl:value-of select="BBLCDetailsVORow/AddressLine4"/></fo:block>
+<fo:block  font-size="12pt" ><xsl:value-of select="BankName"/></fo:block>
+<fo:block  font-size="12pt" ><xsl:value-of select="AddressLine1"/></fo:block>
+<fo:block  font-size="12pt" ><xsl:value-of select="AddressLine2"/> </fo:block>
+<fo:block  font-size="12pt"><xsl:value-of select="AddressLine3"/></fo:block>
+<fo:block  font-size="12pt">  <xsl:value-of select="AddressLine4"/></fo:block>
 <fo:block>&#160;</fo:block>
 <fo:block  font-size="12pt" text-align="justify" linefeed-treatment="preserve" white-space-treatment="preserve" white-space-collapse="false"
->Subject: Request for <fo:inline  text-decoration="underline">acceptance of original documents against LC / NULC No. <xsl:value-of select="BBLCDetailsVORow/BBLCLines/BBLCLinesVORow/BblcNo"/> dated <xsl:value-of select="BBLCDetailsVORow/BBLCLines/BBLCLinesVORow/LcIssueDate"/> in favor of <xsl:value-of select="BBLCDetailsVORow/BBLCLines/BBLCLinesVORow/BeneficiaryName"/>.</fo:inline></fo:block>
+>Subject: Request for <fo:inline  text-decoration="underline">acceptance of original documents against LC / NULC No. <xsl:value-of select="BBLCLines/BBLCLinesVORow/BblcNo"/> dated <xsl:value-of select="BBLCLines/BBLCLinesVORow/LcIssueDate"/> in favor of <xsl:value-of select="BBLCLines/BBLCLinesVORow/BeneficiaryName"/>.</fo:inline></fo:block>
 <fo:block>&#160;</fo:block>
 <fo:block  font-size="12pt" linefeed-treatment="preserve" white-space-treatment="preserve" white-space-collapse="false"
 >Dear Sir,</fo:block>
@@ -85,10 +85,10 @@ Dated: <xsl:value-of select="java:format(java:java.text.SimpleDateFormat.new('MM
 >We would request you to endorse the original shipping documents in our favor. Details are as below: 
 </fo:block>
 <fo:block   font-size="12pt" linefeed-treatment="preserve" white-space-treatment="preserve" white-space-collapse="false">
-Invoice No. <xsl:value-of select="BBLCDetailsVORow/InvoiceNo"/>; Invoice Amount:  <xsl:value-of select="BBLCDetailsVORow/Attribute30"/><xsl:text> </xsl:text><xsl:value-of select='format-number(BBLCDetailsVORow/ImportValue, "###,###.00")'/> 
+Invoice No. <xsl:value-of select="InvoiceNo"/>; Invoice Amount:  <xsl:value-of select="Attribute30"/><xsl:text> </xsl:text><xsl:value-of select='format-number(ImportValue, "###,###.00")'/> 
 </fo:block>
 <fo:block  font-size="12pt" linefeed-treatment="preserve" white-space-treatment="preserve" white-space-collapse="false">
-Bill Of Lading No. <xsl:value-of select="BBLCDetailsVORow/ConsignmentNo"/> Dated <xsl:value-of select="BBLCDetailsVORow/TransportDocumentDate"/>
+Bill Of Lading No. <xsl:value-of select="ConsignmentNo"/> Dated <xsl:value-of select="TransportDocumentDate"/>
 </fo:block>
 <fo:block  font-size="12pt" linefeed-treatment="preserve" white-space-treatment="preserve" white-space-collapse="false">
 Destination: Chittagong Sea port.
@@ -110,7 +110,7 @@ Destination: Chittagong Sea port.
 >Thanking you.       
 
 Yours faithfully,
-<fo:block  font-size="12pt" >for  <xsl:value-of select="BBLCDetailsVORow/OrgName"/></fo:block>
+<fo:block  font-size="12pt" >for  <xsl:value-of select="OrgName"/></fo:block>
 
 
 Authorized Signature
