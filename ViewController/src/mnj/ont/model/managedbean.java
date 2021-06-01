@@ -4870,9 +4870,17 @@ Double.parseDouble(r.getAttribute("ContractValue").toString());
 //             return;        
 //        }
          
-                
-        totalImportValue = calculateTotalImportValue(bblcDetailsVo) ;
-        
+        String noItemFlag = (String)bblcDetailsVo.getCurrentRow().getAttribute("Attribute20");  
+         
+           
+        if(noItemFlag != null &&  noItemFlag.equals("NoItem")){
+            // if invoice added with 'Add Local Invoice' button      
+           totalImportValue = Double.parseDouble(bblcDetailsVo.getCurrentRow().getAttribute("ItemsValue").toString()) ;  
+      }
+        else{
+            totalImportValue = calculateTotalImportValue(bblcDetailsVo) ;
+        }
+          
         if (  (incoTerm.equals("CFR") || incoTerm.equals("CPT") ) && vYesNo.equals("Yes") ){
             // freight cost will be added with importValue only for incoTerm  is CFR and CPT
             //freight cost will not  be added with importValue if  incoTerm is EXW, FOB, FCA
