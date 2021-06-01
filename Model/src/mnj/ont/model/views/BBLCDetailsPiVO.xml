@@ -548,6 +548,19 @@ FROM IEDOC_IMP_BBLC_SUB_DET_PI BBLCDetailsPiEO]]>
     EntityAttrName="PocId"
     EntityUsage="BBLCDetailsPiEO"
     AliasName="POC_ID"/>
+      <ViewAttribute
+    Name="LineTotal"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Double"
+    ColumnType="DOUBLE PRECISION"
+    AliasName="VIEW_ATTR"
+    SQLType="DOUBLE">
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[UnitPrice*InvoiceQuantity]]></TransientExpression>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="PI_SPO_DETAILS_"
     ViewLink="mnj.ont.model.views.SPO_PI_VL"
@@ -557,5 +570,11 @@ FROM IEDOC_IMP_BBLC_SUB_DET_PI BBLCDetailsPiEO]]>
     Name="PI_ADJUSTMENT_CHARGE_"
     ViewLink="mnj.ont.model.views.ViewLink_between_DETAILS_PI_and_PI_ADJUSTMENT_CHARGE"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="BBLCDetails"
+    ViewLink="mnj.ont.model.views.IedocImpBblcSubDetPiFkLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
     IsUpdateable="false"/>
 </ViewObject>
