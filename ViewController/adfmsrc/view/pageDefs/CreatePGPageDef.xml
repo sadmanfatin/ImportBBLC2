@@ -263,6 +263,7 @@
           <Item Value="UnitPrice"/>
           <Item Value="GrnQuantity"/>
           <Item Value="PocId"/>
+          <Item Value="LineTotal"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -1308,5 +1309,10 @@
     <list IterBinding="BBLCHeader1Iterator" StaticList="false"
           Uses="LOV_ProposalOpenStatus" id="ProposalOpenStatus"
           DTSupportsMRU="true"/>
+    <attributeValues IterBinding="BBLCDetails1Iterator" id="TotalPiValue">
+      <AttrNames>
+        <Item Value="TotalPiValue"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

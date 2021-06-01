@@ -4632,7 +4632,7 @@
               </af:panelHeader>
             </af:panelGroupLayout>
             <af:panelCollection id="pc3"
-                                inlineStyle="height:450px; width:1300.0px;">
+                                inlineStyle="height:450px; width:1350.0px;">
               <f:facet name="toolbar">
                 <af:toolbar id="t7" inlineStyle="width:450.0px;">
                   <af:commandButton actionListener="#{bindings.Delete2.execute}"
@@ -4774,6 +4774,30 @@
                     <af:convertNumber groupingUsed="true"
                                       pattern="#{bindings.BBLCDetailsPi1.hints.InvoiceQuantity.format}"/>
                   </af:inputText>
+                </af:column>
+                <af:column headerText="Line Total"
+                           id="c334" width="70" align="center" sortable="true"
+                           filterable="true" sortProperty="LineTotal">
+                  <af:inputText value="#{row.bindings.LineTotal.inputValue}"
+                                label="#{bindings.BBLCDetailsPi1.hints.LineTotal.label}"
+                                required="#{bindings.BBLCDetailsPi1.hints.LineTotal.mandatory}"
+                                columns="#{bindings.BBLCDetailsPi1.hints.LineTotal.displayWidth}"
+                                maximumLength="#{bindings.BBLCDetailsPi1.hints.LineTotal.precision}"
+                                shortDesc="#{bindings.BBLCDetailsPi1.hints.LineTotal.tooltip}"
+                                id="it143" partialTriggers="it57 it17"
+                                readOnly="true">
+                    <f:validator binding="#{row.bindings.LineTotal.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.BBLCDetailsPi1.hints.LineTotal.format}"/>
+                  </af:inputText>
+                  <f:facet name="footer">
+                    <af:group id="g1">
+                      <af:outputText value="#{bindings.TotalPiValue.inputValue}"
+                                     id="ot3"
+                                     inlineStyle="font-weight:bold;"
+                                     partialTriggers="::t3 it143"/>
+                    </af:group>
+                  </f:facet>
                 </af:column>
                 <af:column headerText="#{bindings.BBLCDetailsPi1.hints.StyleBpoNo.label}"
                            id="c153" align="center" sortable="true"
