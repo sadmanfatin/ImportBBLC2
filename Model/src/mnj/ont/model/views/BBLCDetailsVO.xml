@@ -2028,6 +2028,15 @@ FROM IEDOC_IMP_BBLC_DETAILS BBLCDetailsEO]]>
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR"
     IsUpdateable="false"/>
+  <ViewAttribute
+    Name="TotalPiValue"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Double"
+    ColumnType="DOUBLE PRECISION"
+    AliasName="VIEW_ATTR"
+    SQLType="DOUBLE"/>
   <ViewLinkAccessor
     Name="BBLCDetailsPi"
     ViewLink="mnj.ont.model.views.IedocImpBblcSubDetPiFkLink"
