@@ -1091,7 +1091,7 @@
                                                   align="afterStart"
                                                   alignId="f1"/>
                           </af:commandButton>
-                          <af:spacer width="50" height="10" id="s4"/>
+                          <af:spacer width="30" height="10" id="s4"/>
                           <af:commandButton actionListener="#{bindings.CreateInsert1.execute}"
                                             text="Create" id="cb5"
                                             icon="/icons/Icon_6-512.png"
@@ -1104,12 +1104,12 @@
                           <af:commandButton text="Copy Line" id="cb21"
                                             action="#{ManagedBean.CopyLineButton}"
                                             icon="/icons/copy-2.png"/>
-                          <af:spacer width="30" height="10" id="s31"/>
+                          <af:spacer width="20" height="10" id="s31"/>
                           <af:commandButton actionListener="#{bindings.Delete1.execute}"
                                             text="Delete" id="cb33"
                                             icon="/icons/delete-xxl.png"
                                             visible="false"/>
-                          <af:commandButton text="Attach Invoice Document"
+                          <af:commandButton text="Attach Invoice Doc"
                                             id="cb41"
                                             actionListener="#{ManagedBean.AttachInvoiceDoc}"
                                             icon="/icons/attach-xxl.png"/>
@@ -1118,16 +1118,16 @@
                                             icon="/icons/Icon_6-512.png"
                                             actionListener="#{ManagedBean.addLocalInvoices}"/>
                           <af:spacer width="10" height="10" id="s38"/>
-                          <af:commandButton text="Original Documents Receiving Acceptance" id="cb68">
+                          <af:commandButton text="Original Documents Rec Accept" id="cb68">
                             <af:fileDownloadActionListener method="#{CreatePdf.exportAllRowsToPDFOne}"
                                                            filename="Original Documents Receiving Acceptance.pdf"/>
                           </af:commandButton>
-                            <af:commandButton text="Shipping Guarantee Forwarding"
+                            <af:commandButton text="Shipping Gurantee Forwarding"
                                               id="cb71">
                             <af:fileDownloadActionListener method="#{CreatePdf.exportPDFshippingGuaranteeForwarding}"
                                                            filename="Shipping Guarantee Forwarding.pdf"/>
                           </af:commandButton>
-                            <af:commandButton text="TT-FDD Invoice Certify Letter"
+                            <af:commandButton text="TT-FDD Inv Certify Letter"
                                               id="cb69">
                             <af:fileDownloadActionListener method="#{CreatePdf.exportPDFTT_FDD_Invoice_Certify_Letter}"
                                                            filename="TT-FDD Invoice Certify Letter.pdf"/>
@@ -3853,7 +3853,7 @@
           <af:dialog id="d5" title="Select Items"
                      dialogListener="#{ManagedBean.editDialogListenerItem}">
             <af:panelCollection id="pc8"
-                                inlineStyle="width:1300px; height:450px;">
+                                inlineStyle="width:1250.0px; height:450px;">
               <f:facet name="menus"/>
               <f:facet name="toolbar">
                 <af:toolbar id="t19">
@@ -4548,91 +4548,8 @@
         <af:popup id="p8" contentDelivery="lazyUncached">
           <af:dialog id="d9" title="Item Information" type="ok" resize="on"
                      dialogListener="#{ManagedBean.editDialogListenerItemInformation}">
-            <af:panelGroupLayout id="pgl2" layout="horizontal">
-              <af:panelHeader text="Country of Origion" id="ph8"
-                              inlineStyle="height:160px;" visible="false">
-                <f:facet name="context"/>
-                <f:facet name="menuBar"/>
-                <f:facet name="toolbar"/>
-                <f:facet name="legend"/>
-                <f:facet name="info"/>
-                <af:panelCollection id="pc6"
-                                    inlineStyle="width:507px; height:150px;">
-                  <f:facet name="menus"/>
-                  <f:facet name="toolbar">
-                    <af:toolbar id="t14">
-                      <af:commandButton actionListener="#{bindings.CreateInsert5.execute}"
-                                        text="Create"
-                                        disabled="#{!bindings.CreateInsert5.enabled}"
-                                        id="cb15"/>
-                      <af:commandButton actionListener="#{bindings.Delete5.execute}"
-                                        text="Delete"
-                                        disabled="#{!bindings.Delete5.enabled}"
-                                        id="cb16" visible="false"/>
-                      <af:commandButton text="Fill Countries" id="cb17">
-                        <af:showPopupBehavior popupId="::p3"/>
-                      </af:commandButton>
-                    </af:toolbar>
-                  </f:facet>
-                  <f:facet name="statusbar"/>
-                  <af:table value="#{bindings.BBLCCountry1.collectionModel}"
-                            var="row" rows="#{bindings.BBLCCountry1.rangeSize}"
-                            emptyText="#{bindings.BBLCCountry1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                            fetchSize="#{bindings.BBLCCountry1.rangeSize}"
-                            rowBandingInterval="0"
-                            filterModel="#{bindings.BBLCCountry1Query.queryDescriptor}"
-                            queryListener="#{bindings.BBLCCountry1Query.processQuery}"
-                            filterVisible="true" varStatus="vs"
-                            selectionListener="#{bindings.BBLCCountry1.collectionModel.makeCurrent}"
-                            rowSelection="multiple" id="t13"
-                            partialTriggers="::cb15 ::cb16"
-                            binding="#{ManagedBean.countryTable}"
-                            inlineStyle="height:100px;">
-                    <af:column sortProperty="CountryCode" filterable="true"
-                               sortable="true" headerText="Country Code"
-                               id="c98" align="center" width="125">
-                      <af:inputText value="#{row.bindings.CountryCode.inputValue}"
-                                    label="#{bindings.BBLCCountry1.hints.CountryCode.label}"
-                                    required="#{bindings.BBLCCountry1.hints.CountryCode.mandatory}"
-                                    columns="#{bindings.BBLCCountry1.hints.CountryCode.displayWidth}"
-                                    maximumLength="#{bindings.BBLCCountry1.hints.CountryCode.precision}"
-                                    shortDesc="#{bindings.BBLCCountry1.hints.CountryCode.tooltip}"
-                                    id="it73">
-                        <f:validator binding="#{row.bindings.CountryCode.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="CountryName" filterable="true"
-                               sortable="true" headerText="Country Name"
-                               id="c97" align="center" width="146">
-                      <af:inputText value="#{row.bindings.CountryName.inputValue}"
-                                    label="#{bindings.BBLCCountry1.hints.CountryName.label}"
-                                    required="#{bindings.BBLCCountry1.hints.CountryName.mandatory}"
-                                    columns="#{bindings.BBLCCountry1.hints.CountryName.displayWidth}"
-                                    maximumLength="#{bindings.BBLCCountry1.hints.CountryName.precision}"
-                                    shortDesc="#{bindings.BBLCCountry1.hints.CountryName.tooltip}"
-                                    id="it71">
-                        <f:validator binding="#{row.bindings.CountryName.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="CountryDesc" filterable="true"
-                               sortable="true" headerText="Country Decription"
-                               id="c96" align="center" width="204">
-                      <af:inputText value="#{row.bindings.CountryDesc.inputValue}"
-                                    label="#{bindings.BBLCCountry1.hints.CountryDesc.label}"
-                                    required="#{bindings.BBLCCountry1.hints.CountryDesc.mandatory}"
-                                    columns="#{bindings.BBLCCountry1.hints.CountryDesc.displayWidth}"
-                                    maximumLength="#{bindings.BBLCCountry1.hints.CountryDesc.precision}"
-                                    shortDesc="#{bindings.BBLCCountry1.hints.CountryDesc.tooltip}"
-                                    id="it72">
-                        <f:validator binding="#{row.bindings.CountryDesc.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                  </af:table>
-                </af:panelCollection>
-              </af:panelHeader>
-            </af:panelGroupLayout>
             <af:panelCollection id="pc3"
-                                inlineStyle="height:450px; width:1350.0px;">
+                                inlineStyle="height:450px; width:1250.0px;">
               <f:facet name="toolbar">
                 <af:toolbar id="t7" inlineStyle="width:450.0px;">
                   <af:commandButton actionListener="#{bindings.Delete2.execute}"

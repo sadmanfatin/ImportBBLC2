@@ -26,11 +26,6 @@
     <searchRegion Binds="FillPI1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="FillPI1Query"/>
-    <iterator Binds="BBLCCountry1" RangeSize="25"
-              DataControl="MainAMDataControl" id="BBLCCountry1Iterator"/>
-    <searchRegion Binds="BBLCCountry1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  id="BBLCCountry1Query"/>
     <iterator Binds="FillCountry1" RangeSize="25"
               DataControl="MainAMDataControl" id="FillCountry1Iterator"/>
     <searchRegion Binds="FillCountry1Iterator" Criteria=""
@@ -318,20 +313,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="BBLCCountry1Iterator" id="BBLCCountry1">
-      <nodeDefinition DefName="mnj.ont.model.views.BBLCCountryVO"
-                      Name="BBLCCountry10">
-        <AttrNames>
-          <Item Value="CountryCode"/>
-          <Item Value="CountryName"/>
-          <Item Value="CountryDesc"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action IterBinding="BBLCCountry1Iterator" id="CreateInsert5"
-            RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action IterBinding="BBLCCountry1Iterator" id="Delete5"
-            RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <tree IterBinding="FillCountry1Iterator" id="FillCountry1">
       <nodeDefinition DefName="mnj.ont.model.views.FillCountryVO"
                       Name="FillCountry10">
