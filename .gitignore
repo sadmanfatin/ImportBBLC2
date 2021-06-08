@@ -10,3 +10,6 @@ deploy/ImportBBLC2_application1.ear
 Model/deploy/ImportBBLC2_Model_adflibImportBBLC21.jar
 ViewController/deploy/ImportBBLC2_ViewController_webapp1.war
 Model/classes
+deploy/ImportBBLC2_application1.ear
+Model/deploy/ImportBBLC2_Model_adflibImportBBLC21.jar
+ViewController/deploy/ImportBBLC2_ViewController_webapp1.war
