@@ -4010,7 +4010,7 @@
                 </af:column>
                 <af:column headerText=".Balance Quantity"
                            id="c237" width="70" align="center" sortable="true"
-                           filterable="true">
+                           filterable="true" sortProperty="BalanceQuantity">
                   <af:inputText value="#{row.bindings.BalanceQuantity.inputValue}"
                                 label="#{bindings.FillItems1.hints.BalanceQuantity.label}"
                                 required="#{bindings.FillItems1.hints.BalanceQuantity.mandatory}"
@@ -4023,16 +4023,16 @@
                                       pattern="#{bindings.FillItems1.hints.BalanceQuantity.format}"/>
                   </af:inputText>
                 </af:column>
-                <af:column headerText="Poc Id"
-                           id="c332" align="center" sortable="true"
-                           filterable="true">
+                <af:column headerText="#{bindings.FillItems1.hints.PocId.label}"
+                           id="c96" align="center" sortable="true"
+                           filterable="true" sortProperty="PocId" width="60">
                   <af:inputText value="#{row.bindings.PocId.inputValue}"
                                 label="#{bindings.FillItems1.hints.PocId.label}"
                                 required="#{bindings.FillItems1.hints.PocId.mandatory}"
                                 columns="#{bindings.FillItems1.hints.PocId.displayWidth}"
                                 maximumLength="#{bindings.FillItems1.hints.PocId.precision}"
                                 shortDesc="#{bindings.FillItems1.hints.PocId.tooltip}"
-                                id="it141" readOnly="true">
+                                id="it71" readOnly="true">
                     <f:validator binding="#{row.bindings.PocId.validator}"/>
                     <af:convertNumber groupingUsed="false"
                                       pattern="#{bindings.FillItems1.hints.PocId.format}"/>

@@ -310,14 +310,14 @@ ORDER BY PI_NO,IMP_BBLC_HEADER_ID]]>
   </ViewAttribute>
   <ViewAttribute
     Name="PocId"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="oracle.jbo.domain.Number"
-    ColumnType="NUMBER"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
     AliasName="POC_ID"
     Expression="POC_ID"
-    SQLType="NUMERIC">
+    SQLType="VARCHAR"
+    Precision="250">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
