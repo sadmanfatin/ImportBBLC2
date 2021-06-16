@@ -457,7 +457,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
     public void callItemFetch() {
         ViewObject populatevo = getFillItems1();
-                    populatevo.setRangeSize(100);
+                    populatevo.setRangeSize(1000);
         if (populatevo.getRowCount() == 0)   ;
         RowSetIterator it = populatevo.createRowSetIterator("aaa");
         

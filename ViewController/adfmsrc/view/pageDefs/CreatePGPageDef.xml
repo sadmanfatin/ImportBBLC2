@@ -36,7 +36,7 @@
     <searchRegion Binds="BBLCPiDetails1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="BBLCPiDetails1Query"/>
-    <iterator Binds="FillItems1" RangeSize="25" DataControl="MainAMDataControl"
+    <iterator Binds="FillItems1" RangeSize="1000" DataControl="MainAMDataControl"
               id="FillItems1Iterator"/>
     <searchRegion Binds="FillItems1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
