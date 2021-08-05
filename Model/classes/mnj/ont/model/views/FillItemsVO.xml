@@ -103,7 +103,9 @@ SELECT
    and IBL.imp_bblc_line_id = :P_IMP_BBLC_LINE_ID
    
      
-) PO_V   
+) PO_V 
+where 1=1
+AND  (  QUANTITY-NVL(  TOTAL_INVOICE_QUANTITY,0)) >0  
 
 ORDER BY PI_NO,IMP_BBLC_HEADER_ID]]>
   </SQLQuery>
