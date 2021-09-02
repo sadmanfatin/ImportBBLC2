@@ -32,7 +32,7 @@
        ITEM_DESCRIPTION,
        QUANTITY,--SUM(QUANTITY) QUANTITY,
        UNIT_PRICE,--SUM(UNIT_PRICE) UNIT_PRICE,
-     nvl(  TOTAL_INVOICE_QUANTITY,0),
+     nvl(  TOTAL_INVOICE_QUANTITY,0)  TOTAL_INVOICE_QUANTITY,
        (  QUANTITY-nvl(  TOTAL_INVOICE_QUANTITY,0)) BALANCE_QUANTITY,
        RECEIVED_QUANTITY,
        SHORT_EXCESS_QTY,
@@ -61,7 +61,7 @@ SELECT
         and di.PI_NO = IPL.PI_NO
         and di.attribute5 = ITEM_ID
         and di.bpo = IPD.PO_NO
-         AND DI.STYLE_BPO_NO  =  IPDI.ATTRIBUTE10
+         AND DI.poc_id  =  IPDI.poc_id
         group by l.imp_bblc_line_id ,di.PI_NO , di.attribute5 , di.bpo 
          
      ) TOTAL_INVOICE_QUANTITY,
@@ -198,15 +198,15 @@ ORDER BY PI_NO,IMP_BBLC_HEADER_ID]]>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="NvlTotalInvoiceQuantity0"
+    Name="TotalInvoiceQuantity"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    AliasName="NVL(TOTAL_INVOICE_QUANTITY,0)"
-    Expression="NVL(TOTAL_INVOICE_QUANTITY,0)"
-    SQLType="NUMERIC">
+    AliasName="TOTAL_INVOICE_QUANTITY"
+    SQLType="NUMERIC"
+    Expression="TOTAL_INVOICE_QUANTITY">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
@@ -320,19 +320,6 @@ ORDER BY PI_NO,IMP_BBLC_HEADER_ID]]>
     Expression="POC_ID"
     SQLType="VARCHAR"
     Precision="250">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="TotalInvoiceQuantity"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="oracle.jbo.domain.Number"
-    ColumnType="NUMBER"
-    AliasName="TOTAL_INVOICE_QUANTITY"
-    SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
