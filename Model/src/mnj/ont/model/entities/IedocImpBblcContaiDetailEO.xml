@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="IedocImpBblcContaiDetailEO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="IEDOC_IMP_BBLC_CONTAI_DETAIL"
+  AliasName="IedocImpBblcContaiDetailEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="mnj.ont.model.entities.IedocImpBblcContaiDetailEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="ContainerId"
+    IsNotNull="true"
+    ColumnName="CONTAINER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="IEDOC_IMP_BBLC_CONTAI_DETAIL"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ImpBblcDetailId"
+    ColumnName="IMP_BBLC_DETAIL_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="IEDOC_IMP_BBLC_CONTAI_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ContainerName"
+    Precision="50"
+    ColumnName="CONTAINER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IEDOC_IMP_BBLC_CONTAI_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ContainerSize"
+    Precision="20"
+    ColumnName="CONTAINER_SIZE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IEDOC_IMP_BBLC_CONTAI_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="BBLCDetails"
+    Association="mnj.ont.model.entities.BBLCDetailContainerAssoc"
+    AssociationEnd="mnj.ont.model.entities.BBLCDetailContainerAssoc.BBLCDetails"
+    AssociationOtherEnd="mnj.ont.model.entities.BBLCDetailContainerAssoc.IedocImpBblcContaiDetail"
+    Type="mnj.ont.model.entities.BBLCDetailsEOImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="IedocImpBblcContainerDePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="IEDOC_IMP_BBLC_CONTAINER_DE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="mnj.ont.model.entities.IedocImpBblcContaiDetailEO.ContainerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ImpBblcDetailIdFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="IEDOC_IMP_BBLC_DETAILS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="IMP_BBLC_DETAIL_ID_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="mnj.ont.model.entities.IedocImpBblcContaiDetailEO.ImpBblcDetailId"/>
+    </AttrArray>
+  </Key>
+</Entity>

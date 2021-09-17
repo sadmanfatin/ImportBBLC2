@@ -1553,17 +1553,35 @@
                         </af:column>
                         <af:column sortProperty="ContainerNo" filterable="true"
                                    sortable="true"
-                                   headerText="Container No"
-                                   id="c29" filterFeatures="caseInsensitive">
+                                   headerText="Container No (old)"
+                                   id="c29" filterFeatures="caseInsensitive"
+                                   rendered="true" align="center">
                           <af:inputText value="#{row.bindings.ContainerNo.inputValue}"
                                         label="#{bindings.BBLCDetails1.hints.ContainerNo.label}"
                                         required="#{bindings.BBLCDetails1.hints.ContainerNo.mandatory}"
                                         columns="#{bindings.BBLCDetails1.hints.ContainerNo.displayWidth}"
                                         maximumLength="#{bindings.BBLCDetails1.hints.ContainerNo.precision}"
                                         shortDesc="#{bindings.BBLCDetails1.hints.ContainerNo.tooltip}"
-                                        id="it78" autoSubmit="true">
+                                        id="it78" autoSubmit="false"
+                                        visible="true" readOnly="true"
+                                        binding="#{ManagedBean.containerlist_bind}"
+                                        partialTriggers=":::pc6:cb17 :::pc6:cb70 cb15"
+                                        rendered="true">
                             <f:validator binding="#{row.bindings.ContainerNo.validator}"/>
                           </af:inputText>
+                        </af:column>
+                        <af:column headerText="Container No"
+                                   id="c338" filterFeatures="caseInsensitive"
+                                   filterable="true" sortable="true"
+                                   sortProperty="Containerlist" align="center">
+                          <af:outputText value="#{row.Containerlist}"
+                                         id="ot144"/>
+                        </af:column>
+                        <af:column id="c336">
+                          <af:commandButton text="Add Container No" id="cb15"
+                                            partialSubmit="true">
+                            <af:showPopupBehavior popupId=":::p15"/>
+                          </af:commandButton>
                         </af:column>
                         <af:column sortProperty="ContainerStatus"
                                    filterable="true" sortable="true"
@@ -2156,173 +2174,7 @@
                           </af:inputText>
                         </af:column>
                         <f:facet name="detailStamp">
-                          <af:panelFormLayout id="pfl3" rows="3" maxColumns="5">
-                            <af:inputListOfValues id="contanier1_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier1_1.hints.label}"
-                                                  value="#{bindings.Contanier1_1.inputValue}"
-                                                  label="#{bindings.Contanier1_1.hints.label}"
-                                                  model="#{bindings.Contanier1_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier1_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier1_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier1_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier1_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier1_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier2_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier2_1.hints.label}"
-                                                  value="#{bindings.Contanier2_1.inputValue}"
-                                                  label="#{bindings.Contanier2_1.hints.label}"
-                                                  model="#{bindings.Contanier2_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier2_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier2_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier2_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier2_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier2_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier3_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier3_1.hints.label}"
-                                                  value="#{bindings.Contanier3_1.inputValue}"
-                                                  label="#{bindings.Contanier3_1.hints.label}"
-                                                  model="#{bindings.Contanier3_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier3_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier3_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier3_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier3_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier3_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier4_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier4_1.hints.label}"
-                                                  value="#{bindings.Contanier4_1.inputValue}"
-                                                  label="#{bindings.Contanier4_1.hints.label}"
-                                                  model="#{bindings.Contanier4_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier4_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier4_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier4_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier4_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier4_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier5_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier5_1.hints.label}"
-                                                  value="#{bindings.Contanier5_1.inputValue}"
-                                                  label="#{bindings.Contanier5_1.hints.label}"
-                                                  model="#{bindings.Contanier5_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier5_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier5_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier5_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier5_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier5_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier6_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier6_1.hints.label}"
-                                                  value="#{bindings.Contanier6_1.inputValue}"
-                                                  label="#{bindings.Contanier6_1.hints.label}"
-                                                  model="#{bindings.Contanier6_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier6_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier6_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier6_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier6_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier6_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier7_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier7_1.hints.label}"
-                                                  value="#{bindings.Contanier7_1.inputValue}"
-                                                  label="#{bindings.Contanier7_1.hints.label}"
-                                                  model="#{bindings.Contanier7_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier7_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier7_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier7_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier7_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier7_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier8_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier8_1.hints.label}"
-                                                  value="#{bindings.Contanier8_1.inputValue}"
-                                                  label="#{bindings.Contanier8_1.hints.label}"
-                                                  model="#{bindings.Contanier8_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier8_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier8_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier8_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier8_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier8_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier9_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier9_1.hints.label}"
-                                                  value="#{bindings.Contanier9_1.inputValue}"
-                                                  label="#{bindings.Contanier9_1.hints.label}"
-                                                  model="#{bindings.Contanier9_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier9_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier9_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier9_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier9_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier9_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier10_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier10_1.hints.label}"
-                                                  value="#{bindings.Contanier10_1.inputValue}"
-                                                  label="#{bindings.Contanier10_1.hints.label}"
-                                                  model="#{bindings.Contanier10_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier10_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier10_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier10_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier10_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier10_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier11_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier11_1.hints.label}"
-                                                  value="#{bindings.Contanier11_1.inputValue}"
-                                                  label="#{bindings.Contanier11_1.hints.label}"
-                                                  model="#{bindings.Contanier11_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier11_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier11_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier11_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier11_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier11_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier12_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier12_1.hints.label}"
-                                                  value="#{bindings.Contanier12_1.inputValue}"
-                                                  label="#{bindings.Contanier12_1.hints.label}"
-                                                  model="#{bindings.Contanier12_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier12_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier12_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier12_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier12_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier12_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier13_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier13_1.hints.label}"
-                                                  value="#{bindings.Contanier13_1.inputValue}"
-                                                  label="#{bindings.Contanier13_1.hints.label}"
-                                                  model="#{bindings.Contanier13_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier13_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier13_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier13_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier13_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier13_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier14_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier14_1.hints.label}"
-                                                  value="#{bindings.Contanier14_1.inputValue}"
-                                                  label="#{bindings.Contanier14_1.hints.label}"
-                                                  model="#{bindings.Contanier14_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier14_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier14_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier14_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier14_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier14_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                            <af:inputListOfValues id="contanier15_1Id"
-                                                  popupTitle="Search and Select: #{bindings.Contanier15_1.hints.label}"
-                                                  value="#{bindings.Contanier15_1.inputValue}"
-                                                  label="#{bindings.Contanier15_1.hints.label}"
-                                                  model="#{bindings.Contanier15_1.listOfValuesModel}"
-                                                  required="#{bindings.Contanier15_1.hints.mandatory}"
-                                                  columns="#{bindings.Contanier15_1.hints.displayWidth}"
-                                                  shortDesc="#{bindings.Contanier15_1.hints.tooltip}">
-                              <f:validator binding="#{bindings.Contanier15_1.validator}"/>
-                              <af:autoSuggestBehavior suggestedItems="#{bindings.Contanier15_1.suggestedItems}"/>
-                            </af:inputListOfValues>
-                          </af:panelFormLayout>
+                          <af:panelFormLayout id="pfl3" rows="3" maxColumns="5"/>
                         </f:facet>
                       </af:table>
                     </af:panelCollection>
@@ -5819,6 +5671,109 @@
                 </af:panelFormLayout>
               </af:panelHeader>
             </af:panelGroupLayout>
+          </af:dialog>
+        </af:popup>
+        <af:popup id="p15"
+                  popupFetchListener="#{ManagedBean.processAddContDetailPopupFetchListener}"
+                  contentDelivery="lazyUncached">
+          <af:dialog id="d16" type="cancel" title="Add Container Name &amp; Size">
+            <af:panelCollection id="pc6">
+              <f:facet name="menus"/>
+              <f:facet name="toolbar">
+                <af:toolbar id="t14">
+                  <af:commandButton actionListener="#{bindings.CreateInsert5.execute}"
+                                    text="Create"
+                                    disabled="#{!bindings.CreateInsert5.enabled}"
+                                    id="cb16" partialSubmit="true"
+                                    inlineStyle="height:30px;"/>
+                  <af:spacer width="10" height="10" id="s39"/>
+                  <af:commandButton actionListener="#{bindings.Delete5.execute}"
+                                    text="Delete"
+                                    id="cb17" partialSubmit="true"
+                                    inlineStyle="height:30px;"/>
+                  <af:spacer width="10" height="10" id="s40"/>
+                  <af:commandButton actionListener="#{ManagedBean.processContSizepopup}"
+                                    text="Save"
+                                    id="cb70" partialSubmit="true"
+                                    inlineStyle="height:30px;"/>
+                </af:toolbar>
+              </f:facet>
+              <f:facet name="statusbar"/>
+              <af:table value="#{bindings.IedocImpBblcContaiDetailVO1.collectionModel}"
+                        var="row"
+                        rows="#{bindings.IedocImpBblcContaiDetailVO1.rangeSize}"
+                        emptyText="#{bindings.IedocImpBblcContaiDetailVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.IedocImpBblcContaiDetailVO1.rangeSize}"
+                        rowBandingInterval="0"
+                        filterModel="#{bindings.IedocImpBblcContaiDetailVO1Query.queryDescriptor}"
+                        queryListener="#{bindings.IedocImpBblcContaiDetailVO1Query.processQuery}"
+                        filterVisible="true" varStatus="vs"
+                        selectedRowKeys="#{bindings.IedocImpBblcContaiDetailVO1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.IedocImpBblcContaiDetailVO1.collectionModel.makeCurrent}"
+                        rowSelection="single" id="t13"
+                        partialTriggers="::cb16 ::cb17"
+                        binding="#{ManagedBean.bind_popupContDetail_tb}">
+                <af:column sortProperty="ContainerId" filterable="true"
+                           sortable="true"
+                           headerText="Container Id"
+                           id="c97" align="center" width="60" visible="false">
+                  <af:inputText value="#{row.bindings.ContainerId.inputValue}"
+                                label="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerId.label}"
+                                required="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerId.mandatory}"
+                                columns="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerId.displayWidth}"
+                                maximumLength="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerId.precision}"
+                                shortDesc="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerId.tooltip}"
+                                id="it141">
+                    <f:validator binding="#{row.bindings.ContainerId.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerId.format}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="ImpBblcDetailId" filterable="true"
+                           sortable="true"
+                           headerText="#{bindings.IedocImpBblcContaiDetailVO1.hints.ImpBblcDetailId.label}"
+                           id="c332" rendered="true" visible="false">
+                  <af:inputText value="#{row.bindings.ImpBblcDetailId.inputValue}"
+                                label="#{bindings.IedocImpBblcContaiDetailVO1.hints.ImpBblcDetailId.label}"
+                                required="#{bindings.IedocImpBblcContaiDetailVO1.hints.ImpBblcDetailId.mandatory}"
+                                columns="#{bindings.IedocImpBblcContaiDetailVO1.hints.ImpBblcDetailId.displayWidth}"
+                                maximumLength="#{bindings.IedocImpBblcContaiDetailVO1.hints.ImpBblcDetailId.precision}"
+                                shortDesc="#{bindings.IedocImpBblcContaiDetailVO1.hints.ImpBblcDetailId.tooltip}"
+                                id="it73">
+                    <f:validator binding="#{row.bindings.ImpBblcDetailId.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.IedocImpBblcContaiDetailVO1.hints.ImpBblcDetailId.format}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="ContainerName" filterable="true"
+                           sortable="true"
+                           headerText="Container Name"
+                           id="c335" align="center" width="150">
+                  <af:inputText value="#{row.bindings.ContainerName.inputValue}"
+                                label="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerName.label}"
+                                required="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerName.mandatory}"
+                                columns="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerName.displayWidth}"
+                                maximumLength="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerName.precision}"
+                                shortDesc="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerName.tooltip}"
+                                id="it72">
+                    <f:validator binding="#{row.bindings.ContainerName.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="ContainerSize" filterable="true"
+                           sortable="true"
+                           headerText="Container Size"
+                           id="c98" align="center">
+                  <af:selectOneChoice value="#{row.bindings.ContainerSize.inputValue}"
+                                      label="#{row.bindings.ContainerSize.label}"
+                                      required="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerSize.mandatory}"
+                                      shortDesc="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerSize.tooltip}"
+                                      id="soc21">
+                    <f:selectItems value="#{row.bindings.ContainerSize.items}"
+                                   id="si21"/>
+                  </af:selectOneChoice>
+                </af:column>
+              </af:table>
+            </af:panelCollection>
           </af:dialog>
         </af:popup>
       </af:form>

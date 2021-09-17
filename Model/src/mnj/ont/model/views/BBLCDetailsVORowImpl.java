@@ -267,6 +267,16 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
             }
         }
         ,
+        Containerlist {
+            public Object get(BBLCDetailsVORowImpl obj) {
+                return obj.getContainerlist();
+            }
+
+            public void put(BBLCDetailsVORowImpl obj, Object value) {
+                obj.setContainerlist((String)value);
+            }
+        }
+        ,
         ContainerNo {
             public Object get(BBLCDetailsVORowImpl obj) {
                 return obj.getContainerNo();
@@ -1067,293 +1077,293 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
             }
         }
         ,
-        Contanier1_1 {
+        Contanier1 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier1_1();
+                return obj.getContanier1();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier1_1((String)value);
+                obj.setContanier1((String)value);
             }
         }
         ,
-        Contanier2_1 {
+        Contanier2 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier2_1();
+                return obj.getContanier2();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier2_1((String)value);
+                obj.setContanier2((String)value);
             }
         }
         ,
-        Contanier3_1 {
+        Contanier3 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier3_1();
+                return obj.getContanier3();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier3_1((String)value);
+                obj.setContanier3((String)value);
             }
         }
         ,
-        Contanier4_1 {
+        Contanier4 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier4_1();
+                return obj.getContanier4();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier4_1((String)value);
+                obj.setContanier4((String)value);
             }
         }
         ,
-        Contanier5_1 {
+        Contanier5 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier5_1();
+                return obj.getContanier5();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier5_1((String)value);
+                obj.setContanier5((String)value);
             }
         }
         ,
-        Contanier6_1 {
+        Contanier6 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier6_1();
+                return obj.getContanier6();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier6_1((String)value);
+                obj.setContanier6((String)value);
             }
         }
         ,
-        Contanier7_1 {
+        Contanier7 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier7_1();
+                return obj.getContanier7();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier7_1((String)value);
+                obj.setContanier7((String)value);
             }
         }
         ,
-        Contanier8_1 {
+        Contanier8 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier8_1();
+                return obj.getContanier8();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier8_1((String)value);
+                obj.setContanier8((String)value);
             }
         }
         ,
-        Contanier9_1 {
+        Contanier9 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier9_1();
+                return obj.getContanier9();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier9_1((String)value);
+                obj.setContanier9((String)value);
             }
         }
         ,
-        Contanier10_1 {
+        Contanier10 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier10_1();
+                return obj.getContanier10();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier10_1((String)value);
+                obj.setContanier10((String)value);
             }
         }
         ,
-        Contanier11_1 {
+        Contanier11 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier11_1();
+                return obj.getContanier11();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier11_1((String)value);
+                obj.setContanier11((String)value);
             }
         }
         ,
-        Contanier12_1 {
+        Contanier12 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier12_1();
+                return obj.getContanier12();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier12_1((String)value);
+                obj.setContanier12((String)value);
             }
         }
         ,
-        Contanier13_1 {
+        Contanier13 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier13_1();
+                return obj.getContanier13();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier13_1((String)value);
+                obj.setContanier13((String)value);
             }
         }
         ,
-        Contanier14_1 {
+        Contanier14 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier14_1();
+                return obj.getContanier14();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier14_1((String)value);
+                obj.setContanier14((String)value);
             }
         }
         ,
-        Contanier15_1 {
+        Contanier15 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier15_1();
+                return obj.getContanier15();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier15_1((String)value);
+                obj.setContanier15((String)value);
             }
         }
         ,
-        Contanier16_1 {
+        Contanier16 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier16_1();
+                return obj.getContanier16();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier16_1((String)value);
+                obj.setContanier16((String)value);
             }
         }
         ,
-        Contanier17_1 {
+        Contanier17 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier17_1();
+                return obj.getContanier17();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier17_1((String)value);
+                obj.setContanier17((String)value);
             }
         }
         ,
-        Contanier18_1 {
+        Contanier18 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier18_1();
+                return obj.getContanier18();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier18_1((String)value);
+                obj.setContanier18((String)value);
             }
         }
         ,
-        Contanier19_1 {
+        Contanier19 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier19_1();
+                return obj.getContanier19();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier19_1((String)value);
+                obj.setContanier19((String)value);
             }
         }
         ,
-        Contanier20_1 {
+        Contanier20 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier20_1();
+                return obj.getContanier20();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier20_1((String)value);
+                obj.setContanier20((String)value);
             }
         }
         ,
-        Contanier21_1 {
+        Contanier21 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier21_1();
+                return obj.getContanier21();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier21_1((String)value);
+                obj.setContanier21((String)value);
             }
         }
         ,
-        Contanier22_1 {
+        Contanier22 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier22_1();
+                return obj.getContanier22();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier22_1((String)value);
+                obj.setContanier22((String)value);
             }
         }
         ,
-        Contanier23_1 {
+        Contanier23 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier23_1();
+                return obj.getContanier23();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier23_1((String)value);
+                obj.setContanier23((String)value);
             }
         }
         ,
-        Contanier24_1 {
+        Contanier24 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier24_1();
+                return obj.getContanier24();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier24_1((String)value);
+                obj.setContanier24((String)value);
             }
         }
         ,
-        Contanier25_1 {
+        Contanier25 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier25_1();
+                return obj.getContanier25();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier25_1((String)value);
+                obj.setContanier25((String)value);
             }
         }
         ,
-        Contanier26_1 {
+        Contanier26 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier26_1();
+                return obj.getContanier26();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier26_1((String)value);
+                obj.setContanier26((String)value);
             }
         }
         ,
-        Contanier27_1 {
+        Contanier27 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier27_1();
+                return obj.getContanier27();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier27_1((String)value);
+                obj.setContanier27((String)value);
             }
         }
         ,
-        Contanier28_1 {
+        Contanier28 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier28_1();
+                return obj.getContanier28();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier28_1((String)value);
+                obj.setContanier28((String)value);
             }
         }
         ,
-        Contanier29_1 {
+        Contanier29 {
             public Object get(BBLCDetailsVORowImpl obj) {
-                return obj.getContanier29_1();
+                return obj.getContanier29();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
-                obj.setContanier29_1((String)value);
+                obj.setContanier29((String)value);
             }
         }
         ,
@@ -1417,6 +1427,16 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
             }
         }
         ,
+        Container_List {
+            public Object get(BBLCDetailsVORowImpl obj) {
+                return obj.getContainer_List();
+            }
+
+            public void put(BBLCDetailsVORowImpl obj, Object value) {
+                obj.setContainer_List((String)value);
+            }
+        }
+        ,
         BBLCDetailsPi {
             public Object get(BBLCDetailsVORowImpl obj) {
                 return obj.getBBLCDetailsPi();
@@ -1450,6 +1470,16 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
         BBLCLines {
             public Object get(BBLCDetailsVORowImpl obj) {
                 return obj.getBBLCLines();
+            }
+
+            public void put(BBLCDetailsVORowImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
+        ,
+        IedocImpBblcContaiDetail {
+            public Object get(BBLCDetailsVORowImpl obj) {
+                return obj.getIedocImpBblcContaiDetail();
             }
 
             public void put(BBLCDetailsVORowImpl obj, Object value) {
@@ -1658,6 +1688,17 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
 */
 
 
+    public MainAMImpl getAppModuleImpl() {
+    DCBindingContainer bindingContainer =
+     (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
+    //BindingContext bindingContext = BindingContext.getCurrent();
+    DCDataControl dc =
+     bindingContainer.findDataControl("MainAMDataControl"); // Name of application module in datacontrolBinding.cpx
+    MainAMImpl appM = (MainAMImpl)dc.getDataProvider();
+    return appM;
+    }
+
+
     public static final int IMPBBLCDETAILID = AttributesEnum.ImpBblcDetailId.index();
     public static final int IMPBBLCLINEID = AttributesEnum.ImpBblcLineId.index();
     public static final int BBLCNO = AttributesEnum.BblcNo.index();
@@ -1682,6 +1723,7 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
     public static final int PORTOFLOADING = AttributesEnum.PortOfLoading.index();
     public static final int PORTOFDISCHARGE = AttributesEnum.PortOfDischarge.index();
     public static final int MVESSELVOYAGE = AttributesEnum.MVesselVoyage.index();
+    public static final int CONTAINERLIST = AttributesEnum.Containerlist.index();
     public static final int CONTAINERNO = AttributesEnum.ContainerNo.index();
     public static final int CONTAINERSTATUS = AttributesEnum.ContainerStatus.index();
     public static final int CONSIGNMENTNO = AttributesEnum.ConsignmentNo.index();
@@ -1762,45 +1804,47 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
     public static final int ITEMSVALUE = AttributesEnum.ItemsValue.index();
     public static final int FREIGHTCOSTFLAG = AttributesEnum.FreightCostFlag.index();
     public static final int SHIPPMENTTAGDATE = AttributesEnum.ShippmentTagDate.index();
-    public static final int CONTANIER1_1 = AttributesEnum.Contanier1_1.index();
-    public static final int CONTANIER2_1 = AttributesEnum.Contanier2_1.index();
-    public static final int CONTANIER3_1 = AttributesEnum.Contanier3_1.index();
-    public static final int CONTANIER4_1 = AttributesEnum.Contanier4_1.index();
-    public static final int CONTANIER5_1 = AttributesEnum.Contanier5_1.index();
-    public static final int CONTANIER6_1 = AttributesEnum.Contanier6_1.index();
-    public static final int CONTANIER7_1 = AttributesEnum.Contanier7_1.index();
-    public static final int CONTANIER8_1 = AttributesEnum.Contanier8_1.index();
-    public static final int CONTANIER9_1 = AttributesEnum.Contanier9_1.index();
-    public static final int CONTANIER10_1 = AttributesEnum.Contanier10_1.index();
-    public static final int CONTANIER11_1 = AttributesEnum.Contanier11_1.index();
-    public static final int CONTANIER12_1 = AttributesEnum.Contanier12_1.index();
-    public static final int CONTANIER13_1 = AttributesEnum.Contanier13_1.index();
-    public static final int CONTANIER14_1 = AttributesEnum.Contanier14_1.index();
-    public static final int CONTANIER15_1 = AttributesEnum.Contanier15_1.index();
-    public static final int CONTANIER16_1 = AttributesEnum.Contanier16_1.index();
-    public static final int CONTANIER17_1 = AttributesEnum.Contanier17_1.index();
-    public static final int CONTANIER18_1 = AttributesEnum.Contanier18_1.index();
-    public static final int CONTANIER19_1 = AttributesEnum.Contanier19_1.index();
-    public static final int CONTANIER20_1 = AttributesEnum.Contanier20_1.index();
-    public static final int CONTANIER21_1 = AttributesEnum.Contanier21_1.index();
-    public static final int CONTANIER22_1 = AttributesEnum.Contanier22_1.index();
-    public static final int CONTANIER23_1 = AttributesEnum.Contanier23_1.index();
-    public static final int CONTANIER24_1 = AttributesEnum.Contanier24_1.index();
-    public static final int CONTANIER25_1 = AttributesEnum.Contanier25_1.index();
-    public static final int CONTANIER26_1 = AttributesEnum.Contanier26_1.index();
-    public static final int CONTANIER27_1 = AttributesEnum.Contanier27_1.index();
-    public static final int CONTANIER28_1 = AttributesEnum.Contanier28_1.index();
-    public static final int CONTANIER29_1 = AttributesEnum.Contanier29_1.index();
+    public static final int CONTANIER1 = AttributesEnum.Contanier1.index();
+    public static final int CONTANIER2 = AttributesEnum.Contanier2.index();
+    public static final int CONTANIER3 = AttributesEnum.Contanier3.index();
+    public static final int CONTANIER4 = AttributesEnum.Contanier4.index();
+    public static final int CONTANIER5 = AttributesEnum.Contanier5.index();
+    public static final int CONTANIER6 = AttributesEnum.Contanier6.index();
+    public static final int CONTANIER7 = AttributesEnum.Contanier7.index();
+    public static final int CONTANIER8 = AttributesEnum.Contanier8.index();
+    public static final int CONTANIER9 = AttributesEnum.Contanier9.index();
+    public static final int CONTANIER10 = AttributesEnum.Contanier10.index();
+    public static final int CONTANIER11 = AttributesEnum.Contanier11.index();
+    public static final int CONTANIER12 = AttributesEnum.Contanier12.index();
+    public static final int CONTANIER13 = AttributesEnum.Contanier13.index();
+    public static final int CONTANIER14 = AttributesEnum.Contanier14.index();
+    public static final int CONTANIER15 = AttributesEnum.Contanier15.index();
+    public static final int CONTANIER16 = AttributesEnum.Contanier16.index();
+    public static final int CONTANIER17 = AttributesEnum.Contanier17.index();
+    public static final int CONTANIER18 = AttributesEnum.Contanier18.index();
+    public static final int CONTANIER19 = AttributesEnum.Contanier19.index();
+    public static final int CONTANIER20 = AttributesEnum.Contanier20.index();
+    public static final int CONTANIER21 = AttributesEnum.Contanier21.index();
+    public static final int CONTANIER22 = AttributesEnum.Contanier22.index();
+    public static final int CONTANIER23 = AttributesEnum.Contanier23.index();
+    public static final int CONTANIER24 = AttributesEnum.Contanier24.index();
+    public static final int CONTANIER25 = AttributesEnum.Contanier25.index();
+    public static final int CONTANIER26 = AttributesEnum.Contanier26.index();
+    public static final int CONTANIER27 = AttributesEnum.Contanier27.index();
+    public static final int CONTANIER28 = AttributesEnum.Contanier28.index();
+    public static final int CONTANIER29 = AttributesEnum.Contanier29.index();
     public static final int WEIGHT = AttributesEnum.Weight.index();
     public static final int CBM = AttributesEnum.Cbm.index();
     public static final int OTHERCHARGE = AttributesEnum.OtherCharge.index();
     public static final int BBLCLINEINCOTERM = AttributesEnum.BblcLineIncoTerm.index();
     public static final int BBLCLINEBBLCNO = AttributesEnum.BblcLineBblcNo.index();
     public static final int TOTALPIVALUE = AttributesEnum.TotalPiValue.index();
+    public static final int CONTAINER_LIST = AttributesEnum.Container_List.index();
     public static final int BBLCDETAILSPI = AttributesEnum.BBLCDetailsPi.index();
     public static final int BBLCDETAILSAI = AttributesEnum.BBLCDetailsAi.index();
     public static final int BBLCSHIPMENTCHARGES = AttributesEnum.BBLCShipmentCharges.index();
     public static final int BBLCLINES = AttributesEnum.BBLCLines.index();
+    public static final int IEDOCIMPBBLCCONTAIDETAIL = AttributesEnum.IedocImpBblcContaiDetail.index();
     public static final int SHIPSTATUSVO1 = AttributesEnum.ShipStatusVO1.index();
     public static final int SHIPMODEVO1 = AttributesEnum.ShipModeVO1.index();
     public static final int ITEMTYPEVO1 = AttributesEnum.ItemTypeVO1.index();
@@ -1815,18 +1859,6 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
     public static final int CURRENCYVO1 = AttributesEnum.CurrencyVO1.index();
     public static final int YESNO1 = AttributesEnum.YesNo1.index();
     public static final int MNJCONTAINERSPEC1 = AttributesEnum.MNJContainerSpec1.index();
-
-
-    public MainAMImpl getAppModuleImpl() {
-    DCBindingContainer bindingContainer =
-     (DCBindingContainer)BindingContext.getCurrent().getCurrentBindingsEntry();
-    //BindingContext bindingContext = BindingContext.getCurrent();
-    DCDataControl dc =
-     bindingContainer.findDataControl("MainAMDataControl"); // Name of application module in datacontrolBinding.cpx
-    MainAMImpl appM = (MainAMImpl)dc.getDataProvider();
-    return appM;
-    }
-
 
     /**
      * This is the default constructor (do not remove).
@@ -2224,6 +2256,22 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
      */
     public void setMVesselVoyage(String value) {
         setAttributeInternal(MVESSELVOYAGE, value);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute Containerlist.
+     * @return the Containerlist
+     */
+    public String getContainerlist() {
+        return (String) getAttributeInternal(CONTAINERLIST);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute Containerlist.
+     * @param value value to set the  Containerlist
+     */
+    public void setContainerlist(String value) {
+        setAttributeInternal(CONTAINERLIST, value);
     }
 
     /**
@@ -3965,11 +4013,12 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
     /**
      * Sets <code>value</code> as attribute value for CONTANIER29 using the alias name Contanier29_1.
      * @param value value to set the CONTANIER29
-     
+
     public void setContanier29_1(String value) {
         setAttributeInternal(CONTANIER29_1, value);
     }
      */
+
     /**
      * Gets the attribute value for the calculated attribute Weight.
      * @return the Weight
@@ -4019,6 +4068,7 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
         
         setAttributeInternal(OTHERCHARGE,  value );
     }
+
 
     /**
      * Gets the attribute value for the calculated attribute BblcLineIncoTerm.
@@ -4080,469 +4130,487 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
         setAttributeInternal(TOTALPIVALUE, value);
     }
 
+
     /**
-     * Gets the attribute value for CONTANIER1 using the alias name Contanier1_1.
+     * Gets the attribute value for the calculated attribute Container_List.
+     * @return the Container_List
+     */
+    public String getContainer_List() {
+        return (String) getAttributeInternal(CONTAINER_LIST);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute Container_List.
+     * @param value value to set the  Container_List
+     */
+    public void setContainer_List(String value) {
+        setAttributeInternal(CONTAINER_LIST, value);
+    }
+
+    /**
+     * Gets the attribute value for CONTANIER1 using the alias name Contanier1.
      * @return the CONTANIER1
      */
-    public String getContanier1_1() {
-        return (String) getAttributeInternal(CONTANIER1_1);
+    public String getContanier1() {
+        return (String) getAttributeInternal(CONTANIER1);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER1 using the alias name Contanier1_1.
+     * Sets <code>value</code> as attribute value for CONTANIER1 using the alias name Contanier1.
      * @param value value to set the CONTANIER1
      */
-    public void setContanier1_1(String value) {
-        setAttributeInternal(CONTANIER1_1, value);
+    public void setContanier1(String value) {
+        setAttributeInternal(CONTANIER1, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER2 using the alias name Contanier2_1.
-     * @return the CONTANIER2
-     */
-    public String getContanier2_1() {
-        return (String) getAttributeInternal(CONTANIER2_1);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for CONTANIER2 using the alias name Contanier2_1.
-     * @param value value to set the CONTANIER2
-     */
-    public void setContanier2_1(String value) {
-        setAttributeInternal(CONTANIER2_1, value);
-    }
-
-    /**
-     * Gets the attribute value for CONTANIER3 using the alias name Contanier3_1.
-     * @return the CONTANIER3
-     */
-    public String getContanier3_1() {
-        return (String) getAttributeInternal(CONTANIER3_1);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for CONTANIER3 using the alias name Contanier3_1.
-     * @param value value to set the CONTANIER3
-     */
-    public void setContanier3_1(String value) {
-        setAttributeInternal(CONTANIER3_1, value);
-    }
-
-    /**
-     * Gets the attribute value for CONTANIER4 using the alias name Contanier4_1.
-     * @return the CONTANIER4
-     */
-    public String getContanier4_1() {
-        return (String) getAttributeInternal(CONTANIER4_1);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for CONTANIER4 using the alias name Contanier4_1.
-     * @param value value to set the CONTANIER4
-     */
-    public void setContanier4_1(String value) {
-        setAttributeInternal(CONTANIER4_1, value);
-    }
-
-    /**
-     * Gets the attribute value for CONTANIER5 using the alias name Contanier5_1.
-     * @return the CONTANIER5
-     */
-    public String getContanier5_1() {
-        return (String) getAttributeInternal(CONTANIER5_1);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for CONTANIER5 using the alias name Contanier5_1.
-     * @param value value to set the CONTANIER5
-     */
-    public void setContanier5_1(String value) {
-        setAttributeInternal(CONTANIER5_1, value);
-    }
-
-    /**
-     * Gets the attribute value for CONTANIER6 using the alias name Contanier6_1.
-     * @return the CONTANIER6
-     */
-    public String getContanier6_1() {
-        return (String) getAttributeInternal(CONTANIER6_1);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for CONTANIER6 using the alias name Contanier6_1.
-     * @param value value to set the CONTANIER6
-     */
-    public void setContanier6_1(String value) {
-        setAttributeInternal(CONTANIER6_1, value);
-    }
-
-    /**
-     * Gets the attribute value for CONTANIER7 using the alias name Contanier7_1.
-     * @return the CONTANIER7
-     */
-    public String getContanier7_1() {
-        return (String) getAttributeInternal(CONTANIER7_1);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for CONTANIER7 using the alias name Contanier7_1.
-     * @param value value to set the CONTANIER7
-     */
-    public void setContanier7_1(String value) {
-        setAttributeInternal(CONTANIER7_1, value);
-    }
-
-    /**
-     * Gets the attribute value for CONTANIER8 using the alias name Contanier8_1.
-     * @return the CONTANIER8
-     */
-    public String getContanier8_1() {
-        return (String) getAttributeInternal(CONTANIER8_1);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for CONTANIER8 using the alias name Contanier8_1.
-     * @param value value to set the CONTANIER8
-     */
-    public void setContanier8_1(String value) {
-        setAttributeInternal(CONTANIER8_1, value);
-    }
-
-    /**
-     * Gets the attribute value for CONTANIER9 using the alias name Contanier9_1.
-     * @return the CONTANIER9
-     */
-    public String getContanier9_1() {
-        return (String) getAttributeInternal(CONTANIER9_1);
-    }
-
-    /**
-     * Sets <code>value</code> as attribute value for CONTANIER9 using the alias name Contanier9_1.
-     * @param value value to set the CONTANIER9
-     */
-    public void setContanier9_1(String value) {
-        setAttributeInternal(CONTANIER9_1, value);
-    }
-
-    /**
-     * Gets the attribute value for CONTANIER10 using the alias name Contanier10_1.
+     * Gets the attribute value for CONTANIER10 using the alias name Contanier10.
      * @return the CONTANIER10
      */
-    public String getContanier10_1() {
-        return (String) getAttributeInternal(CONTANIER10_1);
+    public String getContanier10() {
+        return (String) getAttributeInternal(CONTANIER10);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER10 using the alias name Contanier10_1.
+     * Sets <code>value</code> as attribute value for CONTANIER10 using the alias name Contanier10.
      * @param value value to set the CONTANIER10
      */
-    public void setContanier10_1(String value) {
-        setAttributeInternal(CONTANIER10_1, value);
+    public void setContanier10(String value) {
+        setAttributeInternal(CONTANIER10, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER11 using the alias name Contanier11_1.
+     * Gets the attribute value for CONTANIER11 using the alias name Contanier11.
      * @return the CONTANIER11
      */
-    public String getContanier11_1() {
-        return (String) getAttributeInternal(CONTANIER11_1);
+    public String getContanier11() {
+        return (String) getAttributeInternal(CONTANIER11);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER11 using the alias name Contanier11_1.
+     * Sets <code>value</code> as attribute value for CONTANIER11 using the alias name Contanier11.
      * @param value value to set the CONTANIER11
      */
-    public void setContanier11_1(String value) {
-        setAttributeInternal(CONTANIER11_1, value);
+    public void setContanier11(String value) {
+        setAttributeInternal(CONTANIER11, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER12 using the alias name Contanier12_1.
+     * Gets the attribute value for CONTANIER12 using the alias name Contanier12.
      * @return the CONTANIER12
      */
-    public String getContanier12_1() {
-        return (String) getAttributeInternal(CONTANIER12_1);
+    public String getContanier12() {
+        return (String) getAttributeInternal(CONTANIER12);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER12 using the alias name Contanier12_1.
+     * Sets <code>value</code> as attribute value for CONTANIER12 using the alias name Contanier12.
      * @param value value to set the CONTANIER12
      */
-    public void setContanier12_1(String value) {
-        setAttributeInternal(CONTANIER12_1, value);
+    public void setContanier12(String value) {
+        setAttributeInternal(CONTANIER12, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER13 using the alias name Contanier13_1.
+     * Gets the attribute value for CONTANIER13 using the alias name Contanier13.
      * @return the CONTANIER13
      */
-    public String getContanier13_1() {
-        return (String) getAttributeInternal(CONTANIER13_1);
+    public String getContanier13() {
+        return (String) getAttributeInternal(CONTANIER13);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER13 using the alias name Contanier13_1.
+     * Sets <code>value</code> as attribute value for CONTANIER13 using the alias name Contanier13.
      * @param value value to set the CONTANIER13
      */
-    public void setContanier13_1(String value) {
-        setAttributeInternal(CONTANIER13_1, value);
+    public void setContanier13(String value) {
+        setAttributeInternal(CONTANIER13, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER14 using the alias name Contanier14_1.
+     * Gets the attribute value for CONTANIER14 using the alias name Contanier14.
      * @return the CONTANIER14
      */
-    public String getContanier14_1() {
-        return (String) getAttributeInternal(CONTANIER14_1);
+    public String getContanier14() {
+        return (String) getAttributeInternal(CONTANIER14);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER14 using the alias name Contanier14_1.
+     * Sets <code>value</code> as attribute value for CONTANIER14 using the alias name Contanier14.
      * @param value value to set the CONTANIER14
      */
-    public void setContanier14_1(String value) {
-        setAttributeInternal(CONTANIER14_1, value);
+    public void setContanier14(String value) {
+        setAttributeInternal(CONTANIER14, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER15 using the alias name Contanier15_1.
+     * Gets the attribute value for CONTANIER15 using the alias name Contanier15.
      * @return the CONTANIER15
      */
-    public String getContanier15_1() {
-        return (String) getAttributeInternal(CONTANIER15_1);
+    public String getContanier15() {
+        return (String) getAttributeInternal(CONTANIER15);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER15 using the alias name Contanier15_1.
+     * Sets <code>value</code> as attribute value for CONTANIER15 using the alias name Contanier15.
      * @param value value to set the CONTANIER15
      */
-    public void setContanier15_1(String value) {
-        setAttributeInternal(CONTANIER15_1, value);
+    public void setContanier15(String value) {
+        setAttributeInternal(CONTANIER15, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER16 using the alias name Contanier16_1.
+     * Gets the attribute value for CONTANIER16 using the alias name Contanier16.
      * @return the CONTANIER16
      */
-    public String getContanier16_1() {
-        return (String) getAttributeInternal(CONTANIER16_1);
+    public String getContanier16() {
+        return (String) getAttributeInternal(CONTANIER16);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER16 using the alias name Contanier16_1.
+     * Sets <code>value</code> as attribute value for CONTANIER16 using the alias name Contanier16.
      * @param value value to set the CONTANIER16
      */
-    public void setContanier16_1(String value) {
-        setAttributeInternal(CONTANIER16_1, value);
+    public void setContanier16(String value) {
+        setAttributeInternal(CONTANIER16, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER17 using the alias name Contanier17_1.
+     * Gets the attribute value for CONTANIER17 using the alias name Contanier17.
      * @return the CONTANIER17
      */
-    public String getContanier17_1() {
-        return (String) getAttributeInternal(CONTANIER17_1);
+    public String getContanier17() {
+        return (String) getAttributeInternal(CONTANIER17);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER17 using the alias name Contanier17_1.
+     * Sets <code>value</code> as attribute value for CONTANIER17 using the alias name Contanier17.
      * @param value value to set the CONTANIER17
      */
-    public void setContanier17_1(String value) {
-        setAttributeInternal(CONTANIER17_1, value);
+    public void setContanier17(String value) {
+        setAttributeInternal(CONTANIER17, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER18 using the alias name Contanier18_1.
+     * Gets the attribute value for CONTANIER18 using the alias name Contanier18.
      * @return the CONTANIER18
      */
-    public String getContanier18_1() {
-        return (String) getAttributeInternal(CONTANIER18_1);
+    public String getContanier18() {
+        return (String) getAttributeInternal(CONTANIER18);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER18 using the alias name Contanier18_1.
+     * Sets <code>value</code> as attribute value for CONTANIER18 using the alias name Contanier18.
      * @param value value to set the CONTANIER18
      */
-    public void setContanier18_1(String value) {
-        setAttributeInternal(CONTANIER18_1, value);
+    public void setContanier18(String value) {
+        setAttributeInternal(CONTANIER18, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER19 using the alias name Contanier19_1.
+     * Gets the attribute value for CONTANIER19 using the alias name Contanier19.
      * @return the CONTANIER19
      */
-    public String getContanier19_1() {
-        return (String) getAttributeInternal(CONTANIER19_1);
+    public String getContanier19() {
+        return (String) getAttributeInternal(CONTANIER19);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER19 using the alias name Contanier19_1.
+     * Sets <code>value</code> as attribute value for CONTANIER19 using the alias name Contanier19.
      * @param value value to set the CONTANIER19
      */
-    public void setContanier19_1(String value) {
-        setAttributeInternal(CONTANIER19_1, value);
+    public void setContanier19(String value) {
+        setAttributeInternal(CONTANIER19, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER20 using the alias name Contanier20_1.
+     * Gets the attribute value for CONTANIER2 using the alias name Contanier2.
+     * @return the CONTANIER2
+     */
+    public String getContanier2() {
+        return (String) getAttributeInternal(CONTANIER2);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for CONTANIER2 using the alias name Contanier2.
+     * @param value value to set the CONTANIER2
+     */
+    public void setContanier2(String value) {
+        setAttributeInternal(CONTANIER2, value);
+    }
+
+    /**
+     * Gets the attribute value for CONTANIER20 using the alias name Contanier20.
      * @return the CONTANIER20
      */
-    public String getContanier20_1() {
-        return (String) getAttributeInternal(CONTANIER20_1);
+    public String getContanier20() {
+        return (String) getAttributeInternal(CONTANIER20);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER20 using the alias name Contanier20_1.
+     * Sets <code>value</code> as attribute value for CONTANIER20 using the alias name Contanier20.
      * @param value value to set the CONTANIER20
      */
-    public void setContanier20_1(String value) {
-        setAttributeInternal(CONTANIER20_1, value);
+    public void setContanier20(String value) {
+        setAttributeInternal(CONTANIER20, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER21 using the alias name Contanier21_1.
+     * Gets the attribute value for CONTANIER21 using the alias name Contanier21.
      * @return the CONTANIER21
      */
-    public String getContanier21_1() {
-        return (String) getAttributeInternal(CONTANIER21_1);
+    public String getContanier21() {
+        return (String) getAttributeInternal(CONTANIER21);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER21 using the alias name Contanier21_1.
+     * Sets <code>value</code> as attribute value for CONTANIER21 using the alias name Contanier21.
      * @param value value to set the CONTANIER21
      */
-    public void setContanier21_1(String value) {
-        setAttributeInternal(CONTANIER21_1, value);
+    public void setContanier21(String value) {
+        setAttributeInternal(CONTANIER21, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER22 using the alias name Contanier22_1.
+     * Gets the attribute value for CONTANIER22 using the alias name Contanier22.
      * @return the CONTANIER22
      */
-    public String getContanier22_1() {
-        return (String) getAttributeInternal(CONTANIER22_1);
+    public String getContanier22() {
+        return (String) getAttributeInternal(CONTANIER22);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER22 using the alias name Contanier22_1.
+     * Sets <code>value</code> as attribute value for CONTANIER22 using the alias name Contanier22.
      * @param value value to set the CONTANIER22
      */
-    public void setContanier22_1(String value) {
-        setAttributeInternal(CONTANIER22_1, value);
+    public void setContanier22(String value) {
+        setAttributeInternal(CONTANIER22, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER23 using the alias name Contanier23_1.
+     * Gets the attribute value for CONTANIER23 using the alias name Contanier23.
      * @return the CONTANIER23
      */
-    public String getContanier23_1() {
-        return (String) getAttributeInternal(CONTANIER23_1);
+    public String getContanier23() {
+        return (String) getAttributeInternal(CONTANIER23);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER23 using the alias name Contanier23_1.
+     * Sets <code>value</code> as attribute value for CONTANIER23 using the alias name Contanier23.
      * @param value value to set the CONTANIER23
      */
-    public void setContanier23_1(String value) {
-        setAttributeInternal(CONTANIER23_1, value);
+    public void setContanier23(String value) {
+        setAttributeInternal(CONTANIER23, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER24 using the alias name Contanier24_1.
+     * Gets the attribute value for CONTANIER24 using the alias name Contanier24.
      * @return the CONTANIER24
      */
-    public String getContanier24_1() {
-        return (String) getAttributeInternal(CONTANIER24_1);
+    public String getContanier24() {
+        return (String) getAttributeInternal(CONTANIER24);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER24 using the alias name Contanier24_1.
+     * Sets <code>value</code> as attribute value for CONTANIER24 using the alias name Contanier24.
      * @param value value to set the CONTANIER24
      */
-    public void setContanier24_1(String value) {
-        setAttributeInternal(CONTANIER24_1, value);
+    public void setContanier24(String value) {
+        setAttributeInternal(CONTANIER24, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER25 using the alias name Contanier25_1.
+     * Gets the attribute value for CONTANIER25 using the alias name Contanier25.
      * @return the CONTANIER25
      */
-    public String getContanier25_1() {
-        return (String) getAttributeInternal(CONTANIER25_1);
+    public String getContanier25() {
+        return (String) getAttributeInternal(CONTANIER25);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER25 using the alias name Contanier25_1.
+     * Sets <code>value</code> as attribute value for CONTANIER25 using the alias name Contanier25.
      * @param value value to set the CONTANIER25
      */
-    public void setContanier25_1(String value) {
-        setAttributeInternal(CONTANIER25_1, value);
+    public void setContanier25(String value) {
+        setAttributeInternal(CONTANIER25, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER26 using the alias name Contanier26_1.
+     * Gets the attribute value for CONTANIER26 using the alias name Contanier26.
      * @return the CONTANIER26
      */
-    public String getContanier26_1() {
-        return (String) getAttributeInternal(CONTANIER26_1);
+    public String getContanier26() {
+        return (String) getAttributeInternal(CONTANIER26);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER26 using the alias name Contanier26_1.
+     * Sets <code>value</code> as attribute value for CONTANIER26 using the alias name Contanier26.
      * @param value value to set the CONTANIER26
      */
-    public void setContanier26_1(String value) {
-        setAttributeInternal(CONTANIER26_1, value);
+    public void setContanier26(String value) {
+        setAttributeInternal(CONTANIER26, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER27 using the alias name Contanier27_1.
+     * Gets the attribute value for CONTANIER27 using the alias name Contanier27.
      * @return the CONTANIER27
      */
-    public String getContanier27_1() {
-        return (String) getAttributeInternal(CONTANIER27_1);
+    public String getContanier27() {
+        return (String) getAttributeInternal(CONTANIER27);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER27 using the alias name Contanier27_1.
+     * Sets <code>value</code> as attribute value for CONTANIER27 using the alias name Contanier27.
      * @param value value to set the CONTANIER27
      */
-    public void setContanier27_1(String value) {
-        setAttributeInternal(CONTANIER27_1, value);
+    public void setContanier27(String value) {
+        setAttributeInternal(CONTANIER27, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER28 using the alias name Contanier28_1.
+     * Gets the attribute value for CONTANIER28 using the alias name Contanier28.
      * @return the CONTANIER28
      */
-    public String getContanier28_1() {
-        return (String) getAttributeInternal(CONTANIER28_1);
+    public String getContanier28() {
+        return (String) getAttributeInternal(CONTANIER28);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER28 using the alias name Contanier28_1.
+     * Sets <code>value</code> as attribute value for CONTANIER28 using the alias name Contanier28.
      * @param value value to set the CONTANIER28
      */
-    public void setContanier28_1(String value) {
-        setAttributeInternal(CONTANIER28_1, value);
+    public void setContanier28(String value) {
+        setAttributeInternal(CONTANIER28, value);
     }
 
     /**
-     * Gets the attribute value for CONTANIER29 using the alias name Contanier29_1.
+     * Gets the attribute value for CONTANIER29 using the alias name Contanier29.
      * @return the CONTANIER29
      */
-    public String getContanier29_1() {
-        return (String) getAttributeInternal(CONTANIER29_1);
+    public String getContanier29() {
+        return (String) getAttributeInternal(CONTANIER29);
     }
 
     /**
-     * Sets <code>value</code> as attribute value for CONTANIER29 using the alias name Contanier29_1.
+     * Sets <code>value</code> as attribute value for CONTANIER29 using the alias name Contanier29.
      * @param value value to set the CONTANIER29
      */
-    public void setContanier29_1(String value) {
-        setAttributeInternal(CONTANIER29_1, value);
+    public void setContanier29(String value) {
+        setAttributeInternal(CONTANIER29, value);
     }
+
+    /**
+     * Gets the attribute value for CONTANIER3 using the alias name Contanier3.
+     * @return the CONTANIER3
+     */
+    public String getContanier3() {
+        return (String) getAttributeInternal(CONTANIER3);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for CONTANIER3 using the alias name Contanier3.
+     * @param value value to set the CONTANIER3
+     */
+    public void setContanier3(String value) {
+        setAttributeInternal(CONTANIER3, value);
+    }
+
+    /**
+     * Gets the attribute value for CONTANIER4 using the alias name Contanier4.
+     * @return the CONTANIER4
+     */
+    public String getContanier4() {
+        return (String) getAttributeInternal(CONTANIER4);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for CONTANIER4 using the alias name Contanier4.
+     * @param value value to set the CONTANIER4
+     */
+    public void setContanier4(String value) {
+        setAttributeInternal(CONTANIER4, value);
+    }
+
+    /**
+     * Gets the attribute value for CONTANIER5 using the alias name Contanier5.
+     * @return the CONTANIER5
+     */
+    public String getContanier5() {
+        return (String) getAttributeInternal(CONTANIER5);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for CONTANIER5 using the alias name Contanier5.
+     * @param value value to set the CONTANIER5
+     */
+    public void setContanier5(String value) {
+        setAttributeInternal(CONTANIER5, value);
+    }
+
+    /**
+     * Gets the attribute value for CONTANIER6 using the alias name Contanier6.
+     * @return the CONTANIER6
+     */
+    public String getContanier6() {
+        return (String) getAttributeInternal(CONTANIER6);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for CONTANIER6 using the alias name Contanier6.
+     * @param value value to set the CONTANIER6
+     */
+    public void setContanier6(String value) {
+        setAttributeInternal(CONTANIER6, value);
+    }
+
+    /**
+     * Gets the attribute value for CONTANIER7 using the alias name Contanier7.
+     * @return the CONTANIER7
+     */
+    public String getContanier7() {
+        return (String) getAttributeInternal(CONTANIER7);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for CONTANIER7 using the alias name Contanier7.
+     * @param value value to set the CONTANIER7
+     */
+    public void setContanier7(String value) {
+        setAttributeInternal(CONTANIER7, value);
+    }
+
+    /**
+     * Gets the attribute value for CONTANIER8 using the alias name Contanier8.
+     * @return the CONTANIER8
+     */
+    public String getContanier8() {
+        return (String) getAttributeInternal(CONTANIER8);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for CONTANIER8 using the alias name Contanier8.
+     * @param value value to set the CONTANIER8
+     */
+    public void setContanier8(String value) {
+        setAttributeInternal(CONTANIER8, value);
+    }
+
+    /**
+     * Gets the attribute value for CONTANIER9 using the alias name Contanier9.
+     * @return the CONTANIER9
+     */
+    public String getContanier9() {
+        return (String) getAttributeInternal(CONTANIER9);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for CONTANIER9 using the alias name Contanier9.
+     * @param value value to set the CONTANIER9
+     */
+    public void setContanier9(String value) {
+        setAttributeInternal(CONTANIER9, value);
+    }
+
 
     /**
      * Gets the associated <code>RowIterator</code> using master-detail link BBLCDetailsPi.
@@ -4577,6 +4645,13 @@ public class BBLCDetailsVORowImpl extends ViewRowImpl {
      */
     public void setBBLCLines(Row value) {
         setAttributeInternal(BBLCLINES, value);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link IedocImpBblcContaiDetail.
+     */
+    public RowIterator getIedocImpBblcContaiDetail() {
+        return (RowIterator)getAttributeInternal(IEDOCIMPBBLCCONTAIDETAIL);
     }
 
     /**

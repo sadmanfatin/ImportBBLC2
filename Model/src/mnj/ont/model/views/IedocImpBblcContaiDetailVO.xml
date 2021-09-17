@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="IedocImpBblcContaiDetailVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  SelectList="IedocImpBblcContaiDetailEO.CONTAINER_ID, 
+       IedocImpBblcContaiDetailEO.IMP_BBLC_DETAIL_ID, 
+       IedocImpBblcContaiDetailEO.CONTAINER_NAME, 
+       IedocImpBblcContaiDetailEO.CONTAINER_SIZE"
+  FromList="IEDOC_IMP_BBLC_CONTAI_DETAIL IedocImpBblcContaiDetailEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="MNJContainerSpec1"
+    ViewObjectName="mnj.ont.model.lov.views.MNJContainerSpec"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ContainerSize"
+    ListVOName="MNJContainerSpec1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ContainerSize"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FlexValue"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="IedocImpBblcContaiDetailEO"
+    Entity="mnj.ont.model.entities.IedocImpBblcContaiDetailEO"/>
+  <ViewAttribute
+    Name="ContainerId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ContainerId"
+    EntityUsage="IedocImpBblcContaiDetailEO"
+    AliasName="CONTAINER_ID"/>
+  <ViewAttribute
+    Name="ImpBblcDetailId"
+    PrecisionRule="true"
+    EntityAttrName="ImpBblcDetailId"
+    EntityUsage="IedocImpBblcContaiDetailEO"
+    AliasName="IMP_BBLC_DETAIL_ID"/>
+  <ViewAttribute
+    Name="ContainerName"
+    PrecisionRule="true"
+    EntityAttrName="ContainerName"
+    EntityUsage="IedocImpBblcContaiDetailEO"
+    AliasName="CONTAINER_NAME"/>
+  <ViewAttribute
+    Name="ContainerSize"
+    PrecisionRule="true"
+    EntityAttrName="ContainerSize"
+    EntityUsage="IedocImpBblcContaiDetailEO"
+    AliasName="CONTAINER_SIZE"
+    LOVName="LOV_ContainerSize">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>

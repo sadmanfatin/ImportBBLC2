@@ -1661,6 +1661,13 @@
     AssociationOtherEnd="mnj.ont.model.entities.BBLCDetail_ShipmentCharges_Assoc.BBLCDetails1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IedocImpBblcContaiDetail"
+    Association="mnj.ont.model.entities.BBLCDetailContainerAssoc"
+    AssociationEnd="mnj.ont.model.entities.BBLCDetailContainerAssoc.IedocImpBblcContaiDetail"
+    AssociationOtherEnd="mnj.ont.model.entities.BBLCDetailContainerAssoc.BBLCDetails"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="IedocImpBblcDetailsPk"
     PrimaryKey="true">

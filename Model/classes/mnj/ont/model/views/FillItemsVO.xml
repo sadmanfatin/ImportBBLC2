@@ -325,19 +325,6 @@ ORDER BY PI_NO,IMP_BBLC_HEADER_ID]]>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="NvlTotalInvoiceQuantity0_1"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="oracle.jbo.domain.Number"
-    ColumnType="NUMBER"
-    AliasName="NVL(TOTAL_INVOICE_QUANTITY,0)"
-    SQLType="NUMERIC">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
     Name="Orgid"
     IsUpdateable="false"
     IsPersistent="false"

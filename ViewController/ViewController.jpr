@@ -328,7 +328,11 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <url n="id" path="../../../AppData/Roaming/JDeveloper/system11.1.1.6.38.62.29/o.jdeveloper/Xalan-2.7.0.jar.library"/>
+            <value n="id" v="Xalan-2.7.0.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Fop.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -364,6 +368,28 @@
             <value n="isJDK" v="false"/>
          </hash>
       </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url path="../libs/xalan-2.7.0.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Xalan-2.7.0.jar"/>
+               <value n="id" v="Xalan-2.7.0.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../libs/fop.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Fop.jar"/>
+               <value n="id" v="Fop.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+         </list>
+      </hash>
       <list n="libraryReferences">
          <hash>
             <value n="id" v="JSP Runtime"/>
@@ -462,7 +488,11 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <url n="id" path="../../../AppData/Roaming/JDeveloper/system11.1.1.6.38.62.29/o.jdeveloper/Xalan-2.7.0.jar.library"/>
+            <value n="id" v="Xalan-2.7.0.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Fop.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>

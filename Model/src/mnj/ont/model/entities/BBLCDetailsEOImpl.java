@@ -1430,6 +1430,16 @@ public class BBLCDetailsEOImpl extends EntityImpl {
                 obj.setAttributeInternal(index(), value);
             }
         }
+        ,
+        IedocImpBblcContaiDetail {
+            public Object get(BBLCDetailsEOImpl obj) {
+                return obj.getIedocImpBblcContaiDetail();
+            }
+
+            public void put(BBLCDetailsEOImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
         ;
         private static AttributesEnum[] vals = null;
         private static int firstIndex = 0;
@@ -1601,6 +1611,7 @@ public class BBLCDetailsEOImpl extends EntityImpl {
     public static final int BBLCDETAILSAI = AttributesEnum.BBLCDetailsAi.index();
     public static final int BBLCSHIPMENTCHARGES = AttributesEnum.BBLCShipmentCharges.index();
     public static final int BBLCSHIPMENTCHARGES1 = AttributesEnum.BBLCShipmentCharges1.index();
+    public static final int IEDOCIMPBBLCCONTAIDETAIL = AttributesEnum.IedocImpBblcContaiDetail.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -3795,6 +3806,7 @@ public class BBLCDetailsEOImpl extends EntityImpl {
         setAttributeInternal(OTHERCHARGE, value);
     }
 
+
     /**
      * getAttrInvokeAccessor: generated method. Do not modify.
      * @param index the index identifying the attribute
@@ -3869,6 +3881,14 @@ public class BBLCDetailsEOImpl extends EntityImpl {
      */
     public RowIterator getBBLCShipmentCharges1() {
         return (RowIterator)getAttributeInternal(BBLCSHIPMENTCHARGES1);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getIedocImpBblcContaiDetail() {
+        return (RowIterator)getAttributeInternal(IEDOCIMPBBLCCONTAIDETAIL);
     }
 
 

@@ -127,6 +127,9 @@
   <ViewUsage
     Name="OrganizationAddressVO1"
     ViewObjectName="mnj.ont.model.views.OrganizationAddressVO"/>
+  <ViewUsage
+    Name="IedocImpBblcContaiDetailVO1"
+    ViewObjectName="mnj.ont.model.views.IedocImpBblcContaiDetailVO"/>
   <ViewLinkUsage
     Name="IedocImpBblcLinesFkLink1"
     ViewLinkObjectName="mnj.ont.model.views.IedocImpBblcLinesFkLink"
@@ -228,6 +231,12 @@
     ViewLinkObjectName="mnj.ont.model.views.HeaderVO_vs_OrganizationAddressVO_VL"
     SrcViewUsageName="mnj.ont.model.service.MainAM.BBLCHeader1"
     DstViewUsageName="mnj.ont.model.service.MainAM.OrganizationAddressVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="BBLCDetailContainerVL1"
+    ViewLinkObjectName="mnj.ont.model.views.BBLCDetailContainerVL"
+    SrcViewUsageName="mnj.ont.model.service.MainAM.BBLCDetails1"
+    DstViewUsageName="mnj.ont.model.service.MainAM.IedocImpBblcContaiDetailVO1"
     Reversed="false"/>
   <ClientInterface>
     <Method

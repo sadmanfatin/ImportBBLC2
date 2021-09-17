@@ -12,8 +12,6 @@
     <searchRegion Binds="BBLCLines1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="BBLCLines1Query"/>
-    <iterator Binds="BBLCDetails1" RangeSize="20"
-              DataControl="MainAMDataControl" id="BBLCDetails1Iterator"/>
     <iterator Binds="BBLCDetailsPi1" RangeSize="200"
               DataControl="MainAMDataControl" id="BBLCDetailsPi1Iterator"/>
     <searchRegion Binds="BBLCDetailsPi1Iterator" Criteria=""
@@ -36,7 +34,7 @@
     <searchRegion Binds="BBLCPiDetails1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="BBLCPiDetails1Query"/>
-    <iterator Binds="FillItems1" RangeSize="25" DataControl="MainAMDataControl"
+    <iterator Binds="FillItems1" RangeSize="1000" DataControl="MainAMDataControl"
               id="FillItems1Iterator"/>
     <searchRegion Binds="FillItems1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
@@ -48,6 +46,9 @@
                   id="Dummy1Query"/>
     <iterator Binds="PI_SPO_DETAILS_VO1" RangeSize="25"
               DataControl="MainAMDataControl" id="PI_SPO_DETAILS_VO1Iterator"/>
+    <iterator Binds="BBLCDetails1" RangeSize="20"
+              DataControl="MainAMDataControl" id="BBLCDetails1Iterator"
+              Refresh="always"/>
     <searchRegion Binds="PI_SPO_DETAILS_VO1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="PI_SPO_DETAILS_VO1Query"/>
@@ -116,6 +117,12 @@
     <iterator Binds="BBLCItemPercentageVO1" RangeSize="25"
               DataControl="MainAMDataControl"
               id="BBLCItemPercentageVO1Iterator"/>
+    <iterator Binds="IedocImpBblcContaiDetailVO1" RangeSize="25"
+              DataControl="MainAMDataControl"
+              id="IedocImpBblcContaiDetailVO1Iterator"/>
+    <searchRegion Binds="IedocImpBblcContaiDetailVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="IedocImpBblcContaiDetailVO1Query"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="BBLCHeader1Iterator" id="ProposalNumber">
@@ -801,39 +808,11 @@
           <Item Value="Cbm"/>
           <Item Value="OtherCharge"/>
           <Item Value="BblcLineIncoTerm"/>
+          <Item Value="Container_List"/>
+          <Item Value="Containerlist"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier1_1" id="Contanier1_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier2_1" id="Contanier2_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier3_1" id="Contanier3_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier4_1" id="Contanier4_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier5_1" id="Contanier5_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier6_1" id="Contanier6_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier7_1" id="Contanier7_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier8_1" id="Contanier8_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier9_1" id="Contanier9_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier10_1" id="Contanier10_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier11_1" id="Contanier11_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier12_1" id="Contanier12_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier13_1" id="Contanier13_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier14_1" id="Contanier14_1"/>
-    <listOfValues StaticList="false" IterBinding="BBLCDetails1Iterator"
-                  Uses="LOV_Contanier15_1" id="Contanier15_1"/>
     <tree IterBinding="BBLC_Acceptance_Inv_det_1Iterator"
           id="BBLC_Acceptance_Inv_det_1">
       <nodeDefinition DefName="mnj.ont.model.views.BBLC_Acceptance_inv_det_VO"
@@ -1058,8 +1037,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action id="Commit" DataControl="MainAMDataControl"
-            RequiresUpdateModel="true" Action="commitTransaction"/>
     <attributeValues IterBinding="BBLCHeader1Iterator"
                      id="BblcPercentOfContract">
       <AttrNames>
@@ -1295,5 +1272,29 @@
         <Item Value="TotalPiValue"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="IedocImpBblcContaiDetailVO1Iterator"
+                     id="ImpBblcDetailId">
+      <AttrNames>
+        <Item Value="ImpBblcDetailId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="IedocImpBblcContaiDetailVO1Iterator"
+          id="IedocImpBblcContaiDetailVO1">
+      <nodeDefinition DefName="mnj.ont.model.views.IedocImpBblcContaiDetailVO"
+                      Name="IedocImpBblcContaiDetailVO10">
+        <AttrNames>
+          <Item Value="ContainerId"/>
+          <Item Value="ImpBblcDetailId"/>
+          <Item Value="ContainerName"/>
+          <Item Value="ContainerSize"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="IedocImpBblcContaiDetailVO1Iterator" id="Delete5"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="IedocImpBblcContaiDetailVO1Iterator" id="CreateInsert5"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" DataControl="MainAMDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
   </bindings>
 </pageDefinition>

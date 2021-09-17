@@ -10,8 +10,8 @@
   CustomQuery="true"
   PageIterMode="Full"
   UseGlueCode="false"
-  RowClass="mnj.ont.model.views.BBLCDetailsVORowImpl"
-  ComponentClass="mnj.ont.model.views.BBLCDetailsVOImpl">
+  ComponentClass="mnj.ont.model.views.BBLCDetailsVOImpl"
+  RowClass="mnj.ont.model.views.BBLCDetailsVORowImpl">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
     <Attr Name="_isExpertMode" Value="true"/>
@@ -280,291 +280,6 @@
     <DisplayCriteria
       Hint="showAndExecute"/>
   </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier1_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier1_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier1_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier2_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier2_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier2_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier3_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier3_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier3_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier4_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier4_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier4_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier5_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier5_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier5_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier6_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier6_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier6_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier7_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier7_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier7_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier8_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier8_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier8_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier9_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier9_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier9_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier10_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier10_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier10_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier11_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier11_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier11_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier12_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier12_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier12_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier13_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier13_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier13_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier14_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier14_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier14_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Contanier15_1"
-    ListVOName="MNJContainerSpec1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_Contanier15_1_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Contanier15_1"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="FlexValue"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
   <SQLQuery>
     <![CDATA[SELECT BBLCDetailsEO.IMP_BBLC_DETAIL_ID, 
        BBLCDetailsEO.IMP_BBLC_LINE_ID, 
@@ -590,6 +305,10 @@
        BBLCDetailsEO.PORT_OF_LOADING, 
        BBLCDetailsEO.PORT_OF_DISCHARGE, 
        BBLCDetailsEO.M_VESSEL_VOYAGE, 
+(SELECT LISTAGG (CONTAINER_NAME, ',') 
+WITHIN GROUP (ORDER BY CONTAINER_NAME)
+FROM ( (SELECT DISTINCT CONTAINER_NAME FROM IEDOC_IMP_BBLC_CONTAI_DETAIL l WHERE l.IMP_BBLC_DETAIL_ID = BBLCDetailsEO.IMP_BBLC_DETAIL_ID )))
+CONTAINER_LIST,
        BBLCDetailsEO.CONTAINER_NO, 
        BBLCDetailsEO.CONTAINER_STATUS, 
        BBLCDetailsEO.CONSIGNMENT_NO, 
@@ -956,6 +675,21 @@ FROM IEDOC_IMP_BBLC_DETAILS BBLCDetailsEO]]>
     EntityAttrName="MVesselVoyage"
     EntityUsage="BBLCDetailsEO"
     AliasName="M_VESSEL_VOYAGE"/>
+  <ViewAttribute
+    Name="Containerlist"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="4000"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CONTAINER_LIST"
+    Expression="CONTAINERLIST"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
+    </DesignTime>
+  </ViewAttribute>
   <ViewAttribute
     Name="ContainerNo"
     PrecisionRule="true"
@@ -1667,325 +1401,175 @@ FROM IEDOC_IMP_BBLC_DETAILS BBLCDetailsEO]]>
     EntityUsage="BBLCDetailsEO"
     AliasName="SHIPPMENT_TAG_DATE"/>
   <ViewAttribute
-    Name="Contanier1_1"
-    LOVName="LOV_Contanier1_1"
+    Name="Contanier1"
     PrecisionRule="true"
     EntityAttrName="Contanier1"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER1">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER1"/>
   <ViewAttribute
-    Name="Contanier2_1"
-    LOVName="LOV_Contanier2_1"
+    Name="Contanier2"
     PrecisionRule="true"
     EntityAttrName="Contanier2"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER2">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER2"/>
   <ViewAttribute
-    Name="Contanier3_1"
-    LOVName="LOV_Contanier3_1"
+    Name="Contanier3"
     PrecisionRule="true"
     EntityAttrName="Contanier3"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER3">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER3"/>
   <ViewAttribute
-    Name="Contanier4_1"
-    LOVName="LOV_Contanier4_1"
+    Name="Contanier4"
     PrecisionRule="true"
     EntityAttrName="Contanier4"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER4">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER4"/>
   <ViewAttribute
-    Name="Contanier5_1"
-    LOVName="LOV_Contanier5_1"
+    Name="Contanier5"
     PrecisionRule="true"
     EntityAttrName="Contanier5"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER5">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER5"/>
   <ViewAttribute
-    Name="Contanier6_1"
-    LOVName="LOV_Contanier6_1"
+    Name="Contanier6"
     PrecisionRule="true"
     EntityAttrName="Contanier6"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER6">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER6"/>
   <ViewAttribute
-    Name="Contanier7_1"
-    LOVName="LOV_Contanier7_1"
+    Name="Contanier7"
     PrecisionRule="true"
     EntityAttrName="Contanier7"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER7">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER7"/>
   <ViewAttribute
-    Name="Contanier8_1"
-    LOVName="LOV_Contanier8_1"
+    Name="Contanier8"
     PrecisionRule="true"
     EntityAttrName="Contanier8"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER8">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER8"/>
   <ViewAttribute
-    Name="Contanier9_1"
-    LOVName="LOV_Contanier9_1"
+    Name="Contanier9"
     PrecisionRule="true"
     EntityAttrName="Contanier9"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER9">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER9"/>
   <ViewAttribute
-    Name="Contanier10_1"
-    LOVName="LOV_Contanier10_1"
+    Name="Contanier10"
     PrecisionRule="true"
     EntityAttrName="Contanier10"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER10">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER10"/>
   <ViewAttribute
-    Name="Contanier11_1"
-    LOVName="LOV_Contanier11_1"
+    Name="Contanier11"
     PrecisionRule="true"
     EntityAttrName="Contanier11"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER11">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER11"/>
   <ViewAttribute
-    Name="Contanier12_1"
-    LOVName="LOV_Contanier12_1"
+    Name="Contanier12"
     PrecisionRule="true"
     EntityAttrName="Contanier12"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER12">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER12"/>
   <ViewAttribute
-    Name="Contanier13_1"
-    LOVName="LOV_Contanier13_1"
+    Name="Contanier13"
     PrecisionRule="true"
     EntityAttrName="Contanier13"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER13">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER13"/>
   <ViewAttribute
-    Name="Contanier14_1"
-    LOVName="LOV_Contanier14_1"
+    Name="Contanier14"
     PrecisionRule="true"
     EntityAttrName="Contanier14"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER14">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER14"/>
   <ViewAttribute
-    Name="Contanier15_1"
-    LOVName="LOV_Contanier15_1"
+    Name="Contanier15"
     PrecisionRule="true"
     EntityAttrName="Contanier15"
     EntityUsage="BBLCDetailsEO"
-    AliasName="CONTANIER15">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CONTANIER15"/>
   <ViewAttribute
-    Name="Contanier16_1"
+    Name="Contanier16"
     PrecisionRule="true"
     EntityAttrName="Contanier16"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER16"/>
   <ViewAttribute
-    Name="Contanier17_1"
+    Name="Contanier17"
     PrecisionRule="true"
     EntityAttrName="Contanier17"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER17"/>
   <ViewAttribute
-    Name="Contanier18_1"
+    Name="Contanier18"
     PrecisionRule="true"
     EntityAttrName="Contanier18"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER18"/>
   <ViewAttribute
-    Name="Contanier19_1"
+    Name="Contanier19"
     PrecisionRule="true"
     EntityAttrName="Contanier19"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER19"/>
   <ViewAttribute
-    Name="Contanier20_1"
+    Name="Contanier20"
     PrecisionRule="true"
     EntityAttrName="Contanier20"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER20"/>
   <ViewAttribute
-    Name="Contanier21_1"
+    Name="Contanier21"
     PrecisionRule="true"
     EntityAttrName="Contanier21"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER21"/>
   <ViewAttribute
-    Name="Contanier22_1"
+    Name="Contanier22"
     PrecisionRule="true"
     EntityAttrName="Contanier22"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER22"/>
   <ViewAttribute
-    Name="Contanier23_1"
+    Name="Contanier23"
     PrecisionRule="true"
     EntityAttrName="Contanier23"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER23"/>
   <ViewAttribute
-    Name="Contanier24_1"
+    Name="Contanier24"
     PrecisionRule="true"
     EntityAttrName="Contanier24"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER24"/>
   <ViewAttribute
-    Name="Contanier25_1"
+    Name="Contanier25"
     PrecisionRule="true"
     EntityAttrName="Contanier25"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER25"/>
   <ViewAttribute
-    Name="Contanier26_1"
+    Name="Contanier26"
     PrecisionRule="true"
     EntityAttrName="Contanier26"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER26"/>
   <ViewAttribute
-    Name="Contanier27_1"
+    Name="Contanier27"
     PrecisionRule="true"
     EntityAttrName="Contanier27"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER27"/>
   <ViewAttribute
-    Name="Contanier28_1"
+    Name="Contanier28"
     PrecisionRule="true"
     EntityAttrName="Contanier28"
     EntityUsage="BBLCDetailsEO"
     AliasName="CONTANIER28"/>
   <ViewAttribute
-    Name="Contanier29_1"
+    Name="Contanier29"
     PrecisionRule="true"
     EntityAttrName="Contanier29"
     EntityUsage="BBLCDetailsEO"
@@ -2037,6 +1621,15 @@ FROM IEDOC_IMP_BBLC_DETAILS BBLCDetailsEO]]>
     ColumnType="DOUBLE PRECISION"
     AliasName="VIEW_ATTR"
     SQLType="DOUBLE"/>
+  <ViewAttribute
+    Name="Container_List"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="500"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
   <ViewLinkAccessor
     Name="BBLCDetailsPi"
     ViewLink="mnj.ont.model.views.IedocImpBblcSubDetPiFkLink"
@@ -2057,6 +1650,11 @@ FROM IEDOC_IMP_BBLC_DETAILS BBLCDetailsEO]]>
     ViewLink="mnj.ont.model.views.IedocImpBblcDetailsFkLink"
     Type="oracle.jbo.Row"
     Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="IedocImpBblcContaiDetail"
+    ViewLink="mnj.ont.model.views.BBLCDetailContainerVL"
+    Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle

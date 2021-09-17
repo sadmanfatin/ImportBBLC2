@@ -25,6 +25,8 @@ import mnj.ont.model.views.FillGRNImpl;
 import mnj.ont.model.views.FillItemsVOImpl;
 import mnj.ont.model.views.FillPIVOImpl;
 
+import mnj.ont.model.views.OrganizationAddressVOImpl;
+
 import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Row;
@@ -2119,5 +2121,21 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
      */
     public ViewLinkImpl getHeaderVO_vs_OrganizationAddressVO_VL1() {
         return (ViewLinkImpl)findViewLink("HeaderVO_vs_OrganizationAddressVO_VL1");
+    }
+
+    /**
+     * Container's getter for IedocImpBblcContaiDetailVO1.
+     * @return IedocImpBblcContaiDetailVO1
+     */
+    public ViewObjectImpl getIedocImpBblcContaiDetailVO1() {
+        return (ViewObjectImpl)findViewObject("IedocImpBblcContaiDetailVO1");
+    }
+
+    /**
+     * Container's getter for BBLCDetailContainerVL1.
+     * @return BBLCDetailContainerVL1
+     */
+    public ViewLinkImpl getBBLCDetailContainerVL1() {
+        return (ViewLinkImpl)findViewLink("BBLCDetailContainerVL1");
     }
 }
