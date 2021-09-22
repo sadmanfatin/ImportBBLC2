@@ -212,20 +212,15 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         //    linerow.setAttribute("ItemDescription",
         //                         getPopulateValue(poprow, "ItemDesc"));
         linerow.setAttribute("PiValue", getPopulateValue(poprow, "PiValue"));
-        linerow.setAttribute("Attribute1",
-                             getPopulateValue(poprow, "Currency"));
+        linerow.setAttribute("Attribute1", getPopulateValue(poprow, "Currency"));
         //  linerow.setAttribute("BpoNo", getPopulateValue(poprow, "BpoNumber"));
         //  linerow.setAttribute("StyleNo",
         //                       getPopulateValue(poprow, "StyleNumber"));
-        linerow.setAttribute("Attribute5",
-                             getPopulateValue(poprow, "BuyerName"));
-        linerow.setAttribute("Attribute6",
-                             getPopulateValue(poprow, "Season"));
-     
-        linerow.setAttribute("BeneficiaryId",
-                             getPopulateValue(poprow, "SupplierId"));
-        linerow.setAttribute("BeneficiaryName",
-                             getPopulateValue(poprow, "SupplierName"));
+        linerow.setAttribute("Attribute5", getPopulateValue(poprow, "BuyerName"));
+        linerow.setAttribute("Attribute6", getPopulateValue(poprow, "Season"));
+
+        linerow.setAttribute("BeneficiaryId", getPopulateValue(poprow, "SupplierId"));
+        linerow.setAttribute("BeneficiaryName", getPopulateValue(poprow, "SupplierName"));
 
         populatePiLines1(OrgId);
     } //end of populateLines
@@ -323,27 +318,16 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
         Row linerow = createContractLines();
 
-        linerow.setAttribute("BblcContractNo",
-                             getPopulateValue(poprow, "ImpSaleContractNo"));
-        linerow.setAttribute("ExportLcNo",
-                             getPopulateValue(poprow, "ExportLcNo"));
-        linerow.setAttribute("ContractDate",
-                             getPopulateValue(poprow, "ContractDate"));
-        linerow.setAttribute("GoodsValue",
-                             getPopulateValue(poprow, "GoodsValue"));
-        linerow.setAttribute("ContractValue",
-                             getPopulateValue(poprow, "ContractValue"));
-        linerow.setAttribute("ContractQuantity",
-                             getPopulateValue(poprow, "ContractQuantity"));
-        linerow.setAttribute("Attribute5",
-                             getPopulateValue(poprow, "BuyerNameNew"));
-        linerow.setAttribute("Attribute6",
-                             getPopulateValue(poprow, "Season"));
-        linerow.setAttribute("Attribute10",
-                             getPopulateValue(poprow, "VersionNo"));
-        linerow.setAttribute("BuyerId",
-                             getPopulateValue(poprow, "BuyerId"));
-               
+        linerow.setAttribute("BblcContractNo", getPopulateValue(poprow, "ImpSaleContractNo"));
+        linerow.setAttribute("ExportLcNo", getPopulateValue(poprow, "ExportLcNo"));
+        linerow.setAttribute("ContractDate", getPopulateValue(poprow, "ContractDate"));
+        linerow.setAttribute("GoodsValue", getPopulateValue(poprow, "GoodsValue"));
+        linerow.setAttribute("ContractValue", getPopulateValue(poprow, "ContractValue"));
+        linerow.setAttribute("ContractQuantity", getPopulateValue(poprow, "ContractQuantity"));
+        linerow.setAttribute("Attribute5", getPopulateValue(poprow, "BuyerNameNew"));
+        linerow.setAttribute("Attribute6", getPopulateValue(poprow, "Season"));
+        linerow.setAttribute("Attribute10", getPopulateValue(poprow, "VersionNo"));
+        linerow.setAttribute("BuyerId", getPopulateValue(poprow, "BuyerId"));
 
 
         populateContractLines1(OrgId);
@@ -355,7 +339,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         ViewObject populatevo = getFillContracts1();
         System.out.println("ORG_ID = " + OrgId);
         populatevo.setWhereClause("ORG_ID = " + OrgId);
-        
+
         populatevo.executeQuery();
 
         if (populatevo.getRowCount() == 0) {
@@ -414,12 +398,9 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
         Row linerow = createCountryLines();
 
-        linerow.setAttribute("CountryCode",
-                             getPopulateValue(poprow, "TerritoryCode"));
-        linerow.setAttribute("CountryName",
-                             getPopulateValue(poprow, "TerritoryShortName"));
-        linerow.setAttribute("CountryDesc",
-                             getPopulateValue(poprow, "Description"));
+        linerow.setAttribute("CountryCode", getPopulateValue(poprow, "TerritoryCode"));
+        linerow.setAttribute("CountryName", getPopulateValue(poprow, "TerritoryShortName"));
+        linerow.setAttribute("CountryDesc", getPopulateValue(poprow, "Description"));
 
         populateCountryLines1();
     } //end of populateLines
@@ -459,12 +440,13 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
     public void callItemFetch() {
         ViewObject populatevo = getFillItems1();
-                    populatevo.setRangeSize(1000);
-        if (populatevo.getRowCount() == 0)   ;
+        populatevo.setRangeSize(1000);
+        if (populatevo.getRowCount() == 0)
+            ;
         RowSetIterator it = populatevo.createRowSetIterator("aaa");
-        
+
         Row r[] = populatevo.getAllRowsInRange();
-        
+
         for (Row row : r) {
             System.out.println("loop count");
             try {
@@ -478,7 +460,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         }
         it.closeRowSetIterator();
     }
-    
+
     public void callItemWithGRNFetch() {
         ViewObject populatevo = getFillGRN1();
         if (populatevo.getRowCount() == 0)
@@ -498,7 +480,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
             }
         }
         it.closeRowSetIterator();
-        
+
     }
 
     public void populateItemLines(Row poprow) {
@@ -511,30 +493,24 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
         linerow.setAttribute("PiNo", getPopulateValue(poprow, "PiNo"));
         linerow.setAttribute("StyleBpoNo", getPopulateValue(poprow, "Style"));
-       // linerow.setAttribute("Attribute6", getPopulateValue(poprow, "Style"));
-        
+        // linerow.setAttribute("Attribute6", getPopulateValue(poprow, "Style"));
+
         //linerow.setAttribute("Bpo", getPopulateValue(poprow, "Bpo"));
         linerow.setAttribute("Bpo", getPopulateValue(poprow, "SpoNo"));
-        
-        linerow.setAttribute("ItemDescription",
-                             getPopulateValue(poprow, "ItemDescription"));
+
+        linerow.setAttribute("ItemDescription", getPopulateValue(poprow, "ItemDescription"));
         linerow.setAttribute("Quantity", getPopulateValue(poprow, "Quantity"));
-        linerow.setAttribute("UnitPrice",
-                             getPopulateValue(poprow, "UnitPrice"));
-        linerow.setAttribute("Attribute1",
-                             getPopulateValue(poprow, "Quantity"));
-        linerow.setAttribute("InvoiceQuantity",
-                             getPopulateValue(poprow, "BalanceQuantity"));
-        linerow.setAttribute("ReceivedQuantity",
-                             getPopulateValue(poprow, "ReceivedQuantity"));
-        linerow.setAttribute("ShortExcessQty",
-                             getPopulateValue(poprow, "ShortExcessQty"));
-        linerow.setAttribute("Attribute5",getPopulateValue(poprow, "Itemid"));
-        
-        linerow.setAttribute("Grn", getPopulateValue(poprow, "Grn"));  /**  added at 16.03.17 by fatin  */
-        
-        linerow.setAttribute("GrnQuantity", getPopulateValue(poprow, "GrnQuantity"));  /**  added at 11.06.17 by fatin  */
-        linerow.setAttribute("PocId", getPopulateValue(poprow, "PocId")); 
+        linerow.setAttribute("UnitPrice", getPopulateValue(poprow, "UnitPrice"));
+        linerow.setAttribute("Attribute1", getPopulateValue(poprow, "Quantity"));
+        linerow.setAttribute("InvoiceQuantity", getPopulateValue(poprow, "BalanceQuantity"));
+        linerow.setAttribute("ReceivedQuantity", getPopulateValue(poprow, "ReceivedQuantity"));
+        linerow.setAttribute("ShortExcessQty", getPopulateValue(poprow, "ShortExcessQty"));
+        linerow.setAttribute("Attribute5", getPopulateValue(poprow, "Itemid"));
+
+        linerow.setAttribute("Grn", getPopulateValue(poprow, "Grn")); /**  added at 16.03.17 by fatin  */
+
+        linerow.setAttribute("GrnQuantity", getPopulateValue(poprow, "GrnQuantity")); /**  added at 11.06.17 by fatin  */
+        linerow.setAttribute("PocId", getPopulateValue(poprow, "PocId"));
         populateItemLines1(OrgId);
     } //end of populateLines
 
@@ -542,17 +518,16 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
 
         String HeaderId = getHeaderId();
-         
-         
-         String lineId  ;
-         lineId = this.getBBLCLines1().getCurrentRow().getAttribute("ImpBblcLineId").toString();
+
+
+        String lineId;
+        lineId = this.getBBLCLines1().getCurrentRow().getAttribute("ImpBblcLineId").toString();
 
         ViewObject populatevo = getFillItems1();
-        populatevo.setNamedWhereClauseParam("P_IMP_BBLC_LINE_ID",lineId );
-      populatevo.executeQuery();
-      
+        populatevo.setNamedWhereClauseParam("P_IMP_BBLC_LINE_ID", lineId);
+        populatevo.executeQuery();
+
     } //end of populateOrderLines method
-    
 
 
     public Row createItemLines() {
@@ -571,8 +546,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         String HeaderId = null;
         try {
 
-            HeaderId =
-                    vo.getCurrentRow().getAttribute("ImpBblcHeaderId").toString();
+            HeaderId = vo.getCurrentRow().getAttribute("ImpBblcHeaderId").toString();
 
         } catch (Exception e) {
             // TODO: Add catch code
@@ -590,15 +564,12 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         System.out.println("copy line 4");
         ViewObject vo = getBBLCDetails1();
 
-        String headerId1 =
-            vo.getCurrentRow().getAttribute("ImpBblcDetailId").toString();
+        String headerId1 = vo.getCurrentRow().getAttribute("ImpBblcDetailId").toString();
         System.out.println("Header Id -->" + headerId1);
         String status = null;
-        String stmt =
-            "BEGIN  APPS.IEDOC_COPY_VERSION_PKG.IEDOC_COPY_SHIP_LINES_BBLC (:1); end;";
+        String stmt = "BEGIN  APPS.IEDOC_COPY_VERSION_PKG.IEDOC_COPY_SHIP_LINES_BBLC (:1); end;";
         System.out.println("copy line 5");
-        CallableStatement cs =
-            getDBTransaction().createCallableStatement(stmt, 1);
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
         try {
             //    cs.registerOutParameter(1, OracleTypes.VARCHAR);
             cs.setInt(1, Integer.parseInt(headerId1));
@@ -645,6 +616,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         it.closeRowSetIterator();
     }
     //////////////////////////////////////
+
     public void selectAllLinesNew(String flag) {
         System.out.println("SelectAllNew  AM");
 
@@ -659,28 +631,28 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
             Row row = it.next();
 
             row.setAttribute("PICheckBoxNew", flag);
-            System.out.println("SelectAllNew AM 2"+flag);
+            System.out.println("SelectAllNew AM 2" + flag);
 
 
         }
         it.closeRowSetIterator();
     }
     /////////////////////////////////////
-//    public void selectAllLinesNew(String flag) {
-//
-//        System.out.println("ENTER AM select all line 1AM ---->");
-//        ViewObject populatevo = getFillPI1();
-//        //populatevo.executeQuery();
-//
-//        Row[] r = populatevo.getAllRowsInRange();
-//
-//        for (Row row : r) {
-//            System.out.println("Loop select 1 AM");
-//            row.setAttribute("PICheckBoxNew", flag);
-//            System.out.println("Get select 1---->" + row.getAttribute("PICheckBoxNew"));
-//
-//        }
-//    }
+    //    public void selectAllLinesNew(String flag) {
+    //
+    //        System.out.println("ENTER AM select all line 1AM ---->");
+    //        ViewObject populatevo = getFillPI1();
+    //        //populatevo.executeQuery();
+    //
+    //        Row[] r = populatevo.getAllRowsInRange();
+    //
+    //        for (Row row : r) {
+    //            System.out.println("Loop select 1 AM");
+    //            row.setAttribute("PICheckBoxNew", flag);
+    //            System.out.println("Get select 1---->" + row.getAttribute("PICheckBoxNew"));
+    //
+    //        }
+    //    }
     ///////////////////////////////////////
 
 
@@ -693,26 +665,17 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
         ViewObject vo = getBBLCHeader1();
 
-        double Entile_Btb_Open_Value = 0, 
-            Available_Btb_OpenValue = 0, 
-            Btb_Accepted_liability = 0, 
-            Btb_Shipping_Liability =0, 
-            Btb_Lc_Liability = 0 ,
-            totalContractValue =  0 ,
-            totalLcValue = 0  , 
-            tt_fdd_value =0  ,           
-            totalContractLiability =0,   // added on  2 Jan 2020
-            totalPaidAmount=0    ,       // added on  2 Jan 2020
-            totalCommissionValue =0 ,    //  added on 8 jan 2020
-             totalGoodsValue = 0;      //  added on 14 jan 2020
-          int  shippingGuranteeCount=0;   
-        
-        String stmt =
-            "BEGIN  APPS.IEDOC_DOC_NO_PKG.IMPORT_BBLC_FORMULAS (:1,:2,:3,:4,:5,:6,:7,:8,:9,:10, :11,:12,:13,:14); end;";
-        CallableStatement cs =
-            getDBTransaction().createCallableStatement(stmt, 1);
+        double Entile_Btb_Open_Value = 0, Available_Btb_OpenValue = 0, Btb_Accepted_liability = 0, Btb_Shipping_Liability = 0, 
+            Btb_Lc_Liability = 0, totalContractValue = 0, totalLcValue = 0, tt_fdd_value = 0, totalContractLiability = 0, // added on  2 Jan 2020
+        totalPaidAmount = 0, // added on  2 Jan 2020
+        totalCommissionValue = 0, //  added on 8 jan 2020
+        totalGoodsValue = 0; //  added on 14 jan 2020
+        int shippingGuranteeCount = 0;
+
+        String stmt = "BEGIN  APPS.IEDOC_DOC_NO_PKG.IMPORT_BBLC_FORMULAS (:1,:2,:3,:4,:5,:6,:7,:8,:9,:10, :11,:12,:13,:14); end;";
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
         try {
-            
+
             cs.setInt(1, Integer.parseInt(HeaderId));
             cs.registerOutParameter(2, OracleTypes.NUMBER);
             cs.registerOutParameter(3, OracleTypes.NUMBER);
@@ -728,57 +691,53 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
             cs.registerOutParameter(13, OracleTypes.NUMBER);
             cs.registerOutParameter(14, OracleTypes.NUMBER);
             cs.execute();
-       
+
             Entile_Btb_Open_Value = cs.getDouble(2);
             Available_Btb_OpenValue = cs.getDouble(3);
             Btb_Accepted_liability = cs.getDouble(4);
             Btb_Shipping_Liability = cs.getDouble(5);
-            Btb_Lc_Liability = Math.round(cs.getDouble(6)*100.0)/100.0; // to get 2 digits afted fraction  added  at 12.3.17 fatin
+            Btb_Lc_Liability = Math.round(cs.getDouble(6) * 100.0) / 100.0; // to get 2 digits afted fraction  added  at 12.3.17 fatin
             totalContractValue = cs.getDouble(7);
             totalLcValue = cs.getDouble(8);
             tt_fdd_value = cs.getDouble(9);
             shippingGuranteeCount = cs.getInt(10);
-            totalContractLiability =  cs.getDouble(11);    //  added on 2 jan 2020
-            totalPaidAmount =  cs.getDouble(12);           //  added on 2 jan 2020
-            totalCommissionValue =  cs.getDouble(13);           //  added on 8 jan 2020
-            totalCommissionValue =  cs.getDouble(13);           //  added on 8 jan 2020
-            totalGoodsValue  = cs.getDouble(14);            //  added on 14 jan 2020
-            cs.close();  
-                        
+            totalContractLiability = cs.getDouble(11); //  added on 2 jan 2020
+            totalPaidAmount = cs.getDouble(12); //  added on 2 jan 2020
+            totalCommissionValue = cs.getDouble(13); //  added on 8 jan 2020
+            totalCommissionValue = cs.getDouble(13); //  added on 8 jan 2020
+            totalGoodsValue = cs.getDouble(14); //  added on 14 jan 2020
+            cs.close();
+
             vo.getCurrentRow().setAttribute("EntitleBtbValue", Entile_Btb_Open_Value);
             vo.getCurrentRow().setAttribute("AvailableBtbValue", Available_Btb_OpenValue);
             vo.getCurrentRow().setAttribute("Attribute2", Btb_Accepted_liability);
-            vo.getCurrentRow().setAttribute("Attribute3",Btb_Shipping_Liability);
+            vo.getCurrentRow().setAttribute("Attribute3", Btb_Shipping_Liability);
             vo.getCurrentRow().setAttribute("Attribute1", Btb_Lc_Liability);
-             vo.getCurrentRow().setAttribute("Attribute4", totalContractValue);
+            vo.getCurrentRow().setAttribute("Attribute4", totalContractValue);
             vo.getCurrentRow().setAttribute("Attribute5", totalLcValue);
             vo.getCurrentRow().setAttribute("TtFddValue", tt_fdd_value);
             vo.getCurrentRow().setAttribute("ShippingGuranteeNumber", shippingGuranteeCount);
-            vo.getCurrentRow().setAttribute("TotalContractLiability", totalContractLiability);    //  added on 2 jan 2020
-            vo.getCurrentRow().setAttribute("PaidAmountForProposal", totalPaidAmount);           //  added on 2 jan 2020
-            vo.getCurrentRow().setAttribute("TotalCommissionValue", totalCommissionValue );      //  added on 8 jan 2020
-            vo.getCurrentRow().setAttribute("TotalGoodsValue", totalGoodsValue );               //  added on 14 jan 2020
-            System.out.println("///////////////////////////  in HeaderFormulaCalculation");
-            
-            
-            
-            System.out.println("=====================    total Goods value "+ totalGoodsValue );
-            
-            
-//            System.out.println("===================  totalContractValue "+totalContractValue);
-//            System.out.println("===================  Entile_Btb_Open_Value "+Entile_Btb_Open_Value);
-//            System.out.println("===================  Available_Btb_OpenValue "+Available_Btb_OpenValue);
-//            System.out.println("===================  Btb_Lc_Liability "+ Btb_Lc_Liability);
-//               System.out.println("===================  Btb_Shipping_Liability "+ Btb_Shipping_Liability);
-//           
-//            System.out.println("===================  Btb_Accepted_liability "+ Btb_Accepted_liability);
-//            System.out.println("===================  totalLcValue "+ totalLcValue);
-//            System.out.println("===================  btb_Original_Liability "+ btb_Original_Liability);
+            vo.getCurrentRow().setAttribute("TotalContractLiability", totalContractLiability); //  added on 2 jan 2020
+            vo.getCurrentRow().setAttribute("PaidAmountForProposal", totalPaidAmount); //  added on 2 jan 2020
+            vo.getCurrentRow().setAttribute("TotalCommissionValue", totalCommissionValue); //  added on 8 jan 2020
+            vo.getCurrentRow().setAttribute("TotalGoodsValue", totalGoodsValue); //  added on 14 jan 2020            
+
+            System.out.println("[HeaderFormulaCalculation === total Goods value] " + totalGoodsValue);
+
+
+            //            System.out.println("===================  totalContractValue "+totalContractValue);
+            //            System.out.println("===================  Entile_Btb_Open_Value "+Entile_Btb_Open_Value);
+            //            System.out.println("===================  Available_Btb_OpenValue "+Available_Btb_OpenValue);
+            //            System.out.println("===================  Btb_Lc_Liability "+ Btb_Lc_Liability);
+            //               System.out.println("===================  Btb_Shipping_Liability "+ Btb_Shipping_Liability);
+            //
+            //            System.out.println("===================  Btb_Accepted_liability "+ Btb_Accepted_liability);
+            //            System.out.println("===================  totalLcValue "+ totalLcValue);
+            //            System.out.println("===================  btb_Original_Liability "+ btb_Original_Liability);
 
         } catch (Exception e) {
-            
-           System.out.println("If Error in AM Claculation  " +
-                               e.getMessage());           
+
+            System.out.println("[HeaderFormulaCalculation === ERROR in AM Claculation ] " + e.getMessage());
         }
 
     }
@@ -789,15 +748,12 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
         ViewObject vo = getBBLCHeader1();
 
-        String headerId1 =
-            vo.getCurrentRow().getAttribute("ImpBblcHeaderId").toString();
+        String headerId1 = vo.getCurrentRow().getAttribute("ImpBblcHeaderId").toString();
         System.out.println("Header Id -->" + headerId1);
         String status = null;
-        String stmt =
-            "BEGIN  IEDOC_COPY_VERSION_PKG.IEDOC_COPY_BBLC(:1,:2); end;";
+        String stmt = "BEGIN  IEDOC_COPY_VERSION_PKG.IEDOC_COPY_BBLC(:1,:2); end;";
 
-        CallableStatement cs =
-            getDBTransaction().createCallableStatement(stmt, 1);
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
         try {
             //    cs.registerOutParameter(1, OracleTypes.VARCHAR);
             cs.setInt(1, Integer.parseInt(headerId1));
@@ -825,18 +781,17 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     public int bblcvalidation(String bblcnumber)
 
     {
-        
-        System.out.println("==================  bblcnumber "+ bblcnumber);
-        System.out.println("==================this.getBBLCLines1().getCurrentRow().getAttribute(\"Attribute15\") "+this.getBBLCLines1().getCurrentRow().getAttribute("Attribute15"));
+
+        System.out.println("==================  bblcnumber " + bblcnumber);
+        System.out.println("==================this.getBBLCLines1().getCurrentRow().getAttribute(\"Attribute15\") " +
+                           this.getBBLCLines1().getCurrentRow().getAttribute("Attribute15"));
 
         String status = null;
-        String stmt =
-            "BEGIN  IEDOC_DOC_NO_PKG.IMPORT_BBLC_NO_UC (:1,:2); end;";
+        String stmt = "BEGIN  IEDOC_DOC_NO_PKG.IMPORT_BBLC_NO_UC (:1,:2); end;";
 
         int flag = 0;
 
-        CallableStatement cs =
-            getDBTransaction().createCallableStatement(stmt, 1);
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
         try {
             cs.registerOutParameter(2, OracleTypes.VARCHAR);
             cs.setString(1, bblcnumber);
@@ -864,13 +819,11 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     {
 
         String status = null;
-        String stmt =
-            "BEGIN  IEDOC_DOC_NO_PKG.IMPORT_INVOICE_NO_UC(:1,:2); end;";
+        String stmt = "BEGIN  IEDOC_DOC_NO_PKG.IMPORT_INVOICE_NO_UC(:1,:2); end;";
 
         int flag = 0;
 
-        CallableStatement cs =
-            getDBTransaction().createCallableStatement(stmt, 1);
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
         try {
             cs.registerOutParameter(2, OracleTypes.VARCHAR);
             cs.setString(1, invoiceno);
@@ -897,13 +850,11 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     {
 
         String status = null;
-        String stmt =
-            "BEGIN  IEDOC_DOC_NO_PKG.IMPORT_BILL_REF_NO_UC(:1,:2); end;";
+        String stmt = "BEGIN  IEDOC_DOC_NO_PKG.IMPORT_BILL_REF_NO_UC(:1,:2); end;";
 
         int flag = 0;
 
-        CallableStatement cs =
-            getDBTransaction().createCallableStatement(stmt, 1);
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
         try {
             cs.registerOutParameter(2, OracleTypes.VARCHAR);
             cs.setString(1, billrefno);
@@ -930,13 +881,11 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     {
 
         String status = null;
-        String stmt =
-            "BEGIN  IEDOC_DOC_NO_PKG.IMPORT_BILL_ENTRY_NO_UC(:1,:2); end;";
+        String stmt = "BEGIN  IEDOC_DOC_NO_PKG.IMPORT_BILL_ENTRY_NO_UC(:1,:2); end;";
 
         int flag = 0;
 
-        CallableStatement cs =
-            getDBTransaction().createCallableStatement(stmt, 1);
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
         try {
             cs.registerOutParameter(2, OracleTypes.VARCHAR);
             cs.setString(1, billofentryno);
@@ -958,28 +907,22 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
     /* Method to Populate WHO Column */
 
-    public void setSessionValues(String orgId, String userId, String respId,
-                                 String respAppl) {
+    public void setSessionValues(String orgId, String userId, String respId, String respAppl) {
 
 
         if (userId != null) {
             FacesContext fctx = FacesContext.getCurrentInstance();
             ExternalContext ectx = fctx.getExternalContext();
             HttpSession userSession = (HttpSession)ectx.getSession(false);
-            
+
             userSession.setAttribute("userId", userId);
             userSession.setAttribute("userId", userId);
             userSession.setAttribute("orgId", orgId);
             userSession.setAttribute("respId", respId);
-            
-        }
-        
-        
 
-        
-        
-        
-        
+        }
+
+
     }
 
     /* End Method to Populate WHO Column */
@@ -990,15 +933,12 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         System.out.println("copy bblc line 4");
         ViewObject vo = getBBLCLines1();
 
-        String headerId1 =
-            vo.getCurrentRow().getAttribute("ImpBblcLineId").toString();
+        String headerId1 = vo.getCurrentRow().getAttribute("ImpBblcLineId").toString();
         System.out.println("Line Id -->" + headerId1);
         String status = null;
-        String stmt =
-            "BEGIN  APPS.IEDOC_COPY_VERSION_PKG.IEDOC_COPY_BBLC_LINES (:1); end;";
+        String stmt = "BEGIN  APPS.IEDOC_COPY_VERSION_PKG.IEDOC_COPY_BBLC_LINES (:1); end;";
         System.out.println("copy bblc line 5");
-        CallableStatement cs =
-            getDBTransaction().createCallableStatement(stmt, 1);
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
         try {
             //    cs.registerOutParameter(1, OracleTypes.VARCHAR);
             cs.setInt(1, Integer.parseInt(headerId1));
@@ -1044,23 +984,22 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
 
         Map sessionScope = ADFContext.getCurrent().getSessionScope();
-       
-            String P_BBLC_NO = (String)sessionScope.get("P_BBLC_NO");     // to upper case added by fatin 5.2.15
-            String P_CONTRACT_NO = (String)sessionScope.get("P_CONTRACT_NO");
-            String P_INVOICE_NO = (String)sessionScope.get("P_INVOICE_NO");
-            String P_ACCEPTANCE_NO = (String)sessionScope.get("P_ACCEPTANCE_NO");
-            String P_PROPOSAL_NO = (String)sessionScope.get("P_PROPOSAL_NO");
-            
+
+        String P_BBLC_NO = (String)sessionScope.get("P_BBLC_NO"); // to upper case added by fatin 5.2.15
+        String P_CONTRACT_NO = (String)sessionScope.get("P_CONTRACT_NO");
+        String P_INVOICE_NO = (String)sessionScope.get("P_INVOICE_NO");
+        String P_ACCEPTANCE_NO = (String)sessionScope.get("P_ACCEPTANCE_NO");
+        String P_PROPOSAL_NO = (String)sessionScope.get("P_PROPOSAL_NO");
+
         //  --------------------- added on 11.dec.17----------------------------------
-            String P_LC_REF_NO = (String)sessionScope.get("P_LC_REF_NO");
+        String P_LC_REF_NO = (String)sessionScope.get("P_LC_REF_NO");
         //  --------------------------------------------------------------------------
-        
-        
+
 
         StringBuilder query = new StringBuilder(baseQuery());
-              
+
         if (P_BBLC_NO != null && P_BBLC_NO.length() > 0) {
-            
+
             query.append(getbblcQuery(P_BBLC_NO).toUpperCase());
         }
         if (P_CONTRACT_NO != null && P_CONTRACT_NO.length() > 0) {
@@ -1069,27 +1008,27 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         if (P_INVOICE_NO != null && P_INVOICE_NO.length() > 0) {
             query.append(getInvoiceQuery(P_INVOICE_NO).toUpperCase());
         }
-        if (P_ACCEPTANCE_NO != null && P_ACCEPTANCE_NO.length() >0 ) {
+        if (P_ACCEPTANCE_NO != null && P_ACCEPTANCE_NO.length() > 0) {
             query.append(getAccpQuery(P_ACCEPTANCE_NO).toUpperCase());
         }
-    
-        if (P_PROPOSAL_NO != null && P_PROPOSAL_NO.length() >0 ) {
+
+        if (P_PROPOSAL_NO != null && P_PROPOSAL_NO.length() > 0) {
             query.append(getPropNoQuery(P_PROPOSAL_NO).toUpperCase());
         }
-        
+
         //  --------------------- added on 11.dec.17----------------------------------
-        
-        if (P_LC_REF_NO != null && P_LC_REF_NO.length() >0 ) {
+
+        if (P_LC_REF_NO != null && P_LC_REF_NO.length() > 0) {
             query.append(getLcRefNoQuery(P_LC_REF_NO).toUpperCase());
         }
-       // -----------------------------------------------------------------------------
-        
+        // -----------------------------------------------------------------------------
+
         query.append(getOrderBy());
-            
-        System.out.println("Get Query ---->"+query.toString());
-    
+
+        System.out.println("Get Query ---->" + query.toString());
+
         changeBaseQuery(query);
-                
+
         //    ViewObject vo = findViewObject("BBLCHeader1");
         //    vo.setNamedWhereClauseParam("P_BBLC_NO",56);
         //    vo.setNamedWhereClauseParam("P_CONTRACT_NO",P_CONTRACT_NO);
@@ -1103,8 +1042,8 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         //    //System.out.println("qUERY "+vo.getQuery());
         //
         //    vo.executeQuery();
-        
-        
+
+
     }
 
 
@@ -1114,23 +1053,21 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         ViewObjectImpl voi = getBBLCHeader1();
         if (query != null) {
             voi.setFullSqlMode(voi.FULLSQL_MODE_AUGMENTATION);
-            
-            
+
+
             voi.setQuery(query.toString());
             voi.executeQuery();
-        }
-        else {
-//            voi.setFullSqlMode(voi.FULLSQL_MODE_AUGMENTATION);
-//            voi.setQuery(baseQuery());
-            voi.executeQuery(); 
+        } else {
+            //            voi.setFullSqlMode(voi.FULLSQL_MODE_AUGMENTATION);
+            //            voi.setQuery(baseQuery());
+            voi.executeQuery();
         }
     }
 
 
     public String getbblcQuery(String value) {
 
-        String query =
-            " and Exists (select  1 from IEDOC_IMP_BBLC_LINES BBLCLines \n" +
+        String query = " and Exists (select  1 from IEDOC_IMP_BBLC_LINES BBLCLines \n" +
             "         where BBLCHeaderEO.IMP_BBLC_HEADER_ID=BBLCLines.IMP_BBLC_HEADER_ID \n" +
             "         and BBLCLines.BBLC_NO='" + value + "') ";
 
@@ -1140,8 +1077,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
     public String getContractQuery(String value) {
 
-        String query =
-            " And Exists (select  1 from IEDOC_IMP_BBLC_CONTRACTS BBLCContracts \n" +
+        String query = " And Exists (select  1 from IEDOC_IMP_BBLC_CONTRACTS BBLCContracts \n" +
             "            where BBLCHeaderEO.IMP_BBLC_HEADER_ID=BBLCContracts.IMP_BBLC_HEADER_ID \n" +
             "            and BBLCContracts.BBLC_CONTRACT_NO='" + value + "') ";
 
@@ -1151,8 +1087,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
     public String getInvoiceQuery(String value) {
 
-        String query =
-            " And Exists (select  1 from IEDOC_IMP_BBLC_DETAILS BBLCDetails,IEDOC_IMP_BBLC_LINES BBLines \n" +
+        String query = " And Exists (select  1 from IEDOC_IMP_BBLC_DETAILS BBLCDetails,IEDOC_IMP_BBLC_LINES BBLines \n" +
             "              where BBLCDetails.IMP_BBLC_LINE_ID=BBLines.IMP_BBLC_LINE_ID\n" +
             "              and BBLCHeaderEO.IMP_BBLC_HEADER_ID=BBLines.IMP_BBLC_HEADER_ID \n" +
             "              and BBLCDetails.Invoice_NO='" + value + "') ";
@@ -1173,8 +1108,8 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
         return query;
     }
-    
-  
+
+
     public String getPropNoQuery(String value) {
 
         String query = " And BBLCHeaderEO.PROPOSAL_NUMBER='" + value + "' ";
@@ -1189,104 +1124,100 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         return query;
     }
 
-       
-    public String baseQuery(){
-                
-        String headerVoQuery =  this.getBBLCHeader1().getQuery();
-       StringBuilder headerVoQuerySb = new StringBuilder(headerVoQuery);
-        headerVoQuerySb = headerVoQuerySb.delete( headerVoQuery.lastIndexOf("Where 1=1")+"Where 1=1".length(), headerVoQuerySb.length());
+
+    public String baseQuery() {
+
+        String headerVoQuery = this.getBBLCHeader1().getQuery();
+        StringBuilder headerVoQuerySb = new StringBuilder(headerVoQuery);
+        headerVoQuerySb = headerVoQuerySb.delete(headerVoQuery.lastIndexOf("Where 1=1") + "Where 1=1".length(), headerVoQuerySb.length());
         headerVoQuerySb = headerVoQuerySb.delete(0, headerVoQuerySb.indexOf("SELECT BBLCHeaderEO.IMP_BBLC_HEADER_ID"));
-   
-        
-       String query =
-        "SELECT BBLCHeaderEO.IMP_BBLC_HEADER_ID, \n" + 
-                "       BBLCHeaderEO.PROPOSAL_NUMBER, \n" + 
-                "       BBLCHeaderEO.PROPOSAL_DATE, \n" + 
-                "       BBLCHeaderEO.IMPORT_AGAINST_CONTRACT, \n" + 
-                "       BBLCHeaderEO.NEGOTIATION_BANK, \n" + 
-                "       BBLCHeaderEO.CONTRACT_VALUE, \n" + 
-                "       BBLCHeaderEO.LAST_SHIP_DATE, \n" + 
-                "       BBLCHeaderEO.ENTITLE_BTB_VALUE, \n" + 
-                "       BBLCHeaderEO.AVAILABLE_BTB_VALUE, \n" + 
-                "       BBLCHeaderEO.VERSION_NO, \n" + 
-                "       BBLCHeaderEO.VERSION_DATE, \n" + 
-                "       BBLCHeaderEO.ORG_ID, \n" + 
-                "       BBLCHeaderEO.LAST_UPDATE_LOGIN, \n" + 
-                "       BBLCHeaderEO.LAST_UPDATE_DATE, \n" + 
-                "       BBLCHeaderEO.LAST_UPDATED_BY, \n" + 
-                "       BBLCHeaderEO.CREATION_DATE, \n" + 
-                "       BBLCHeaderEO.CREATED_BY, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE1, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE2, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE3, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE4, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE5, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE6, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE7, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE8, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE9, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE10, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE11, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE12, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE13, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE14, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE15, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE16, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE17, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE18, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE19, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE20, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE21, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE22, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE23, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE24, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE25, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE26, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE27, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE28, \n" + 
-                "       BBLCHeaderEO.ATTRIBUTE29, \n" +                            
-                "       (SELECT HOU.INTERNAL_ADDRESS_LINE\n" + 
-                "        FROM HR_ORGANIZATION_UNITS HOU \n" + 
-                "        WHERE HOU.ORGANIZATION_ID = BBLCHeaderEO.ORG_ID AND ROWNUM = 1) ORG_NAME,\n" + 
-                "       BBLCHeaderEO.ATTRIBUTE30,\n" + 
-                "       BBLCHeaderEO.BBLC_DOC_NUMBER,\n" + 
-                "       BBLCHeaderEO.PAID_AMOUNT_FOR_PROPOSAL, \n" +  
-                "       (SELECT SUBSTR(HOU.NAME,0,INSTR(HOU.NAME,' '))||' / '||TO_CHAR(SYSDATE,'YYYY')||' / '||BBLCHeaderEO.BBLC_DOC_NUMBER\n" + 
-                "        FROM HR_ORGANIZATION_UNITS HOU \n" + 
-                "        WHERE HOU.ORGANIZATION_ID = BBLCHeaderEO.ORG_ID AND ROWNUM = 1) PROPOSAL_NO_NEW,\n" + 
-                "BBLCHeaderEO.NEGOTIATION_BANK_ID,\n" + 
-                "(SELECT FU.USER_NAME FROM FND_USER FU WHERE FU.USER_ID = BBLCHeaderEO.CREATED_BY) CREATED_BY_NAME, \n" + 
-                " nvl ( (  nullif ( (SELECT SUM(CONTRACT_VALUE) FROM \n" + 
-           " IEDOC_IMP_BBLC_CONTRACTS CC \n" + 
-           " WHERE CC.IMP_BBLC_HEADER_ID=BBLCHEADEREO.IMP_BBLC_HEADER_ID \n" + 
-           " AND   CC.ATTRIBUTE10  =  ( \n" + 
-                                         " select  max( attribute10) from IEDOC_IMP_BBLC_CONTRACTS CC1  \n" + 
-                                        "  where cc1.IMP_BBLC_HEADER_ID = cc.IMP_BBLC_HEADER_ID \n" + 
-                                       "   and CC1.BBLC_CONTRACT_NO = CC.BBLC_CONTRACT_NO \n" +                                             
-                                      "  )),0)  \n" + 
-                  "  )  , 1) CONTRACT_VAL , \n" + 
-                    
-                   "nvl((select sum(l.TOTAL_BBLC_VALUE)"+ 
-                     "from iedoc_imp_bblc_lines l"+ 
-                    " where l.imp_bblc_header_id =BBLCHeaderEO.imp_bblc_header_id"  +
-                   "  and l.imp_bblc_line_id =  (select max(l2.imp_bblc_line_id )from iedoc_imp_bblc_lines l2 where l2.bblc_no  = l.bblc_no )"+
-                     
-                    "), 0) TOTAL_BBLC_VALUE ,"+   
-             "BBLCHeaderEO.CREATED_BY_ORIGINAL ,"+
-                      "BBLCHeaderEO.CREATED_BY_CHANGE_DATE "+
-                " FROM IEDOC_IMP_BBLC_HEADERS BBLCHeaderEO \n"+ 
-                 "Where 1=1  ";
-               
-//       System.out.println("=========================== headerVoQuery ================== ");
-//        System.out.println(headerVoQuery);
-        
-//        System.out.println("===========================  headerVoQuerySb ================== ");
-//         System.out.println( headerVoQuerySb);
-        
-//        System.out.println("=========================== Query ================== ");
-//         System.out.println(query);      
-    //   return   query ;
-         return   headerVoQuerySb.toString();       
+
+
+        String query = "SELECT BBLCHeaderEO.IMP_BBLC_HEADER_ID, \n" +
+            "       BBLCHeaderEO.PROPOSAL_NUMBER, \n" +
+            "       BBLCHeaderEO.PROPOSAL_DATE, \n" +
+            "       BBLCHeaderEO.IMPORT_AGAINST_CONTRACT, \n" +
+            "       BBLCHeaderEO.NEGOTIATION_BANK, \n" +
+            "       BBLCHeaderEO.CONTRACT_VALUE, \n" +
+            "       BBLCHeaderEO.LAST_SHIP_DATE, \n" +
+            "       BBLCHeaderEO.ENTITLE_BTB_VALUE, \n" +
+            "       BBLCHeaderEO.AVAILABLE_BTB_VALUE, \n" +
+            "       BBLCHeaderEO.VERSION_NO, \n" +
+            "       BBLCHeaderEO.VERSION_DATE, \n" +
+            "       BBLCHeaderEO.ORG_ID, \n" +
+            "       BBLCHeaderEO.LAST_UPDATE_LOGIN, \n" +
+            "       BBLCHeaderEO.LAST_UPDATE_DATE, \n" +
+            "       BBLCHeaderEO.LAST_UPDATED_BY, \n" +
+            "       BBLCHeaderEO.CREATION_DATE, \n" +
+            "       BBLCHeaderEO.CREATED_BY, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE1, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE2, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE3, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE4, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE5, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE6, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE7, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE8, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE9, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE10, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE11, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE12, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE13, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE14, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE15, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE16, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE17, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE18, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE19, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE20, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE21, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE22, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE23, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE24, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE25, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE26, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE27, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE28, \n" +
+            "       BBLCHeaderEO.ATTRIBUTE29, \n" +
+            "       (SELECT HOU.INTERNAL_ADDRESS_LINE\n" +
+            "        FROM HR_ORGANIZATION_UNITS HOU \n" +
+            "        WHERE HOU.ORGANIZATION_ID = BBLCHeaderEO.ORG_ID AND ROWNUM = 1) ORG_NAME,\n" +
+            "       BBLCHeaderEO.ATTRIBUTE30,\n" +
+            "       BBLCHeaderEO.BBLC_DOC_NUMBER,\n" +
+            "       BBLCHeaderEO.PAID_AMOUNT_FOR_PROPOSAL, \n" +
+            "       (SELECT SUBSTR(HOU.NAME,0,INSTR(HOU.NAME,' '))||' / '||TO_CHAR(SYSDATE,'YYYY')||' / '||BBLCHeaderEO.BBLC_DOC_NUMBER\n" +
+            "        FROM HR_ORGANIZATION_UNITS HOU \n" +
+            "        WHERE HOU.ORGANIZATION_ID = BBLCHeaderEO.ORG_ID AND ROWNUM = 1) PROPOSAL_NO_NEW,\n" +
+            "BBLCHeaderEO.NEGOTIATION_BANK_ID,\n" +
+            "(SELECT FU.USER_NAME FROM FND_USER FU WHERE FU.USER_ID = BBLCHeaderEO.CREATED_BY) CREATED_BY_NAME, \n" +
+            " nvl ( (  nullif ( (SELECT SUM(CONTRACT_VALUE) FROM \n" +
+            " IEDOC_IMP_BBLC_CONTRACTS CC \n" +
+            " WHERE CC.IMP_BBLC_HEADER_ID=BBLCHEADEREO.IMP_BBLC_HEADER_ID \n" +
+            " AND   CC.ATTRIBUTE10  =  ( \n" +
+            " select  max( attribute10) from IEDOC_IMP_BBLC_CONTRACTS CC1  \n" +
+            "  where cc1.IMP_BBLC_HEADER_ID = cc.IMP_BBLC_HEADER_ID \n" +
+            "   and CC1.BBLC_CONTRACT_NO = CC.BBLC_CONTRACT_NO \n" +
+            "  )),0)  \n" +
+            "  )  , 1) CONTRACT_VAL , \n" +
+            "nvl((select sum(l.TOTAL_BBLC_VALUE)" +
+
+            "from iedoc_imp_bblc_lines l" + " where l.imp_bblc_header_id =BBLCHeaderEO.imp_bblc_header_id" +
+            "  and l.imp_bblc_line_id =  (select max(l2.imp_bblc_line_id )from iedoc_imp_bblc_lines l2 where l2.bblc_no  = l.bblc_no )" +
+            "), 0) TOTAL_BBLC_VALUE ," +
+
+            "BBLCHeaderEO.CREATED_BY_ORIGINAL ," + "BBLCHeaderEO.CREATED_BY_CHANGE_DATE " + " FROM IEDOC_IMP_BBLC_HEADERS BBLCHeaderEO \n" +
+            "Where 1=1  ";
+
+        //       System.out.println("=========================== headerVoQuery ================== ");
+        //        System.out.println(headerVoQuery);
+
+        //        System.out.println("===========================  headerVoQuerySb ================== ");
+        //         System.out.println( headerVoQuerySb);
+
+        //        System.out.println("=========================== Query ================== ");
+        //         System.out.println(query);
+        //   return   query ;
+        return headerVoQuerySb.toString();
     }
 
     public void ExecuteBBLCLines() {
@@ -1296,7 +1227,6 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
 
     } //end of ExecuteBBLCLines method
-
 
 
     public String getBBLCDETAIL_Pi_id() {
@@ -1315,44 +1245,41 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     }
 
 
+    public void UploadFabrincRoll(String InvoiceNo, String ContractNo) {
 
-    public void UploadFabrincRoll(String InvoiceNo,String ContractNo ){
+        String vBBLCDetail_Pi_ID = null;
+        String status = null;
+        vBBLCDetail_Pi_ID = getBBLCDETAIL_Pi_id();
 
-               String vBBLCDetail_Pi_ID=null;               
-                String status = null;
-                 vBBLCDetail_Pi_ID=getBBLCDETAIL_Pi_id();
-                 
-                
-                String stmt =
-                    "BEGIN  IEDOC_BBLC_PKG.MNJ_FAB_ROLL_INV(:1); end;";
 
-              //     System.out.println("Procedure Code");
-                                   
-                CallableStatement cs =
-                    getDBTransaction().createCallableStatement(stmt, 1);
-                 //  System.out.println("Procedure Code 2");
-                   
-                try {
-                  //  cs.setString(1, InvoiceNo);
-                  //  cs.setString(2, ContractNo);
-                 
-                 
-                 System.out.println(vBBLCDetail_Pi_ID+"<<--------->>");
-                    cs.setString(1, vBBLCDetail_Pi_ID);
-                   // cs.setString(2, vOrg);
+        String stmt = "BEGIN  IEDOC_BBLC_PKG.MNJ_FAB_ROLL_INV(:1); end;";
 
-                    cs.execute();
-                    //System.out.println("flag value in AM" + flag);
-                    //    status = cs.getString(1);
+        //     System.out.println("Procedure Code");
 
-                    cs.close();
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
+        //  System.out.println("Procedure Code 2");
 
-                } catch (Exception e) {
-                    status = e.getMessage();
-                }
-                   System.out.println("Procedure Code 3 "+status);
-               
-           }
+        try {
+            //  cs.setString(1, InvoiceNo);
+            //  cs.setString(2, ContractNo);
+
+
+            System.out.println(vBBLCDetail_Pi_ID + "<<--------->>");
+            cs.setString(1, vBBLCDetail_Pi_ID);
+            // cs.setString(2, vOrg);
+
+            cs.execute();
+            //System.out.println("flag value in AM" + flag);
+            //    status = cs.getString(1);
+
+            cs.close();
+
+        } catch (Exception e) {
+            status = e.getMessage();
+        }
+        System.out.println("[UploadFabrincRoll  Procedure Code 3] " + status);
+
+    }
 
     /**
      * Container's getter for MnjMfgFabinsDetailTemp1.
@@ -1371,44 +1298,40 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     }
 
 
-    public void MnjDetItemsPopulate(String ShipmentNo,int DetailLine_Id ){
+    public void MnjDetItemsPopulate(String ShipmentNo, int DetailLine_Id) {
 
-            String status = null;
-            
-            
-          
-            String stmt =
-                "BEGIN  IEDOC_BBLC_PKG.MNJ_BBLC_SHIPMENT_UPLOAD(:1,:2); end;";
+        String status = null;
 
-                            
-            CallableStatement cs =
-                getDBTransaction().createCallableStatement(stmt, 1);
-              // System.out.println("Procedure Code 2");
-               
-            try {
-                cs.setString(1, ShipmentNo);
-                cs.setInt(2, DetailLine_Id);
-                cs.execute();
-               
 
-                cs.close();
+        String stmt = "BEGIN  IEDOC_BBLC_PKG.MNJ_BBLC_SHIPMENT_UPLOAD(:1,:2); end;";
 
-            } catch (Exception e) {
-                status = e.getMessage();
-            }
-           
-               
-           /****/
 
-           ViewObject vo = getBBLCDetailsPi1();
-           //ViewObject vo = getBBLCDetails1();
-           vo.executeQuery();   
-               
-           /****/    
-          
-           
-           
-           }
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
+        // System.out.println("Procedure Code 2");
+
+        try {
+            cs.setString(1, ShipmentNo);
+            cs.setInt(2, DetailLine_Id);
+            cs.execute();
+
+
+            cs.close();
+
+        } catch (Exception e) {
+            status = e.getMessage();
+        }
+
+
+        /****/
+
+        ViewObject vo = getBBLCDetailsPi1();
+        //ViewObject vo = getBBLCDetails1();
+        vo.executeQuery();
+
+        /****/
+
+
+    }
 
     /**
      * Container's getter for PI_SPO_DETAILS_1.
@@ -1435,61 +1358,57 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     }
 
 
-    public String GetBBLCPiCount(int Header_Id ){
-               
-      //         System.out.println("Procedure Code 0000");
-               
-             String vStr = null,status=null;
-            String stmt =
-                "BEGIN  :1:=IEDOC_BBLC_PKG.Mnj_Count_Bblc_Pi(:2); end;";
+    public String GetBBLCPiCount(int Header_Id) {
 
-               System.out.println("Procedure Code");
-                               
-            CallableStatement cs =
-                getDBTransaction().createCallableStatement(stmt, 1);
-             //  System.out.println("Procedure Code 2");
-               
-            try {
-                cs.setInt(2, Header_Id);
-                cs.registerOutParameter(1, oracle.jdbc.OracleTypes.VARCHAR);              
-                cs.execute();
-                vStr=cs.getString(1);    
-                cs.close();
+        //         System.out.println("Procedure Code 0000");
 
-            } catch (Exception e) {
-                status = e.getMessage();
-            }
-            
-               System.out.println("Procedure Code 3 "+vStr);
-            return vStr;       
-           }
+        String vStr = null, status = null;
+        String stmt = "BEGIN  :1:=IEDOC_BBLC_PKG.Mnj_Count_Bblc_Pi(:2); end;";
 
-    public String GetBBLCInvoiceItemCount(int Header_Id ){
+        System.out.println("Procedure Code");
 
-            String vStr = null,status=null;
-            String stmt =
-                "BEGIN  :1:=IEDOC_BBLC_PKG.Mnj_Count_Item(:2); end;";
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
+        //  System.out.println("Procedure Code 2");
 
-//               System.out.println("Procedure Code Invoice Count");
-                               
-            CallableStatement cs =
-                getDBTransaction().createCallableStatement(stmt, 1);
-  //             System.out.println("Procedure Code 2 Invoice Count");
-               
-            try {
-                cs.setInt(2, Header_Id);
-                cs.registerOutParameter(1, oracle.jdbc.OracleTypes.VARCHAR);              
-                cs.execute();
-                vStr=cs.getString(1);    
-                cs.close();
+        try {
+            cs.setInt(2, Header_Id);
+            cs.registerOutParameter(1, oracle.jdbc.OracleTypes.VARCHAR);
+            cs.execute();
+            vStr = cs.getString(1);
+            cs.close();
 
-            } catch (Exception e) {
-                status = e.getMessage();
-            }
-            
-    //           System.out.println("Procedure Code 3 Invoice Count "+vStr);
-            return vStr;       
-           }
+        } catch (Exception e) {
+            status = e.getMessage();
+        }
+
+        System.out.println("Procedure Code 3 " + vStr);
+        return vStr;
+    }
+
+    public String GetBBLCInvoiceItemCount(int Header_Id) {
+
+        String vStr = null, status = null;
+        String stmt = "BEGIN  :1:=IEDOC_BBLC_PKG.Mnj_Count_Item(:2); end;";
+
+        //               System.out.println("Procedure Code Invoice Count");
+
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
+        //             System.out.println("Procedure Code 2 Invoice Count");
+
+        try {
+            cs.setInt(2, Header_Id);
+            cs.registerOutParameter(1, oracle.jdbc.OracleTypes.VARCHAR);
+            cs.execute();
+            vStr = cs.getString(1);
+            cs.close();
+
+        } catch (Exception e) {
+            status = e.getMessage();
+        }
+
+        //           System.out.println("Procedure Code 3 Invoice Count "+vStr);
+        return vStr;
+    }
 
 
     /**
@@ -1525,143 +1444,129 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     }
 
 
-    public void CopyLine_ChargeInterface(int Interface_Id ){
+    public void CopyLine_ChargeInterface(int Interface_Id) {
 
-            String status = null;
-            String stmt =
-             //   "BEGIN  IEDOC_BBLC_PKG.COPY_LINE_CHARGE_INTERFACE(:1,:2,:3); end;";
-             "BEGIN  IEDOC_BBLC_PKG.ADD_LINE_CHARGE_INTERFACE(:1,:2,:3); end;";
-
-            //   System.out.println("Procedure Code");
-                               
-            CallableStatement cs =
-                getDBTransaction().createCallableStatement(stmt, 1);
-               System.out.println("Procedure Code 2");
-               
-            try {
-                cs.setInt(1, Interface_Id);
-                cs.registerOutParameter(2, oracle.jdbc.OracleTypes.VARCHAR);              
-                cs.registerOutParameter(3, oracle.jdbc.OracleTypes.VARCHAR);              
-                
-                cs.execute();
-                //System.out.println("flag value in AM" + flag);
-                //    status = cs.getString(1);
-
-                cs.close();
-                ViewObject vo=getMnjChargesInterfaceVO1();
-                vo.executeQuery();
-            } catch (Exception e) {
-                status = e.getMessage();
-            }
-               System.out.println("Procedure Code 3 "+status);
-               
-           }
-
-
-    public void GenerateCharge_Lines(int Header_Id,int Detail_Id,int User_Id ){
-        
-            
-
-            String status = null;
-            String stmt =
-                "BEGIN  IEDOC_BBLC_PKG.POPULATE_INTERFACE(:1,:2,:3,:4,:5,:6,:7); end;";
-
-               System.out.println("Procedure Code");
-                               
-            CallableStatement cs =
-                getDBTransaction().createCallableStatement(stmt, 1);
-               System.out.println("Procedure Code 2");
-               
-               
-               
-            try {
-                cs.setInt(1, Header_Id);
-                cs.setInt(2, Detail_Id);
-                cs.setInt(3,1110 );
-                cs.setInt(4, 50817);
-                cs.setInt(5, 201);
-
-                cs.registerOutParameter(6, oracle.jdbc.OracleTypes.VARCHAR);              
-                cs.registerOutParameter(7, oracle.jdbc.OracleTypes.VARCHAR);              
-                
-                cs.execute();
-                //System.out.println("flag value in AM" + flag);
-                //    status = cs.getString(1);
-
-                cs.close();
-                System.out.println("Level Generate Lines 1");
-                ViewObject vo=getMnjChargesInterfaceVO1();
-                 vo.executeQuery();
-                    
-                    System.out.println("Level Generate Lines 2");
-                
-
-            } catch (Exception e) {
-                status = e.getMessage();
-            }
-               System.out.println("Procedure Code 3 "+status);
-               
-              
-              
-              
-              
-              
-              
-               
-           }
-
-
-
-    public void ProcessLines( ){
-        System.out.println("Procedure Code 1");
-        String vChargeDetNew=null;
-         String orId ;
-        vChargeDetNew=GetChargeDetID();
-        orId= getOrgId();
-        
         String status = null;
         String stmt =
-         "BEGIN  MNJ_INL_CHARGES_PKG.PROCESS_INTERFACE(:1,:2,:3,:4); end;";
+            //   "BEGIN  IEDOC_BBLC_PKG.COPY_LINE_CHARGE_INTERFACE(:1,:2,:3); end;";
+            "BEGIN  IEDOC_BBLC_PKG.ADD_LINE_CHARGE_INTERFACE(:1,:2,:3); end;";
 
-        System.out.println("Procedure Code");
-                        
-        CallableStatement cs =
-         getDBTransaction().createCallableStatement(stmt, 1);
-   
-   
-             
+        //   System.out.println("Procedure Code");
+
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
+        System.out.println("Procedure Code 2");
+
         try {
+            cs.setInt(1, Interface_Id);
+            cs.registerOutParameter(2, oracle.jdbc.OracleTypes.VARCHAR);
+            cs.registerOutParameter(3, oracle.jdbc.OracleTypes.VARCHAR);
 
-         cs.setString(1,vChargeDetNew);
-            cs.setInt(2,Integer.parseInt(orId)); 
-         cs.registerOutParameter(3, oracle.jdbc.OracleTypes.VARCHAR);              
-         cs.registerOutParameter(4, oracle.jdbc.OracleTypes.VARCHAR);              
-         cs.execute();
-        
-         cs.close();
+            cs.execute();
+            //System.out.println("flag value in AM" + flag);
+            //    status = cs.getString(1);
 
+            cs.close();
+            ViewObject vo = getMnjChargesInterfaceVO1();
+            vo.executeQuery();
         } catch (Exception e) {
-         status = e.getMessage();
+            status = e.getMessage();
         }
-        System.out.println("Procedure Code 3 "+status);
-        
+        System.out.println("Procedure Code 3 " + status);
+
     }
 
 
-    public String GetChargeDetID(){
-            ViewObject vo = getBBLCShipmentChargesVO1();
-            String ChargeDetID = null;
-            try {
+    public void GenerateCharge_Lines(int Header_Id, int Detail_Id, int User_Id) {
 
-                ChargeDetID = vo.getCurrentRow().getAttribute("ImpBblcDetChargeId").toString();
 
-            } catch (Exception e) {
-                // TODO: Add catch code
-                ;
-            }
-            return ChargeDetID;}
+        String status = null;
+        String stmt = "BEGIN  IEDOC_BBLC_PKG.POPULATE_INTERFACE(:1,:2,:3,:4,:5,:6,:7); end;";
 
-/*    public void Process_Lines(int Charge_Detail_Id ){
+        System.out.println("Procedure Code");
+
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
+        System.out.println("Procedure Code 2");
+
+
+        try {
+            cs.setInt(1, Header_Id);
+            cs.setInt(2, Detail_Id);
+            cs.setInt(3, 1110);
+            cs.setInt(4, 50817);
+            cs.setInt(5, 201);
+
+            cs.registerOutParameter(6, oracle.jdbc.OracleTypes.VARCHAR);
+            cs.registerOutParameter(7, oracle.jdbc.OracleTypes.VARCHAR);
+
+            cs.execute();
+            //System.out.println("flag value in AM" + flag);
+            //    status = cs.getString(1);
+
+            cs.close();
+            System.out.println("Level Generate Lines 1");
+            ViewObject vo = getMnjChargesInterfaceVO1();
+            vo.executeQuery();
+
+            System.out.println("Level Generate Lines 2");
+
+
+        } catch (Exception e) {
+            status = e.getMessage();
+        }
+        System.out.println("Procedure Code 3 " + status);
+
+
+    }
+
+
+    public void ProcessLines() {
+        System.out.println("Procedure Code 1");
+        String vChargeDetNew = null;
+        String orId;
+        vChargeDetNew = GetChargeDetID();
+        orId = getOrgId();
+
+        String status = null;
+        String stmt = "BEGIN  MNJ_INL_CHARGES_PKG.PROCESS_INTERFACE(:1,:2,:3,:4); end;";
+
+        System.out.println("Procedure Code");
+
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
+
+
+        try {
+
+            cs.setString(1, vChargeDetNew);
+            cs.setInt(2, Integer.parseInt(orId));
+            cs.registerOutParameter(3, oracle.jdbc.OracleTypes.VARCHAR);
+            cs.registerOutParameter(4, oracle.jdbc.OracleTypes.VARCHAR);
+            cs.execute();
+
+            cs.close();
+
+        } catch (Exception e) {
+            status = e.getMessage();
+        }
+        System.out.println("Procedure Code 3 " + status);
+
+    }
+
+
+    public String GetChargeDetID() {
+        ViewObject vo = getBBLCShipmentChargesVO1();
+        String ChargeDetID = null;
+        try {
+
+            ChargeDetID = vo.getCurrentRow().getAttribute("ImpBblcDetChargeId").toString();
+
+        } catch (Exception e) {
+            // TODO: Add catch code
+            ;
+        }
+        return ChargeDetID;
+    }
+
+    /*    public void Process_Lines(int Charge_Detail_Id ){
 
                System.out.println("Procedure Code 1");
 
@@ -1698,20 +1603,20 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     @Override
     public void afterCommit(TransactionEvent transactionEvent) {
         super.afterCommit(transactionEvent);
-            
+
         executeQuery_ShipmentChrg();
     }
-   
-   
-    public void executeQuery_ShipmentChrg(){
-    
-            System.out.println("Level after commit 1");
-                ViewObject vo=getBBLCShipmentChargesVO1();
-                vo.executeQuery();
-                
-                System.out.println("Level after commit 2");
-            
-        }
+
+
+    public void executeQuery_ShipmentChrg() {
+
+        System.out.println("[executeQuery_ShipmentChrg - Level after commit 1] ");
+        ViewObject vo = getBBLCShipmentChargesVO1();
+        vo.executeQuery();
+
+        System.out.println("[executeQuery_ShipmentChrg - Level after commit 2] ");
+
+    }
 
     public String CopyBBLCLinesAM() {
 
@@ -1719,52 +1624,48 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
         String vBBLCLineId = vo.getCurrentRow().getAttribute("ImpBblcLineId").toString();
         String vAmendmentType = vo.getCurrentRow().getAttribute("Attribute15").toString();
-        String status=null;
-        System.out.println(vAmendmentType+"<<-Amendment Type--BBLC Line-------------->>"+vBBLCLineId);
-        
-        String stmt =
-            "BEGIN  APPS.IEDOC_BBLC_PKG.COPY_BBLC_LINES(:1,:2,:3); end;";
-        CallableStatement cs =
-            getDBTransaction().createCallableStatement(stmt, 1);
+        String status = null;
+        System.out.println(vAmendmentType + "<<-Amendment Type--BBLC Line-------------->>" + vBBLCLineId);
+
+        String stmt = "BEGIN  APPS.IEDOC_BBLC_PKG.COPY_BBLC_LINES(:1,:2,:3); end;";
+        CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
         try {
             cs.setInt(1, Integer.parseInt(vBBLCLineId));
             cs.setString(2, vAmendmentType);
-            cs.registerOutParameter(3,OracleTypes.VARCHAR);
+            cs.registerOutParameter(3, OracleTypes.VARCHAR);
             cs.execute();
 
             status = cs.getString(3);
 
             cs.close();
         } catch (Exception e) {
-          status = e.getMessage();
+            status = e.getMessage();
         }
         vo.executeQuery();
-      return status;
+        return status;
     }
-    
+
     public String callBBLCReport() {
 
         ViewObject vo = getBBLCHeader1();
-        
-        Map sessionScope = ADFContext.getCurrent().getSessionScope();   
-        
-       
+
+        Map sessionScope = ADFContext.getCurrent().getSessionScope();
+
+
         String userId = (String)sessionScope.get("userId");
         String respId = (String)sessionScope.get("respId");
         String respAppl = (String)sessionScope.get("respAppl");
 
-        String headerId =
-            vo.getCurrentRow().getAttribute("ImpBblcHeaderId").toString();
+        String headerId = vo.getCurrentRow().getAttribute("ImpBblcHeaderId").toString();
 
         System.out.println("ProposalNumber id -->" + headerId);
         String status = null;
         String stmt = "BEGIN  :1 := mnj_ont_BBLC_report(:2,:3,:4,:5); end;";
-        java.sql.CallableStatement cs =
-            getDBTransaction().createCallableStatement(stmt, 1);
+        java.sql.CallableStatement cs = getDBTransaction().createCallableStatement(stmt, 1);
         try {
             cs.registerOutParameter(1, OracleTypes.VARCHAR);
             cs.setString(2, headerId);
-           cs.setString(3, userId);
+            cs.setString(3, userId);
             cs.setString(4, respId);
             cs.setString(5, respAppl);
             //cs.setInt(6,1 );
@@ -1775,8 +1676,8 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
             status = e.getMessage();
 
         }
-        System.out.println("User Id matrix-------->"+userId);
-        System.out.println("status-------->"+status);
+        System.out.println("User Id matrix-------->" + userId);
+        System.out.println("status-------->" + status);
         return status;
 
     }
@@ -1870,25 +1771,24 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     public ViewObjectImpl getMnjFileUpdDwn1() {
         return (ViewObjectImpl)findViewObject("MnjFileUpdDwn1");
     }
-    
-    
-    
-    public void setFileData(String name, String fileSize ,String path,String contTyp) {
-      
-        Map sessionScope = ADFContext.getCurrent().getSessionScope();   
-        String varDoc = (String)sessionScope.get("s_doc");  //s_docNo
+
+
+    public void setFileData(String name, String fileSize, String path, String contTyp) {
+
+        Map sessionScope = ADFContext.getCurrent().getSessionScope();
+        String varDoc = (String)sessionScope.get("s_doc"); //s_docNo
         String varDocNo = (String)sessionScope.get("s_docNo");
-      
-        ViewObject fileVo = this. getMnjFileUpdDwn1();
+
+        ViewObject fileVo = this.getMnjFileUpdDwn1();
         Row newRow = fileVo.createRow();
         newRow.setAttribute("FileName", name);
         newRow.setAttribute("FileSize", fileSize);
         newRow.setAttribute("Path", path);
         newRow.setAttribute("ContentType", contTyp);
-        newRow.setAttribute("FileId", varDoc+varDocNo);
+        newRow.setAttribute("FileId", varDoc + varDocNo);
         fileVo.insertRow(newRow);
-       
-        
+
+
         fileVo.executeQuery();
         commit();
     }
@@ -1911,12 +1811,11 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     }
 
     private String getLcRefNoQuery(String value) {
-        
-        
-        String query =  
-        " and Exists (select  1 from IEDOC_IMP_BBLC_LINES BBLCLines \n" +
-        "         where BBLCHeaderEO.IMP_BBLC_HEADER_ID=BBLCLines.IMP_BBLC_HEADER_ID \n" +
-        "         and BBLCLines.ATTRIBUTE29='" + value + "') ";
+
+
+        String query = " and Exists (select  1 from IEDOC_IMP_BBLC_LINES BBLCLines \n" +
+            "         where BBLCHeaderEO.IMP_BBLC_HEADER_ID=BBLCLines.IMP_BBLC_HEADER_ID \n" +
+            "         and BBLCLines.ATTRIBUTE29='" + value + "') ";
 
         return query;
     }
@@ -1931,80 +1830,75 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     }
 
     private void commit() {
-        
+
         boolean isVerifiedUser;
-        isVerifiedUser= checkVerifiedUser();
-        
-        String currentUserName ;
-        
-                      
-         if(!isVerifiedUser){
-             
+        isVerifiedUser = checkVerifiedUser();
+
+        String currentUserName;
+
+
+        if (!isVerifiedUser) {
+
             showWrongUserMessage();
-            
-            return;            
+
+            return;
         }
-        
+
         this.getDBTransaction().commit();
-        
+
     }
-    
-    
-    
-    public  void showMessage(String messege , String severity ) {
-        
-        
+
+
+    public void showMessage(String messege, String severity) {
+
+
         FacesMessage fm = new FacesMessage(messege);
-        
-        if(severity.equals("info")){
+
+        if (severity.equals("info")) {
             fm.setSeverity(FacesMessage.SEVERITY_INFO);
-        }
-        else if(severity.equals("warn")){
+        } else if (severity.equals("warn")) {
             fm.setSeverity(FacesMessage.SEVERITY_WARN);
-        }
-        else if(severity.equals("error")){
+        } else if (severity.equals("error")) {
             fm.setSeverity(FacesMessage.SEVERITY_ERROR);
         }
-        
+
         FacesContext context = FacesContext.getCurrentInstance();
         context.addMessage(null, fm);
-        
+
     }
-    
+
     private boolean checkVerifiedUser() {
         String docCreator;
         String docCreatorName;
         try {
-            docCreator =
-                    this.getBBLCHeader1().getCurrentRow().getAttribute("CreatedBy").toString();
+            docCreator = this.getBBLCHeader1().getCurrentRow().getAttribute("CreatedBy").toString();
         } catch (Exception e) {
             docCreator = "000000";
         }
         try {
-            docCreatorName =
-                    this.getBBLCHeader1().getCurrentRow().getAttribute("CreatedByName").toString();
+            docCreatorName = this.getBBLCHeader1().getCurrentRow().getAttribute("CreatedByName").toString();
         } catch (Exception e) {
             docCreatorName = "No Creator";
         }
         Map sessionScope = ADFContext.getCurrent().getSessionScope();
-        
+
         String currentUser = (String)sessionScope.get("userId");
-        
+
         //  String currentUser = "5219";
-        
-        if( currentUser != null && (currentUser.equals("6086")  ||  currentUser.equals("1545"))){
-          // verify user for user: USER_EXPORT and Syed_harun
-          return true;
+
+        if (currentUser != null && (currentUser.equals("6086") || currentUser.equals("1545"))) {
+            // verify user for user: USER_EXPORT and Syed_harun
+            return true;
         }
-                         
-        else if(!docCreator.equals(currentUser)){
-            
-         return   false;   
-            
-         //  return   true; 
-            
+
+        else if (!docCreator.equals(currentUser)) {
+
+            return false;
+
+            //  return   true;
+
         }
-         return true;
+        return true;
 
     }
 
@@ -2015,23 +1909,21 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
     public ViewObjectImpl getAllUserVO1() {
         return (ViewObjectImpl)findViewObject("AllUserVO1");
     }
-    
-    
+
+
     private void showWrongUserMessage() {
-        
+
         String currentUserName;
-        try{
-            currentUserName= this.getAllUserVO1().first().getAttribute("UserName").toString();
+        try {
+            currentUserName = this.getAllUserVO1().first().getAttribute("UserName").toString();
+        } catch (Exception e) {
+            currentUserName = "No Current User ";
         }
-        catch(Exception e){
-            currentUserName ="No Current User ";
-        }
-        
-        String message="Only creatior of this document can delete or update this document.  Current User : "
-                       + currentUserName;
+
+        String message = "Only creatior of this document can delete or update this document.  Current User : " + currentUserName;
         showMessage(message, "info");
-        
-        
+
+
     }
 
 

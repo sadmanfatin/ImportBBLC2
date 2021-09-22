@@ -1877,32 +1877,35 @@ public class BBLCHeaderEOImpl extends EntityImpl {
         Map sessionScope = ADFContext.getCurrent().getSessionScope();
         String user = (String)sessionScope.get("userId");
       
-        System.out.println("Document No -->" + getSrNoString());
+        System.out.println("[BBLCHeaderEOImpl :: doDML Document No getSrNoString] -->" + getSrNoString());
          
         if (DML_UPDATE == operation) {
             try {
                 setLastUpdateDate((Date)Date.getCurrentDate());
                 setLastUpdatedBy(new oracle.jbo.domain.Number(user));
-                System.out.println("Level Update "+(user));
+                System.out.println("[BBLCHeaderEOImpl ] Level Update "+(user));
                 
             } catch (SQLException f) {
+                System.out.println("[BBLCHeaderEOImpl ERROR 1 DML_UPDATE] ");
                 System.out.println(f.getMessage());
+                System.out.println(f.getErrorCode()) ;
             }
         } else if (DML_INSERT == operation) {
 
             try {
 
-                System.out.println("Level Insert "+(user));
+                System.out.println("[BBLCHeaderEOImpl] Level Insert "+(user));
                 
                 setProposalNumber(getBBLCProposalNoString());
                 setBblcDocNumber(new oracle.jbo.domain.Number(getSrNoString()));
                 setCreationDate((Date)Date.getCurrentDate());
                 setCreatedBy(new oracle.jbo.domain.Number(user));
 
-                System.out.println("Level 2 ");
+                System.out.println("[BBLCHeaderEOImpl] Level 2 ");
 
 
             } catch (SQLException f) {
+                System.out.println("[BBLCHeaderEOImpl ERROR 2]");
                 ;
             }
         }

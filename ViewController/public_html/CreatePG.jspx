@@ -1573,7 +1573,8 @@
                         <af:column headerText="Container No"
                                    id="c338" filterFeatures="caseInsensitive"
                                    filterable="true" sortable="true"
-                                   sortProperty="Containerlist" align="center">
+                                   sortProperty="Containerlist" align="center"
+                                   binding="#{ManagedBean.container_no_bind}">
                           <af:outputText value="#{row.Containerlist}"
                                          id="ot144"/>
                         </af:column>
@@ -5676,7 +5677,8 @@
         <af:popup id="p15"
                   popupFetchListener="#{ManagedBean.processAddContDetailPopupFetchListener}"
                   contentDelivery="lazyUncached">
-          <af:dialog id="d16" type="cancel" title="Add Container Name &amp; Size">
+          <af:dialog id="d16" title="Add Container No"
+                     dialogListener="#{ManagedBean.addContainerDialogListener}">
             <af:panelCollection id="pc6">
               <f:facet name="menus"/>
               <f:facet name="toolbar">
@@ -5692,10 +5694,6 @@
                                     id="cb17" partialSubmit="true"
                                     inlineStyle="height:30px;"/>
                   <af:spacer width="10" height="10" id="s40"/>
-                  <af:commandButton actionListener="#{ManagedBean.processContSizepopup}"
-                                    text="Save"
-                                    id="cb70" partialSubmit="true"
-                                    inlineStyle="height:30px;"/>
                 </af:toolbar>
               </f:facet>
               <f:facet name="statusbar"/>
@@ -5747,7 +5745,7 @@
                 </af:column>
                 <af:column sortProperty="ContainerName" filterable="true"
                            sortable="true"
-                           headerText="Container Name"
+                           headerText="Container No"
                            id="c335" align="center" width="150">
                   <af:inputText value="#{row.bindings.ContainerName.inputValue}"
                                 label="#{bindings.IedocImpBblcContaiDetailVO1.hints.ContainerName.label}"

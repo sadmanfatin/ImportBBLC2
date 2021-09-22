@@ -207,6 +207,7 @@ public class managedbean {
     private RichInputText freightCostBind;
     private RichTable bind_popupContDetail_tb;
     private RichInputText containerlist_bind;
+    private RichColumn container_no_bind;
 
 
     public void editDialogListenerPi(DialogEvent dialogEvent) {
@@ -289,9 +290,9 @@ public class managedbean {
 
         System.out.println("sabih Error Here");
         OperationBinding operationBinding = executeOperation("populateContractLines1");
-        System.out.println("sabih Error 1   " + getOrgId().getValue());
+        System.out.println("[setWhereClauseContract] [sabih Error 1 getOrgId]  " + getOrgId().getValue());
         operationBinding.getParamsMap().put("OrgId", getOrgId().getValue());
-        System.out.println("sabih Error 2   " + getOrgId().getValue());
+        System.out.println("[setWhereClauseContract] [sabih Error 2 getOrgId]  " + getOrgId().getValue());
         operationBinding.execute();
         if (!operationBinding.getErrors().isEmpty()) {
             System.out.println("if errors-->");
@@ -3171,11 +3172,11 @@ public class managedbean {
         //   totalContractValue.setValue(getContractTotalValue());
 
         OperationBinding operationBinding = executeOperation("HeaderFormulaCalculation");
-        System.out.println("sabih Error 1   " + getHeaderID().getValue());
+        System.out.println("[calculateBblcHeaderFormulas  === getHeaderID]  " + getHeaderID().getValue());
         operationBinding.getParamsMap().put("HeaderId", getHeaderID().getValue());
         operationBinding.execute();
         if (!operationBinding.getErrors().isEmpty()) {
-
+            System.out.println("[calculateBblcHeaderFormulas === ERROR] ");
         }
 
 
@@ -4048,7 +4049,6 @@ public class managedbean {
         }
 
         Map sessionScope = ADFContext.getCurrent().getSessionScope();
-
         String currentUser = (String)sessionScope.get("userId");
 
         //  String currentUser = "5219";
@@ -4059,11 +4059,8 @@ public class managedbean {
         }
 
         else if (!docCreator.equals(currentUser)) {
-
             return false;
-
-            //  return   true;
-
+            // return   true;
         }
         return true;
     }
@@ -4754,7 +4751,7 @@ public class managedbean {
         
 
         this.refreshQueryKeepingCurrentRow(BBLCDetails1vo );
-        AdfFacesContext.getCurrentInstance().addPartialTarget(shipmentTable );
+        AdfFacesContext.getCurrentInstance().addPartialTarget(container_no_bind );
     }
 
     public void processCreateInsertContDetail(ActionEvent actionEvent) {
@@ -4790,5 +4787,30 @@ public class managedbean {
 
     public RichInputText getContainerlist_bind() {
         return containerlist_bind;
+    }
+
+    public void setContainer_no_bind(RichColumn container_no_bind) {
+        this.container_no_bind = container_no_bind;
+    }
+
+    public RichColumn getContainer_no_bind() {
+        return container_no_bind;
+    }
+
+    public void addContainerDialogListener(DialogEvent dialogEvent) {
+        if (dialogEvent.getOutcome().name().equals("ok")) {
+            
+            ViewObject BblcContaiDetailvo = appM.getIedocImpBblcContaiDetailVO1();
+            ViewObject BBLCDetails1vo     = appM.getBBLCDetails1();
+        
+            BindingContainer bindings = getBindings();
+            OperationBinding operationBinding = bindings.getOperationBinding("Commit");
+            Object result = operationBinding.execute();
+                 
+            AdfFacesContext.getCurrentInstance().addPartialTarget(container_no_bind );
+                        
+        } else if (dialogEvent.getOutcome().name().equals("cancel")) {
+            ;
+        }
     }
 }
