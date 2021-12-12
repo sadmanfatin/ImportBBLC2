@@ -2,6 +2,7 @@ package mnj.ont.model.lov.views;
 
 import java.sql.ResultSet;
 
+import oracle.jbo.Row;
 import oracle.jbo.server.ViewObjectImpl;
 import oracle.jbo.server.ViewRowImpl;
 import oracle.jbo.server.ViewRowSetImpl;
@@ -48,6 +49,16 @@ public class SupplierVOImpl extends ViewObjectImpl {
      */
     public long getQueryHitCount(ViewRowSetImpl viewRowSet) {
         long value = super.getQueryHitCount(viewRowSet);
+        return value;
+    }
+
+
+    /**
+     * getCappedQueryHitCount - overridden for custom java data source support.
+     */
+    @Override
+    public long getCappedQueryHitCount(ViewRowSetImpl viewRowSet, Row[] masterRows, long oldCap, long cap) {
+        long value = super.getCappedQueryHitCount(viewRowSet, masterRows, oldCap, cap);
         return value;
     }
 }

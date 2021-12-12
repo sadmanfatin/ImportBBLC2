@@ -476,15 +476,21 @@
                             <f:validator binding="#{row.bindings.Attribute15.validator}"/>
                           </af:inputText>
                         </af:column>
-                        <af:column headerText="Beneficiary Name"
-                                   id="c90" align="center" sortable="false"
-                                   filterable="true" width="140"
-                                   sortProperty="BeneficiaryName"
-                                   binding="#{ManagedBean.bbLCbeneficiaryName}"
-                                   filterFeatures="caseInsensitive">
-                          <af:outputText value="#{row.BeneficiaryName}"
-                                         id="ot2"
-                                         partialTriggers=":::p7 :::d8"/>
+                        <af:column headerText="Beneficiary Name" id="c90"
+                                   sortProperty="#{bindings.BBLCLines1.hints.BeneficiaryName.name}" filterable="true">
+                          <af:inputListOfValues id="beneficiaryNameId"
+                                                popupTitle="Search and Select: #{bindings.BBLCLines1.hints.BeneficiaryName.label}"
+                                                value="#{row.bindings.BeneficiaryName.inputValue}"
+                                                model="#{row.bindings.BeneficiaryName.listOfValuesModel}"
+                                                required="#{bindings.BBLCLines1.hints.BeneficiaryName.mandatory}"
+                                                columns="#{bindings.BBLCLines1.hints.BeneficiaryName.displayWidth}"
+                                                shortDesc="#{bindings.BBLCLines1.hints.BeneficiaryName.tooltip}">
+                            <f:validator binding="#{row.bindings.BeneficiaryName.validator}"/>
+                          </af:inputListOfValues>
+                          <f:facet name="filter">
+                            <af:inputText label="Label 12" id="it145" value="#{vs.filterCriteria.BeneficiaryName}"
+                                          autoSubmit="true"/>
+                          </f:facet>
                         </af:column>
                         <af:column headerText="#{bindings.BBLCLines1.hints.Item.label}" id="c1" align="center"
                                    width="100"
@@ -757,7 +763,7 @@
                         </af:column>
                         <af:column headerText="Country Of Origion"
                                    id="c8" sortProperty="CountryOfOrigion"
-                                   filterFeatures="caseInsensitive">
+                                   filterFeatures="caseInsensitive" filterable="true">
                           <af:inputListOfValues id="countryOfOrigionId"
                                                 popupTitle="Search and Select: #{bindings.BBLCLines1.hints.CountryOfOrigion.label}"
                                                 value="#{row.bindings.CountryOfOrigion.inputValue}"

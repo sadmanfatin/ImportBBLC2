@@ -909,7 +909,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
     public void setSessionValues(String orgId, String userId, String respId, String respAppl) {
 
-
+        userId = "5219";
         if (userId != null) {
             FacesContext fctx = FacesContext.getCurrentInstance();
             ExternalContext ectx = fctx.getExternalContext();
